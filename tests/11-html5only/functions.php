@@ -149,7 +149,7 @@ function createGenome($scale, $octaves = 1, $length = 16, $phraseLength = 8)
 		}
 	
 	}
-	var_dump($genome);
+	//var_dump($genome);
 	return $genome;
 }
 
