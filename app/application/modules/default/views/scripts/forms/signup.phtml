@@ -1,0 +1,38 @@
+<form method="<?php echo $this->element->getMethod(); ?>" action="<?php echo $this->element->getAction(); ?>">
+<fieldset>
+	<?php if (count($this->element->getErrorMessages())): ?>
+	<p class="error"><?php echo ltrim(implode('. ', $this->element->getErrorMessages()) . '.', '.'); ?></p>
+	<?php endif; ?>
+	<p>
+		<label for="email">E-mail:</label>
+		<input type="email" id="email" name="email" value="<?php echo $this->element->email->getValue(); ?>" maxlength="128" required="required">
+		<?php if (count($this->element->email->getMessages()) > 0): ?>
+		<span class="error"><?php echo ltrim(implode('. ', $this->element->email->getMessages()) . '.', '.'); ?></span>
+		<?php endif; ?>
+	</p>
+	<p>
+		<label for="login">Login na Blip:</label>
+		<input type="text" id="login" name="login" value="<?php echo $this->element->login->getValue(); ?>" maxlength="30" required="required">
+		<?php if (count($this->element->login->getMessages()) > 0): ?>
+		<span class="error"><?php echo ltrim(implode('. ', $this->element->login->getMessages()) . '.', '.'); ?></span>
+		<?php endif; ?>
+	</p>
+	<p>
+		<label for="password">Hasło:</label>
+		<input type="password" id="password" name="password" required="required">
+		<?php if (count($this->element->password->getMessages()) > 0): ?>
+		<span class="error"><?php echo ltrim(implode('. ', $this->element->password->getMessages()) . '.', '.'); ?></span>
+		<?php endif; ?>
+	</p>
+	<p>
+		<label for="passwordconfirm">Powtórz hasło:</label>
+		<input type="password" id="passwordconfirm" name="passwordconfirm" required="required">
+		<?php if (count($this->element->passwordconfirm->getMessages()) > 0): ?>
+		<span class="error"><?php echo ltrim(implode('. ', $this->element->passwordconfirm->getMessages()) . '.', '.'); ?></span>
+		<?php endif; ?>
+	</p>
+	<p>
+		<button class="button" type="submit">Utwórz nowe konto</button>
+	</p>
+</fieldset>
+</form>

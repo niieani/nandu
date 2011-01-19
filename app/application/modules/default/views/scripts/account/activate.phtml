@@ -1,0 +1,24 @@
+<?php if ($this->success === true): ?>
+<header>
+<h2>Twoje konto zostało aktywowane</h2>
+</header>
+<p>Jeśli możesz, poświęć jeszcze chwilę na <a href="<?php echo $this->url(array(), 'account'); ?>">uzupełnienie swojego profilu</a>.</p>
+<h3>Gratulujemy!</h3>
+<p>Od tego momentu jesteś Czytelnikiem w serwisie <b>Blipoteka</b> i możesz:</p>
+<ul>
+	<li>udostępniać swoje książki dodając je do swojego księgozbioru</li>
+	<li>wyszukiwać, przeglądać księgozbiory i wypożyczać książki od innych Czytelników</li>
+	<li>zostać Kurierem i pomóc w przewozie książek, dodając wpis w tabeli kursów</li>
+</ul>
+<footer>
+<p>Możesz już <a href="<?php echo $this->url(array(), 'index'); ?>">rozpocząć korzystanie</a> z serwisu.</p>
+</footer>
+<?php else: ?>
+<header>
+<h2>Aktywacja nie powiodła się</h2>
+</header>
+<p>Nie udało się aktywować konta użytkownika, żeton aktywacyjny jest nieprawidłowy lub wygasł.</p>
+<footer>
+<p>Jeśli chcesz, możesz spróbować <a href="<?php echo $this->url(array(), 'signup'); ?>">zarejestrować się</a> ponownie.</p>
+</footer>
+<?php endif; ?>

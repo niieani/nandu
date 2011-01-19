@@ -1,0 +1,11 @@
+<?php echo $this->render('header.phtml'); ?>
+<p>Cześć, <strong><?php echo $this->nickname; ?></strong>!</p>
+<p>Otrzymujesz tę wiadomość, ponieważ Pani Blipotekarka szepnęła nam, że chcesz zostać Czytelnikiem.</p>
+<p>
+Ponieważ udało Ci się prawidłowo wypełnić formularz rejestracyjny, już tylko krok dzieli Cię od pełnego sukcesu.
+Podejmij proszę wyzwanie i <a style="color:# 907860" href="<?php echo $this->activationUrl; ?>">kliknij tutaj</a>,
+aby aktywować swoje konto. Możesz też wpisać w pasek adresu przeglądarki URL zamieszczony poniżej:
+</p>
+<p><a style="color:# 907860" href="<?php echo $this->activationUrl; ?>"><?php echo $this->activationUrl; ?></a></p>
+<p><strong>Uwaga:</strong> powyższy link aktywacyjny jest ważny przez najbliższe 24h.</p>
+<?php echo $this->render('footer.phtml'); ?>

@@ -1,0 +1,4 @@
+Blipoteka_User_FriendRef:
+  Blipoteka_User_FriendRef_1_2:
+    user: Blipoteka_User_1
+    friend: Blipoteka_User_2

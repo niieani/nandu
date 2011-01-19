@@ -1,0 +1,974 @@
+Blipoteka_Book:
+  Blipoteka_Book_1:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Juliet, naga'
+    original_title: 'Juliet, Naked'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_1
+    year: '2010'
+    pages: '336'
+    isbn: '9788375340969'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 17:10:07'
+  Blipoteka_Book_2:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Marta
+    original_title: null
+    city: Blipoteka_City_765876
+    publisher: Blipoteka_Publisher_2
+    year: '1979'
+    pages: '223'
+    isbn: '8322200056'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 17:30:09'
+  Blipoteka_Book_3:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Popioły
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_3
+    year: '1953'
+    pages: '904'
+    isbn: null
+    description: 'Wydanie w 3 tomach'
+    auto_accept_requests: false
+    created_at: '2010-10-17 17:52:49'
+  Blipoteka_Book_4:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Gra z cieniem'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_3
+    year: '1987'
+    pages: '354'
+    isbn: '8307014980'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 17:55:50'
+  Blipoteka_Book_5:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: Ulisses
+    original_title: Ulysses
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1975'
+    pages: '1018'
+    isbn: null
+    description: 'Wydanie w 2 tomach'
+    auto_accept_requests: false
+    created_at: '2010-10-17 17:56:13'
+  Blipoteka_Book_6:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Pisma. Opowiadania i powieści 1901-1909'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1956'
+    pages: '729'
+    isbn: null
+    description: 'Tylko tom 5'
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:02:28'
+  Blipoteka_Book_7:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Ludzie bezdomni'
+    original_title: null
+    city: Blipoteka_City_765876
+    publisher: Blipoteka_Publisher_2
+    year: '1982'
+    pages: '349'
+    isbn: '8322200773'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:05:51'
+  Blipoteka_Book_8:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Blask fantastyczny'
+    original_title: 'The Light Fantastic'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_5
+    year: '1986'
+    pages: '267'
+    isbn: '8373377905'
+    description: 'Tylko jedna osoba może ocalić Świat Dysku, który dąży do kolizji ze złowróżbną czerwoną gwiazdą. Na nieszczęście, osobą tą jest mało uzdolniony i tchórzliwy mag o imieniu Ricewind. Zostaje on magicznie ściągnięty z Kosmosu, by stać się obiektem polowania wszystkich ośmiu Obrządków Magicznych, próbujących odzyskać ukryte w jego umyśle Zaklęcie. W towarzystwie Dwukwiata z Bagażem i Cohena – największego i najsłynniejszego z bohaterów Dysku – po licznych przygodach powraca do Ankh Morpork, by uczestniczyć w jednym z kluczowych wydarzeń historii i kosmologii równocześnie.'
+    auto_accept_requests: true
+    created_at: '2010-10-17 18:07:15'
+  Blipoteka_Book_9:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Na wakacjach; Nawrócony; Sen'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_6
+    year: '1984'
+    pages: '44'
+    isbn: '8370010814'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:15:46'
+  Blipoteka_Book_10:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Wiersze wybrane'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_8
+    year: '1986'
+    pages: '94'
+    isbn: '8320905621'
+    description: "Część 1: A kiedy mi przyjdzie zagrać;\r\nCzęść 2: Czytanie (wiersze dla dzieci);\r\nPosłowie: Teresa Marciszuk"
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:19:28'
+  Blipoteka_Book_11:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Deklinacja nic'
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_7
+    year: '2009'
+    pages: '54'
+    isbn: '9788361962168'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:21:32'
+  Blipoteka_Book_12:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Przedwiośnie
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_3
+    year: '1978'
+    pages: '331'
+    isbn: null
+    description: 'Seria: Biblioteka Lektur Szkolnych'
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:22:27'
+  Blipoteka_Book_13:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Popiół i diament'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1964'
+    pages: '345'
+    isbn: null
+    description: 'Seria: Biblioteka Powszechna'
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:24:28'
+  Blipoteka_Book_14:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Ziemia obiecana'
+    original_title: null
+    city: Blipoteka_City_3093133
+    publisher: Blipoteka_Publisher_9
+    year: '1987'
+    pages: '296'
+    isbn: '8321806740'
+    description: "Wydanie w 2 tomach;\r\nPosłowie i przypisy: Bogdan Mazan"
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:29:16'
+  Blipoteka_Book_15:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Pamiętnik jasnowidza'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_10
+    year: '1984'
+    pages: '243'
+    isbn: '8320535115'
+    description: 'Autor ciekawie, niejednokrotnie z humorem opisuje epizody ze swego życia, od trudnego dzieciństwa w przedwojennej Polsce, poprzez II wojnę światową i pobyt w obozach zagłady, do Polski Ludowej. Nie wprowadzając nas w arkana sztuk tajemnych przedstawia świat międzywojnia ze swojego osobliwego, oryginalnego punktu widzenia.'
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:30:37'
+  Blipoteka_Book_16:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Cham
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_3
+    year: '1956'
+    pages: '248'
+    isbn: null
+    description: 'Posłowie: Jan Okopień'
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:31:05'
+  Blipoteka_Book_17:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Pani Bovary'
+    original_title: 'Madame Bovary'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1957'
+    pages: '406'
+    isbn: null
+    description: "Seria: Biblioteka Arcydzieł. Najsławniejsze powieści świata;\r\nPrzedmowa: Jan Parandowski"
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:36:39'
+  Blipoteka_Book_18:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Nad Niemnem'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_3
+    year: '1965'
+    pages: '576'
+    isbn: null
+    description: 'Posłowie: Jan Krzyżanowski'
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:41:21'
+  Blipoteka_Book_19:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Słoneczna loteria'
+    original_title: 'Solar Lottery'
+    city: Blipoteka_City_3088171
+    publisher: Blipoteka_Publisher_11
+    year: '2004'
+    pages: '223'
+    isbn: '8371206224'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:45:23'
+  Blipoteka_Book_20:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Wybór pism. Nowele'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1954'
+    pages: '445'
+    isbn: null
+    description: "Tylko tom 1;\r\nWstęp: Leon Kruczkowski"
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:47:40'
+  Blipoteka_Book_21:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Sto lat samotności'
+    original_title: 'Cien años de soledad'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_12
+    year: '2001'
+    pages: '437'
+    isbn: '8372000123'
+    description: null
+    auto_accept_requests: true
+    created_at: '2010-10-17 18:52:26'
+  Blipoteka_Book_22:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Literatura polska okresu pozytywizmu'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_13
+    year: '1976'
+    pages: '384'
+    isbn: 830200684X
+    description: 'Podręcznik szkolny'
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:52:32'
+  Blipoteka_Book_23:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Placówka
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_14
+    year: '1949'
+    pages: '294'
+    isbn: null
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 18:55:58'
+  Blipoteka_Book_24:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: Pozytywizm
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_13
+    year: '1995'
+    pages: '335'
+    isbn: 830205416X
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 19:05:59'
+  Blipoteka_Book_25:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Nowele wybrane'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: null
+    pages: '317'
+    isbn: null
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 19:06:03'
+  Blipoteka_Book_26:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Reportaże zagraniczne'
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_15
+    year: '1981'
+    pages: '355'
+    isbn: '8308004881'
+    description: 'Seria: Biblioteka Literatury Faktu'
+    auto_accept_requests: false
+    created_at: '2010-10-17 19:09:55'
+  Blipoteka_Book_27:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Najdawniejsze zabytki języka polskiego'
+    original_title: null
+    city: Blipoteka_City_3081368
+    publisher: Blipoteka_Publisher_16
+    year: '1951'
+    pages: '208'
+    isbn: null
+    description: 'Seria: Biblioteka Narodowa I 104'
+    auto_accept_requests: false
+    created_at: '2010-10-17 19:17:32'
+  Blipoteka_Book_28:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Fatalne jaja i inne opowiadania'
+    original_title: 'Роковые яйца'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_6
+    year: '1988'
+    pages: '139'
+    isbn: '8370012329'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-06 22:31:45'
+  Blipoteka_Book_29:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Biłek
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_15
+    year: '1980'
+    pages: '52'
+    isbn: '8308004385'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 19:19:36'
+  Blipoteka_Book_30:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Przyducha
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_17
+    year: '1988'
+    pages: '215'
+    isbn: '8311075263'
+    description: 'Zawiera: 1) Przyducha, 2) Dziewięciokrotne powiększenie'
+    auto_accept_requests: false
+    created_at: '2010-10-17 19:27:05'
+  Blipoteka_Book_31:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Germinal
+    original_title: Germinal
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1977'
+    pages: '519'
+    isbn: null
+    description: 'Seria: Biblioteka Klasyki Polskiej i Obcej'
+    auto_accept_requests: false
+    created_at: '2010-10-17 19:33:30'
+  Blipoteka_Book_32:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: Lód
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_15
+    year: '2007'
+    pages: '1051'
+    isbn: '9788308039854'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 19:38:57'
+  Blipoteka_Book_33:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: Silmarilion
+    original_title: 'The Silmarillion'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_18
+    year: '2009'
+    pages: '402'
+    isbn: '9788324135271'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:07:25'
+  Blipoteka_Book_34:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Hobbit albo tam i z powrotem'
+    original_title: 'The Hobbit or There and Back Again'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_18
+    year: '2009'
+    pages: '277'
+    isbn: '9788324135110'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:21:25'
+  Blipoteka_Book_35:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Przeminęło z filmem'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_19
+    year: '1987'
+    pages: '299'
+    isbn: '8322103018'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:32:39'
+  Blipoteka_Book_36:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: Diuna
+    original_title: Dune
+    publisher: Blipoteka_Publisher_20
+    year: '1985'
+    pages: '445'
+    isbn: '8320707722'
+    description: 'Wydanie w 2 tomach'
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:36:39'
+  Blipoteka_Book_37:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Sercowa choroba czyli moje życie w sztuce'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_3
+    year: '1992'
+    pages: '346'
+    isbn: '8307022630'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:37:47'
+  Blipoteka_Book_38:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Trzy opowieści'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1973'
+    pages: '493'
+    isbn: null
+    description: 'Zawiera: 1) Ciemności kryją ziemię, 2) Bramy raju, 3) Idzie skacząc po górach'
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:40:14'
+  Blipoteka_Book_39:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Dreszcz czystości'
+    original_title: 'The Thrill of the Chaste: Finding Fulfillment While Keeping Your Clothes On'
+    city: Blipoteka_City_3088171
+    publisher: Blipoteka_Publisher_22
+    year: '2008'
+    pages: '242'
+    isbn: '9788370336608'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:44:36'
+  Blipoteka_Book_40:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Coś na progu'
+    original_title: null
+    city: Blipoteka_City_3088171
+    publisher: Blipoteka_Publisher_21
+    year: '1999'
+    pages: '242'
+    isbn: '8371505825'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:45:33'
+  Blipoteka_Book_41:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Psie serce'
+    original_title: 'Sobaczje sierdce'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_20
+    year: '1989'
+    pages: '96'
+    isbn: '8320712025'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:50:19'
+  Blipoteka_Book_42:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Antygona
+    original_title: Αντιγόνη
+    city: Blipoteka_City_3081368
+    publisher: Blipoteka_Publisher_16
+    year: '1986'
+    pages: '107'
+    isbn: '8304020769'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 20:55:25'
+  Blipoteka_Book_43:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Literatura polska okresu pozytywizmu'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_23
+    year: '1962'
+    pages: '260'
+    isbn: null
+    description: 'Podręcznik dla techników'
+    auto_accept_requests: false
+    created_at: '2010-10-17 21:00:40'
+  Blipoteka_Book_44:
+    type: '1'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Szanse rozwoju osobowości'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_24
+    year: '1984'
+    pages: '531'
+    isbn: '8305110362'
+    description: null
+    auto_accept_requests: true
+    created_at: '2010-10-17 21:02:19'
+  Blipoteka_Book_45:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Lalka
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1982'
+    pages: '884'
+    isbn: '8306008251'
+    description: 'Wydanie w 2 tomach'
+    auto_accept_requests: false
+    created_at: '2010-10-17 21:04:15'
+  Blipoteka_Book_46:
+    type: '1'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Światło dnia'
+    original_title: 'The Dazzle of Day'
+    city: Blipoteka_City_3088171
+    publisher: Blipoteka_Publisher_21
+    year: '1997'
+    pages: '271'
+    isbn: '8371505744'
+    description: null
+    auto_accept_requests: true
+    created_at: '2010-10-17 21:05:52'
+  Blipoteka_Book_47:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Graf Zero'
+    original_title: 'Count Zero'
+    city: Blipoteka_City_3088171
+    publisher: Blipoteka_Publisher_21
+    year: '1999'
+    pages: '269'
+    isbn: '8371505523'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 21:07:39'
+  Blipoteka_Book_48:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Inne pieśni'
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_15
+    year: '2003'
+    pages: '629'
+    isbn: '8308034810'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 21:09:05'
+  Blipoteka_Book_49:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: Zamieć
+    original_title: 'Snow Crash'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_25
+    year: '2009'
+    pages: '443'
+    isbn: '9788374182287'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 21:12:43'
+  Blipoteka_Book_50:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Blade Runner'
+    original_title: 'Do Androids Dream of Electric Sheep?'
+    publisher: Blipoteka_Publisher_5
+    year: '2005'
+    pages: '272'
+    isbn: '8374692316'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-17 21:15:49'
+  Blipoteka_Book_51:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Cały ten Kutz'
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_26
+    year: '2009'
+    pages: '363'
+    isbn: '9788324011384'
+    description: null
+    auto_accept_requests: true
+    created_at: '2010-10-17 21:43:22'
+  Blipoteka_Book_52:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Kolonie Knellera'
+    original_title: 'Hakaitana szel Kneller'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_27
+    year: '2009'
+    pages: '107'
+    isbn: '9788374145503'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:01:03'
+  Blipoteka_Book_53:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Nie bój się seksu czyli kochaj i rób, co chcesz'
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_28
+    year: '2009'
+    pages: '209'
+    isbn: '9788360040997'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:07:28'
+  Blipoteka_Book_54:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Seks, jakiego nie znacie'
+    original_title: null
+    city: Blipoteka_City_3100946
+    publisher: Blipoteka_Publisher_29
+    year: '2009'
+    pages: '211'
+    isbn: '9788374246187'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:20:46'
+  Blipoteka_Book_55:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Zielone jabłuszko'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_5
+    year: '2004'
+    pages: '176'
+    isbn: '8373378278'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:25:51'
+  Blipoteka_Book_56:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Kłamczucha w opałach'
+    original_title: 'Pants on Fire'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_18
+    year: '2008'
+    pages: '215'
+    isbn: '9788324130825'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:27:47'
+  Blipoteka_Book_57:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Piknik na skraju drogi'
+    original_title: 'Пикник на обочине'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_20
+    year: '1974'
+    pages: '239'
+    isbn: null
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:37:17'
+  Blipoteka_Book_58:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Moralność pani Dulskiej'
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_30
+    year: null
+    pages: '96'
+    isbn: '9788386740451'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:39:19'
+  Blipoteka_Book_59:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Poezja naszego wieku. Antologia wierszy publikowanych po 1918 roku'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_13
+    year: '1989'
+    pages: '463'
+    isbn: '8302037710'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:43:13'
+  Blipoteka_Book_60:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Baśnie
+    original_title: null
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_30
+    year: '2007'
+    pages: '158'
+    isbn: '9788374354134'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:49:10'
+  Blipoteka_Book_61:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Imię róży'
+    original_title: 'Il nome della rosa'
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_4
+    year: '1996'
+    pages: '628'
+    isbn: '8306024842'
+    description: null
+    auto_accept_requests: true
+    created_at: '2010-10-18 21:49:40'
+  Blipoteka_Book_62:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: 'Pan Ibrahim i kwiaty Koranu'
+    original_title: 'Monsieur Ibrahim et les fleurs du Coran'
+    city: Blipoteka_City_3094802
+    publisher: Blipoteka_Publisher_26
+    year: '2008'
+    pages: '63'
+    isbn: '9788324004713'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 21:55:29'
+  Blipoteka_Book_63:
+    type: '1'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Wielki las'
+    original_title: null
+    city: Blipoteka_City_763166
+    publisher: Blipoteka_Publisher_31
+    year: '1987'
+    pages: '416'
+    isbn: '8385255001'
+    description: null
+    auto_accept_requests: true
+    created_at: '2010-10-18 22:00:18'
+  Blipoteka_Book_64:
+    type: '0'
+    user: Blipoteka_User_2
+    owner: Blipoteka_User_2
+    status: '0'
+    title: Patussa
+    original_title: null
+    city: Blipoteka_City_3093133
+    publisher: Blipoteka_Publisher_32
+    year: '2006'
+    pages: '112'
+    isbn: '9788388790980'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 22:00:29'
+  Blipoteka_Book_65:
+    type: '0'
+    user: Blipoteka_User_1
+    owner: Blipoteka_User_1
+    status: '0'
+    title: 'Piękni, dwudziestoletni'
+    original_title: null
+    city: Blipoteka_City_756135
+    publisher: Blipoteka_Publisher_6
+    year: '1988'
+    pages: '174'
+    isbn: '8370012485'
+    description: null
+    auto_accept_requests: false
+    created_at: '2010-10-18 22:04:31'

@@ -1,0 +1,17 @@
+<h1>Houston, mamy problem!</h1>
+<h2><?php echo $this->message ?></h2>
+
+<?php if (isset($this->exception)): ?>
+
+<h3>Informacje o wyjątku:</h3>
+<p><b>Komunikat:</b> <?php echo $this->exception->getMessage() ?></p>
+
+<h3>Stos wywołań:</h3>
+<pre><?php echo $this->exception->getTraceAsString() ?></pre>
+
+<h3>Parametry żądania:</h3>
+<pre>
+<?php echo $this->request ?>
+</pre>
+
+<?php endif ?>

@@ -1,0 +1,97 @@
+Blipoteka_Publisher:
+  Blipoteka_Publisher_1:
+    name: 'Nowa Proza'
+    url: 'http://www.nowaproza.eu'
+  Blipoteka_Publisher_2:
+    name: 'Wydawnictwo Lubelskie'
+    url: null
+  Blipoteka_Publisher_3:
+    name: Czytelnik
+    url: 'http://www.czytelnik.pl'
+  Blipoteka_Publisher_4:
+    name: 'Państwowy Instytut Wydawniczy'
+    url: 'http://www.piw.pl'
+  Blipoteka_Publisher_5:
+    name: 'Prószyński i S-ka'
+    url: 'http://www.proszynski.pl'
+  Blipoteka_Publisher_6:
+    name: 'Wydawnictwa ALFA'
+    url: 'http://www.alfawero.pl'
+  Blipoteka_Publisher_7:
+    name: LOKATOR
+    url: 'http://www.wydawnictwo.lokator.pointblue.com.pl'
+  Blipoteka_Publisher_8:
+    name: 'Wydawnictwo Spółdzielcze'
+    url: null
+  Blipoteka_Publisher_9:
+    name: 'Wydawnictwo Łódzkie'
+    url: null
+  Blipoteka_Publisher_10:
+    name: 'Ludowa Spółdzielnia Wydawnicza'
+    url: null
+  Blipoteka_Publisher_11:
+    name: REBIS
+    url: 'http://www.rebis.com.pl'
+  Blipoteka_Publisher_12:
+    name: MUZA
+    url: 'http://www.muza.com.pl'
+  Blipoteka_Publisher_13:
+    name: 'Wydawnictwa Szkolne i Pedagogiczne'
+    url: 'http://www.wsip.pl'
+  Blipoteka_Publisher_14:
+    name: 'Książka i Wiedza'
+    url: 'http://www.kiw.com.pl'
+  Blipoteka_Publisher_15:
+    name: 'Wydawnictwo Literackie'
+    url: 'http://www.wydawnictwoliterackie.pl'
+  Blipoteka_Publisher_16:
+    name: Ossolineum
+    url: 'http://www.ossolineum.pl'
+  Blipoteka_Publisher_17:
+    name: 'Wydawnictwo Ministerstwa Obrony Narodowej'
+    url: null
+  Blipoteka_Publisher_18:
+    name: AMBER
+    url: 'http://www.wydawnictwoamber.pl'
+  Blipoteka_Publisher_19:
+    name: 'Wydawnictwa Artystyczne i Filmowe'
+    url: null
+  Blipoteka_Publisher_20:
+    name: Iskry
+    url: 'http://www.iskry.com.pl'
+  Blipoteka_Publisher_21:
+    name: 'Zysk i S-ka'
+    url: 'http://www.zysk.com.pl'
+  Blipoteka_Publisher_22:
+    name: 'W Drodze'
+    url: 'http://www.wdrodze.pl'
+  Blipoteka_Publisher_23:
+    name: 'Państwowe Wydawnictwa Szkolnictwa Zawodowego'
+    url: null
+  Blipoteka_Publisher_24:
+    name: 'RSW „Prasa-Książka-Ruch”'
+    url: null
+  Blipoteka_Publisher_25:
+    name: ISA
+    url: 'http://www.isa.pl'
+  Blipoteka_Publisher_26:
+    name: Znak
+    url: 'http://www.znak.com.pl'
+  Blipoteka_Publisher_27:
+    name: W.A.B.
+    url: 'http://www.wab.com.pl'
+  Blipoteka_Publisher_28:
+    name: Esprit
+    url: 'http://www.esprit.com.pl'
+  Blipoteka_Publisher_29:
+    name: 'Edycja Świętego Pawła'
+    url: 'http://www.edycja.pl'
+  Blipoteka_Publisher_30:
+    name: 'Zielona Sowa'
+    url: 'http://www.zielonasowa.pl'
+  Blipoteka_Publisher_31:
+    name: 'Przedsiębiorstwo Wydawniczo-Handlowe EURO'
+    url: null
+  Blipoteka_Publisher_32:
+    name: 'Akapit Press'
+    url: 'http://www.akapit-press.com.pl'

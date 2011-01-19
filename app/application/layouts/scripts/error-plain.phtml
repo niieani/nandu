@@ -1,0 +1,15 @@
+<?php echo $this->doctype() . "\n"; ?>
+<?php echo $this->html5BoilerplateHtml($this->lang, false); ?>
+<head>
+<?php echo $this->headMeta() . "\n"; ?>
+<?php echo $this->headTitle() . "\n"; ?>
+<?php echo $this->headLink() . "\n"; ?>
+<script src="<?php echo $this->baseUrl("js/libs/modernizr-1.6.min.js"); ?>"></script>
+<?php echo $this->inlineScript()->setScript(sprintf("var baseUrl = '%s';", $this->baseUrl(''))); ?>
+</head>
+<body>
+<?php echo $this->layout()->content . "\n" ?>
+<?php echo $this->headScript() . "\n"; ?>
+<?php echo $this->partial('footer.phtml') . "\n"; ?>
+</body>
+</html>

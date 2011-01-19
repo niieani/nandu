@@ -1,0 +1,42 @@
+<h2>Pełna lista książek</h2>
+
+<section class="book-list">
+	<?php $pagination = $this->paginationControl($this->books, 'Sliding', 'paginators/book-list.phtml'); ?>
+	<?php echo $pagination; ?>
+	<table>
+		<col align="left" width="220" />
+		<col align="left" width="330" />
+		<col align="left" />
+		<col align="left" />
+		<col align="left" />
+		<col align="left" />
+		<thead>
+			<tr>
+				<th>Autor</th>
+				<th>Tytuł książki</th>
+				<th>Wędrówka</th>
+				<th>Status</th>
+				<th>Właściciel</th>
+				<th>Gdzie jest / <br>w drodze do</th>
+			</tr>
+		</thead>
+	<tbody>
+		<?php foreach ($this->books as $book): ?>
+		<?php $holder = $book['holder']; ?>
+		<tr class="<?php echo 's'.$book['status']; ?>">
+			<td><?php $author = current($book['authors']); echo $author['name']; ?></td>
+			<td><?php $title = $book['title']; echo Void_Util_Text::truncate($title, 48, true, ''); ?></td>
+			<td><?php echo $book['type_name']; ?></td>
+			<td><?php echo $book['status_name']; ?></td>
+			<td><?php echo $book['owner']['blip']; ?></td>
+			<td>
+			<?php if ($holder !== null): ?>
+			<?php echo $holder['blip']; ?> (<?php echo $holder['city']['name']; ?>)
+			<?php endif; ?>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+	</table>
+	<?php echo $pagination; ?>
+</section>

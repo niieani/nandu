@@ -1,0 +1,36 @@
+<?php echo $this->doctype() . "\n"; ?>
+<?php echo $this->html5BoilerplateHtml($this->lang, false); ?>
+<head>
+<?php echo $this->headMeta() . "\n"; ?>
+<?php echo $this->headTitle() . "\n"; ?>
+<?php echo $this->headLink() . "\n"; ?>
+<script src="<?php echo $this->baseUrl("js/libs/modernizr-1.6.min.js"); ?>"></script>
+<?php echo $this->inlineScript()->setScript(sprintf("var baseUrl = '%s';", $this->baseUrl(''))); ?>
+</head>
+<body>
+<div id="wrap">
+	<div id="container">
+		<section id="header">
+			<div class="container_12 clearfix">
+				<header class="grid_8">
+					<h1><a href="<?php echo $this->url(array(), 'index') ?>">Blipoteka.pl</a></h1>
+					<p>Mię­dzy­mia­stowa biblioteka użyt­kow­ni­ków ser­wisu Blip.pl</p>
+				</header>
+			</div>
+		</section>
+		<section id="signin-wrap" class="container_12 clearfix">
+			<aside class="grid_2 push_3">
+				<a href="<?php echo $this->url(array(), 'index') ?>"><img src="<?php echo $this->baseUrl('img/logo128.png'); ?>" alt="Logo Blipoteki" /></a>
+			</aside>
+			<section id="signin" class="grid_7 push_3">
+			<?php echo $this->layout()->content . "\n" ?>
+			</section>
+		</div>
+	</div>
+</div>
+
+<?php echo $this->partial('footer-layout.phtml') . "\n"; ?>
+<?php echo $this->headScript() . "\n"; ?>
+<?php echo $this->partial('footer.phtml') . "\n"; ?>
+</body>
+</html>

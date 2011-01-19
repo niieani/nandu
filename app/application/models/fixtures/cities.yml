@@ -1,0 +1,181 @@
+Blipoteka_City:
+  Blipoteka_City_756135:
+    city_id: 756135
+    name: Warszawa
+    asciiname: Warszawa
+    lat: '52.22977'
+    lng: '21.01178'
+    feature_code: PPLC
+    admin1_code: '78'
+    admin2_code: null
+    modified_at: '2010-07-16'
+  Blipoteka_City_759734:
+    city_id: 759734
+    name: Rzeszów
+    asciiname: Rzeszow
+    lat: '50.05000'
+    lng: '22.00000'
+    feature_code: PPLA
+    admin1_code: '80'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_762753:
+    city_id: 762753
+    name: Pacanów
+    asciiname: Pacanow
+    lat: '50.40031'
+    lng: '21.04148'
+    feature_code: PPL
+    admin1_code: '84'
+    admin2_code: 2601
+    modified_at: '2010-09-10'
+  Blipoteka_City_763166:
+    city_id: 763166
+    name: Olsztyn
+    asciiname: Olsztyn
+    lat: '53.78333'
+    lng: '20.48333'
+    feature_code: PPLA
+    admin1_code: '85'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_765876:
+    city_id: 765876
+    name: Lublin
+    asciiname: Lublin
+    lat: '51.25000'
+    lng: '22.56667'
+    feature_code: PPLA
+    admin1_code: '75'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_769250:
+    city_id: 769250
+    name: Kielce
+    asciiname: Kielce
+    lat: '50.87033'
+    lng: '20.62752'
+    feature_code: PPLA
+    admin1_code: '84'
+    admin2_code: null
+    modified_at: '2010-07-15'
+  Blipoteka_City_776069:
+    city_id: 776069
+    name: Białystok
+    asciiname: Bialystok
+    lat: '53.13333'
+    lng: '23.15000'
+    feature_code: PPLA
+    admin1_code: '81'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_3080165:
+    city_id: 3080165
+    name: 'Zielona Góra'
+    asciiname: 'Zielona Gora'
+    lat: '51.93333'
+    lng: '15.50000'
+    feature_code: PPLA
+    admin1_code: '76'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_3081368:
+    city_id: 3081368
+    name: Wrocław
+    asciiname: Wroclaw
+    lat: '51.10000'
+    lng: '17.03333'
+    feature_code: PPLA
+    admin1_code: '72'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_3083829:
+    city_id: 3083829
+    name: Szczecin
+    asciiname: Szczecin
+    lat: '53.42938'
+    lng: '14.55294'
+    feature_code: PPLA
+    admin1_code: '87'
+    admin2_code: null
+    modified_at: '2008-11-20'
+  Blipoteka_City_3088171:
+    city_id: 3088171
+    name: Poznań
+    asciiname: Poznan
+    lat: '52.41667'
+    lng: '16.96667'
+    feature_code: PPLA
+    admin1_code: '86'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_3090048:
+    city_id: 3090048
+    name: Opole
+    asciiname: Opole
+    lat: '50.66667'
+    lng: '17.95000'
+    feature_code: PPLA
+    admin1_code: '79'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_3093133:
+    city_id: 3093133
+    name: Łódź
+    asciiname: Lodz
+    lat: '51.75000'
+    lng: '19.46667'
+    feature_code: PPLA
+    admin1_code: '74'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_3094802:
+    city_id: 3094802
+    name: Kraków
+    asciiname: Krakow
+    lat: '50.08333'
+    lng: '19.91667'
+    feature_code: PPLA
+    admin1_code: '77'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_3096472:
+    city_id: 3096472
+    name: Katowice
+    asciiname: Katowice
+    lat: '50.26667'
+    lng: '19.01667'
+    feature_code: PPLA
+    admin1_code: '83'
+    admin2_code: null
+    modified_at: '2010-09-13'
+  Blipoteka_City_3099434:
+    city_id: 3099434
+    name: Gdańsk
+    asciiname: Gdansk
+    lat: '54.35205'
+    lng: '18.64637'
+    feature_code: PPLA
+    admin1_code: '82'
+    admin2_code: '2261'
+    modified_at: '2010-09-13'
+  Blipoteka_City_3100946:
+    city_id: 3100946
+    name: Częstochowa
+    asciiname: Czestochowa
+    lat: '50.80000'
+    lng: '19.11667'
+    feature_code: PPL
+    admin1_code: '83'
+    admin2_code: null
+    modified_at: '2010-08-10'
+  Blipoteka_City_3102014:
+    city_id: 3102014
+    name: Bydgoszcz
+    asciiname: Bydgoszcz
+    lat: '53.15000'
+    lng: '18.00000'
+    feature_code: PPLA
+    admin1_code: '73'
+    admin2_code: null
+    modified_at: '2010-08-10'

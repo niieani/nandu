@@ -1,0 +1,269 @@
+Blipoteka_Book_Author:
+  Blipoteka_Book_Author_1_20:
+    book: Blipoteka_Book_1
+    author: Blipoteka_Author_20
+    is_master: true
+  Blipoteka_Book_Author_2_35:
+    book: Blipoteka_Book_2
+    author: Blipoteka_Author_35
+    is_master: true
+  Blipoteka_Book_Author_3_55:
+    book: Blipoteka_Book_3
+    author: Blipoteka_Author_55
+    is_master: true
+  Blipoteka_Book_Author_4_1:
+    book: Blipoteka_Book_4
+    author: Blipoteka_Author_1
+    is_master: true
+  Blipoteka_Book_Author_5_22:
+    book: Blipoteka_Book_5
+    author: Blipoteka_Author_22
+    is_master: true
+  Blipoteka_Book_Author_6_15:
+    book: Blipoteka_Book_6
+    author: Blipoteka_Author_15
+    is_master: true
+  Blipoteka_Book_Author_7_55:
+    book: Blipoteka_Book_7
+    author: Blipoteka_Author_55
+    is_master: true
+  Blipoteka_Book_Author_8_38:
+    book: Blipoteka_Book_8
+    author: Blipoteka_Author_38
+    is_master: true
+  Blipoteka_Book_Author_9_39:
+    book: Blipoteka_Book_9
+    author: Blipoteka_Author_39
+    is_master: true
+  Blipoteka_Book_Author_10_27:
+    book: Blipoteka_Book_10
+    author: Blipoteka_Author_27
+    is_master: true
+  Blipoteka_Book_Author_11_36:
+    book: Blipoteka_Book_11
+    author: Blipoteka_Author_36
+    is_master: true
+  Blipoteka_Book_Author_12_55:
+    book: Blipoteka_Book_12
+    author: Blipoteka_Author_55
+    is_master: true
+  Blipoteka_Book_Author_13_1:
+    book: Blipoteka_Book_13
+    author: Blipoteka_Author_1
+    is_master: true
+  Blipoteka_Book_Author_14_40:
+    book: Blipoteka_Book_14
+    author: Blipoteka_Author_40
+    is_master: true
+  Blipoteka_Book_Author_15_31:
+    book: Blipoteka_Book_15
+    author: Blipoteka_Author_31
+    is_master: true
+  Blipoteka_Book_Author_16_35:
+    book: Blipoteka_Book_16
+    author: Blipoteka_Author_35
+    is_master: true
+  Blipoteka_Book_Author_17_12:
+    book: Blipoteka_Book_17
+    author: Blipoteka_Author_12
+    is_master: true
+  Blipoteka_Book_Author_18_35:
+    book: Blipoteka_Book_18
+    author: Blipoteka_Author_35
+    is_master: true
+  Blipoteka_Book_Author_19_8:
+    book: Blipoteka_Book_19
+    author: Blipoteka_Author_8
+    is_master: true
+  Blipoteka_Book_Author_20_42:
+    book: Blipoteka_Book_20
+    author: Blipoteka_Author_42
+    is_master: true
+  Blipoteka_Book_Author_21_30:
+    book: Blipoteka_Book_21
+    author: Blipoteka_Author_30
+    is_master: true
+  Blipoteka_Book_Author_22_33:
+    book: Blipoteka_Book_22
+    author: Blipoteka_Author_33
+    is_master: true
+  Blipoteka_Book_Author_23_39:
+    book: Blipoteka_Book_23
+    author: Blipoteka_Author_39
+    is_master: true
+  Blipoteka_Book_Author_24_4:
+    book: Blipoteka_Book_24
+    author: Blipoteka_Author_4
+    is_master: true
+  Blipoteka_Book_Author_25_42:
+    book: Blipoteka_Book_25
+    author: Blipoteka_Author_42
+    is_master: true
+  Blipoteka_Book_Author_26_52:
+    book: Blipoteka_Book_26
+    author: Blipoteka_Author_52
+    is_master: true
+  Blipoteka_Book_Author_27_50:
+    book: Blipoteka_Book_27
+    author: Blipoteka_Author_50
+    is_master: true
+  Blipoteka_Book_Author_28_5:
+    book: Blipoteka_Book_28
+    author: Blipoteka_Author_5
+    is_master: true
+  Blipoteka_Book_Author_29_21:
+    book: Blipoteka_Book_29
+    author: Blipoteka_Author_21
+    is_master: true
+  Blipoteka_Book_Author_30_3:
+    book: Blipoteka_Book_30
+    author: Blipoteka_Author_3
+    is_master: true
+  Blipoteka_Book_Author_31_54:
+    book: Blipoteka_Book_31
+    author: Blipoteka_Author_54
+    is_master: true
+  Blipoteka_Book_Author_32_9:
+    book: Blipoteka_Book_32
+    author: Blipoteka_Author_9
+    is_master: true
+  Blipoteka_Book_Author_33_51:
+    book: Blipoteka_Book_33
+    author: Blipoteka_Author_51
+    is_master: true
+  Blipoteka_Book_Author_34_51:
+    book: Blipoteka_Book_34
+    author: Blipoteka_Author_51
+    is_master: true
+  Blipoteka_Book_Author_35_37:
+    book: Blipoteka_Book_35
+    author: Blipoteka_Author_37
+    is_master: true
+  Blipoteka_Book_Author_36_18:
+    book: Blipoteka_Book_36
+    author: Blipoteka_Author_18
+    is_master: true
+  Blipoteka_Book_Author_37_49:
+    book: Blipoteka_Book_37
+    author: Blipoteka_Author_49
+    is_master: true
+  Blipoteka_Book_Author_38_1:
+    book: Blipoteka_Book_38
+    author: Blipoteka_Author_1
+    is_master: true
+  Blipoteka_Book_Author_39_11:
+    book: Blipoteka_Book_39
+    author: Blipoteka_Author_11
+    is_master: true
+  Blipoteka_Book_Author_40_28:
+    book: Blipoteka_Book_40
+    author: Blipoteka_Author_28
+    is_master: true
+  Blipoteka_Book_Author_41_5:
+    book: Blipoteka_Book_41
+    author: Blipoteka_Author_5
+    is_master: true
+  Blipoteka_Book_Author_42_44:
+    book: Blipoteka_Book_42
+    author: Blipoteka_Author_44
+    is_master: true
+  Blipoteka_Book_Author_43_2:
+    book: Blipoteka_Book_43
+    author: Blipoteka_Author_2
+    is_master: true
+  Blipoteka_Book_Author_44_29:
+    book: Blipoteka_Book_44
+    author: Blipoteka_Author_29
+    is_master: true
+  Blipoteka_Book_Author_45_39:
+    book: Blipoteka_Book_45
+    author: Blipoteka_Author_39
+    is_master: true
+  Blipoteka_Book_Author_46_14:
+    book: Blipoteka_Book_46
+    author: Blipoteka_Author_14
+    is_master: true
+  Blipoteka_Book_Author_47_13:
+    book: Blipoteka_Book_47
+    author: Blipoteka_Author_13
+    is_master: true
+  Blipoteka_Book_Author_48_9:
+    book: Blipoteka_Book_48
+    author: Blipoteka_Author_9
+    is_master: true
+  Blipoteka_Book_Author_49_46:
+    book: Blipoteka_Book_49
+    author: Blipoteka_Author_46
+    is_master: true
+  Blipoteka_Book_Author_50_8:
+    book: Blipoteka_Book_50
+    author: Blipoteka_Author_8
+    is_master: true
+  Blipoteka_Book_Author_51_25:
+    book: Blipoteka_Book_51
+    author: Blipoteka_Author_25
+    is_master: true
+  Blipoteka_Book_Author_52_24:
+    book: Blipoteka_Book_52
+    author: Blipoteka_Author_24
+    is_master: true
+  Blipoteka_Book_Author_53_26:
+    book: Blipoteka_Book_53
+    author: Blipoteka_Author_26
+    is_master: true
+  Blipoteka_Book_Author_54_26:
+    book: Blipoteka_Book_54
+    author: Blipoteka_Author_26
+    is_master: true
+  Blipoteka_Book_Author_55_45:
+    book: Blipoteka_Book_55
+    author: Blipoteka_Author_45
+    is_master: true
+  Blipoteka_Book_Author_56_7:
+    book: Blipoteka_Book_56
+    author: Blipoteka_Author_7
+    is_master: true
+  Blipoteka_Book_Author_57_47:
+    book: Blipoteka_Book_57
+    author: Blipoteka_Author_47
+    is_master: true
+  Blipoteka_Book_Author_57_48:
+    book: Blipoteka_Book_57
+    author: Blipoteka_Author_48
+    is_master: false
+  Blipoteka_Book_Author_58_53:
+    book: Blipoteka_Book_58
+    author: Blipoteka_Author_53
+    is_master: true
+  Blipoteka_Book_Author_59_23:
+    book: Blipoteka_Book_59
+    author: Blipoteka_Author_23
+    is_master: true
+  Blipoteka_Book_Author_60_16:
+    book: Blipoteka_Book_60
+    author: Blipoteka_Author_16
+    is_master: true
+  Blipoteka_Book_Author_60_17:
+    book: Blipoteka_Book_60
+    author: Blipoteka_Author_17
+    is_master: false
+  Blipoteka_Book_Author_61_10:
+    book: Blipoteka_Book_61
+    author: Blipoteka_Author_10
+    is_master: true
+  Blipoteka_Book_Author_62_41:
+    book: Blipoteka_Book_62
+    author: Blipoteka_Author_41
+    is_master: true
+  Blipoteka_Book_Author_63_32:
+    book: Blipoteka_Book_63
+    author: Blipoteka_Author_32
+    is_master: true
+  Blipoteka_Book_Author_64_43:
+    book: Blipoteka_Book_64
+    author: Blipoteka_Author_43
+    is_master: true
+  Blipoteka_Book_Author_65_19:
+    book: Blipoteka_Book_65
+    author: Blipoteka_Author_19
+    is_master: true

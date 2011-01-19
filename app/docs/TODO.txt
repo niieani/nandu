@@ -1,0 +1,8 @@
+* There's a nice ZF and Doctrine 1.2.x integration available: http://github.com/beberlei/zf-doctrine/.
+  Let's use it! (may require some major refactoring).
+* Write unit and functional tests.
+* Prepare scripts and generate project documentation from sources.
+* Doctrine create-db creates database with the collation default for the MySQL server. Write some script to fix it.
+* Blipoteka_Book ownership and relationship to the Blipoteka_User probably needs rethinking (especially the case
+  when user decides to delete his/her account).
+* Take care about situation when a user requesting a book is in the same city as holder of the book.

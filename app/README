@@ -1,0 +1,9 @@
+--------------------------------
+ BLIPoteka – blipowa biblioteka
+--------------------------------
+
+Blipoteka is an open source, web project of simple social book exchange/lending system. It
+powers Blipoteka.pl site -- little community of people who know each other from Blip.pl
+(Polish Twitter counterpart) website.
+
+See docs/ directory and http://github.com/argasek/blipoteka/wiki/Home for more details.

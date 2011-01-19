@@ -1,0 +1,7 @@
+<form method="<?php echo $this->element->getMethod(); ?>" action="<?php echo $this->element->getAction(); ?>">
+<fieldset>
+	<?php if (count($this->element->getErrorMessages())): ?>
+	<p class="error"><?php echo ltrim(implode('. ', $this->element->getErrorMessages()) . '.', '.'); ?></p>
+	<?php endif; ?>
+</fieldset>
+</form>

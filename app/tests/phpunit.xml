@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./bootstrap.php" colors="true" verbose="true">
+	<testsuites>
+		<testsuite name="Blipoteka">
+			<directory>Blipoteka</directory>
+		</testsuite>
+		<testsuite name="Void">
+			<directory>Void</directory>
+		</testsuite>
+		<testsuite name="Vendor">
+			<directory>Vendor</directory>
+		</testsuite>
+    </testsuites>
+</phpunit>
