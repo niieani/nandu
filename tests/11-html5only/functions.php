@@ -3,7 +3,7 @@
 require_once ('class.probability.php');
 require_once ('class.midigen.php');
 
-//Ten kawa≥ek kodu to taki LUKIER SYNTAKTYCZNY :-D
+//Ten kawa≈Çek kodu to taki LUKIER SYNTAKTYCZNY :-D
 $scales['major']['notes'] = array(0,2,4,5,7,9,11);
 $scales['major']['length'] = 12;
 $scales['major']['triad'] = array(0,3,4);
