@@ -1,9 +1,9 @@
 <?php
 
-class AccountController extends Blipoteka_Controller 
+class MelodyController extends Blipoteka_Controller 
 {
 
-	public function createAction()
+	public function indexAction()
 	{
 		
 	}
