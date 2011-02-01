@@ -34,41 +34,7 @@ class IndexController extends Blipoteka_Controller {
 	 * @return void
 	 */
 	public function indexAction() {
-		if (Zend_Auth::getInstance()->hasIdentity()) {
 			$this->view->headTitle('Strona główna');
-			$service = new Blipoteka_Service_Book();
-			$paginator = $service->getBookListPaginator();
-			$paginator->setCurrentPageNumber($this->_getParam('page'));
-			$this->view->books = $paginator;
-		} else {
-			$this->_forward('login', null, null, array('skip-auth' => 1));
-		}
-	}
-
-	/**
-	 * Contact action
-	 *
-	 * @return void
-	 */
-	public function contactAction() {
-		$this->view->headTitle('Kontakt');
-	}
-
-	/**
-	 * Login action
-	 *
-	 * @return void
-	 */
-	public function loginAction() {
-		$form = new Blipoteka_Form_Account_Signin(array('action' => $this->view->url(array(), 'signin')));
-		$session = new Zend_Session_Namespace('signin');
-		if ($session->form instanceof Blipoteka_Form_Account_Signin) {
-			$this->view->form = $session->form;
-		} else {
-			$this->view->form = $form;
-		}
-		$session->form = $form;
-		$this->_helper->layout->setLayout('layout-login');
 	}
 
 	/**

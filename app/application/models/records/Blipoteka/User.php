@@ -77,22 +77,22 @@ class Blipoteka_User extends Void_Doctrine_Record {
 	public function setUp() {
 		parent::setUp();
 		// User may have many friends
-		$this->hasMany('Blipoteka_User as friends', array(
-			'local' => 'user_id',
-			'foreign' => 'friend_id',
-			'refClass' => 'Blipoteka_User_FriendRef',
-			'equal' => true
-		));
+//		$this->hasMany('Blipoteka_User as friends', array(
+//			'local' => 'user_id',
+//			'foreign' => 'friend_id',
+//			'refClass' => 'Blipoteka_User_FriendRef',
+//			'equal' => true
+//		));
 
 		// User may add many books to the system
-		$this->hasMany('Blipoteka_Book as books_provided', array('local' => 'user_id', 'foreign' => 'user_id'));
+//		$this->hasMany('Blipoteka_Book as books_provided', array('local' => 'user_id', 'foreign' => 'user_id'));
 		// User may be owner of many books
-		$this->hasMany('Blipoteka_Book as books_owned', array('local' => 'user_id', 'foreign' => 'owner_id'));
+//		$this->hasMany('Blipoteka_Book as books_owned', array('local' => 'user_id', 'foreign' => 'owner_id'));
 		// User may be holder of many books
-		$this->hasMany('Blipoteka_Book as books_held', array('local' => 'user_id', 'foreign' => 'holder_id'));
+//		$this->hasMany('Blipoteka_Book as books_held', array('local' => 'user_id', 'foreign' => 'holder_id'));
 
 		// Each user lives in a city. We don't allow deletion of cities as long as any entity have this city assigned
-		$this->hasOne('Blipoteka_City as city', array('local' => 'city_id', 'foreign' => 'city_id', 'onUpdate' => 'CASCADE', 'onDelete' => 'RESTRICT'));
+//		$this->hasOne('Blipoteka_City as city', array('local' => 'city_id', 'foreign' => 'city_id', 'onUpdate' => 'CASCADE', 'onDelete' => 'RESTRICT'));
 
 		// FIXME: this Doctrine behaviour doesn't suit our needs very well -- actually,
 		// we are interested only of user's triggered record updates (ie. updated_at

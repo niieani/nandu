@@ -27,9 +27,9 @@
  *
  */
 final class Blipoteka_Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
-	const HEAD_META_DESCRIPTION = 'Bli­po­teka to biblio­teka mię­dzy­mia­stowa użyt­kow­ni­ków ser­wisu Blip.pl.';
-	const HEAD_TITLE = 'Blipoteka';
-	const OPENSEARCH_TITLE = 'Blipoteka';
+	const HEAD_META_DESCRIPTION = 'Nandu!';
+	const HEAD_TITLE = 'Nandu';
+	const OPENSEARCH_TITLE = 'Nandu';
 
 	/**
 	 * Default locale
