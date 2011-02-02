@@ -55,4 +55,13 @@ class IndexController extends Blipoteka_Controller {
 		$this->view->headTitle('Contact');
 	}
 
+	/**
+	 * Just junk
+	 *
+	 * @return void
+	 */
+	public function junkAction() {
+		$this->_helper->jsonOutput(true);
+	}
+
 }
