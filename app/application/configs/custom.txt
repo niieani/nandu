@@ -1,0 +1,130 @@
+[production]
+
+; Bootstrap
+bootstrap.path = APPLICATION_PATH "/models/classes/Blipoteka/Bootstrap.php"
+bootstrap.class = "Blipoteka_Bootstrap"
+
+; PHP production settings
+phpSettings.display_startup_errors = 0
+phpSettings.display_errors = 0
+phpSettings.date.timezone = "Europe/Warsaw"
+phpSettings.iconv.input_encoding = "UTF-8"
+phpSettings.iconv.output_encoding = "UTF-8"
+phpSettings.iconv.internal_encoding = "UTF-8"
+phpSettings.mbstring.http_input = "UTF-8"
+phpSettings.mbstring.http_output = "UTF-8"
+phpSettings.mbstring.internal_encoding = "UTF-8"
+phpSettings.default_charset = "UTF-8"
+phpSettings.default_mimetype = "text/html"
+phpSettings.session.auto_start = 0 
+phpSettings.upload_tmp_dir = APPLICATION_PATH "/uploads"
+
+; Additional include paths
+includePaths[] = ROOT_PATH "/library/void/"
+includePaths[] = ROOT_PATH "/library/framework/"
+includePaths[] = APPLICATION_PATH "/models/records/"
+includePaths[] = APPLICATION_PATH "/models/classes/"
+includePaths[] = APPLICATION_PATH "/models/tables/"
+
+; Resource Class settings
+pluginPaths.Void_Application_Resource = ROOT_PATH "/library/void/Void/Application/Resource"
+
+; Doctrine ORM settings
+resources.doctrine.attr.attr_model_loading = "conservative"
+resources.doctrine.attr.attr_autoload_table_classes = 1
+resources.doctrine.attr.attr_auto_accessor_override = 0
+resources.doctrine.attr.attr_validate = 1
+resources.doctrine.attr.attr_use_native_enum = 1
+; Doctrine ORM MySQL specific settings
+resources.doctrine.attr.attr_default_table_type = "INNODB"
+resources.doctrine.attr.attr_default_table_charset = "utf8"
+resources.doctrine.attr.attr_default_table_collate = "utf8_polish_ci"
+
+; Doctrine command line settings
+resources.doctrine.cli.fixturesPath = APPLICATION_PATH "/models/fixtures"
+resources.doctrine.cli.modelsPath = APPLICATION_PATH "/models/records"
+resources.doctrine.cli.migrationsPath = APPLICATION_PATH "/models/migrations"
+resources.doctrine.cli.sqlPath = ""
+resources.doctrine.cli.yamlSchemaPath = ""
+; Should Doctrine log queries execution time?
+;resources.doctrine.profilers = 0
+; List of loggers which should output information about queries
+resources.doctrine.dqlloggers =
+
+; Doctrine auth adapter settings
+resources.auth.adapter.default.class = "Void_Auth_Adapter_Doctrine"
+;resources.auth.adapter.default.treatment.class = "Void_Auth_Credential_Treatment_Hash"
+resources.auth.adapter.default.treatment.class = "Void_Auth_Credential_Treatment_Hmac_Base64"
+resources.auth.adapter.default.treatment.secret = ""
+resources.auth.adapter.default.treatment.algorithm = "sha512"
+resources.auth.adapter.default.treatment.raw_output = 1
+resources.auth.adapter.default.model = "Blipoteka_User"
+resources.auth.adapter.default.identity = 'email'
+resources.auth.adapter.default.credential = 'password'
+
+; Blip OAuth auth adapter settings
+;resources.auth.adapter.blip.class = "Void_Auth_Adaper_Blip_OAuth"
+
+; Front Controller settings
+resources.frontController.defaultModule = "default"
+resources.frontController.moduleDirectory = APPLICATION_PATH "/modules";
+resources.frontController.moduleControllerDirectoryName = "controllers";
+resources.frontController.baseUrl = ""
+resources.frontController.plugins[] = Blipoteka_Controller_Plugin_Auth
+
+; Layouts settings
+resources.layout.layout = "layout"
+resources.layout.viewSuffix = "phtml"
+resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts"
+
+; View settings
+resources.view.charset = 'UTF-8'
+resources.view.doctype = 'HTML5'
+resources.view.helperPath.Void_View_Helper = ROOT_PATH "/library/void/Void/View/Helper"
+
+; Locale settings
+resources.locale.default = pl_PL
+
+; Translations settings
+resources.translate.data = ROOT_PATH "/library/resources/languages/"
+resources.translate.scan = Zend_Translate::LOCALE_DIRECTORY
+resources.translate.options.scan = "directory"
+resources.translate.disableNotices = 1
+
+; Register namespaces
+autoloadernamespaces[] = "Doctrine"
+autoloadernamespaces[] = "Blipoteka"
+autoloadernamespaces[] = "Nandu"
+autoloadernamespaces[] = "Void"
+
+; Session settings
+resources.session.save_path = ROOT_PATH "/sessions"
+resources.session.name = "nandu"
+resources.session.throw_startup_exceptions = 0
+
+; Default database connection
+db.default.adapter = "mysql"
+db.default.host = "localhost"
+db.default.username = "username"
+db.default.password = "password"
+db.default.dbname = "dbname"
+db.default.profiler = 0
+db.default.charset = "utf8"
+
+; Mail settings
+resources.mail.defaultfrom.email = "blipoteka@blipoteka.pl"
+resources.mail.defaultfrom.name = "Blipoteka"
+;resources.mail.defaultreplyTo.email = "blipoteka@blipoteka.pl"
+;resources.mail.defaultreplyTo.name = "Blipoteka"
+
+[testing : production]
+
+[development : production]
+
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+phpSettings.error_reporting = -1
+
+resources.session.throw_startup_exceptions = 1
+
+[cli : production]
