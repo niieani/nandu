@@ -25,7 +25,9 @@ class MelodyController extends Blipoteka_Controller
 		$melodyA = $this->_manager->getMelody($melodyAId);
 		$melodyB = $this->_manager->getMelody($melodyBId);
 
-		$this->_helper->jsonOutput(array($melodyAId, $melodyBId));
+		list ($newA, $newB) = $this->_manager->vote($melodyA, $melodyB);
+		
+		$this->_helper->jsonOutput(array($newA, $newB));
 	}
 	
 }

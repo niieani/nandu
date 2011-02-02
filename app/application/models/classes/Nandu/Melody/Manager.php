@@ -133,5 +133,12 @@ class Nandu_Melody_Manager
 			throw new Blipoteka_Exception(sprintf('Melody #%d not found.', $id));
 		}
     }
+    
+    public function vote(Nandu_Melody $better, Nandu_Melody $worse)
+    {
+    	//kill worse, mutate better with another better & mutate
+    	// return array($childA, $childB)
+    	return array($better, $worse);
+    }
 
 }
