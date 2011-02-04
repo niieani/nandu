@@ -1,0 +1,1 @@
+ /usr/bin/timidity -A110 --reverb=f,100 -Ow --verbose=-2 --output-file=- doll_keys_intro.mid | oggenc -q1 -o test.ogg -
