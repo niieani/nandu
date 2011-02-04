@@ -34,7 +34,7 @@ class IndexController extends Blipoteka_Controller {
 	 * @return void
 	 */
 	public function indexAction() {
-			$this->view->headTitle('Strona główna');
+			$this->view->headTitle('Main');
 	}
 
 	/**
@@ -43,7 +43,25 @@ class IndexController extends Blipoteka_Controller {
 	 * @return void
 	 */
 	public function termsAction() {
-		$this->view->headTitle('Regulamin');
+		$this->view->headTitle('Terms of use');
+	}
+
+	/**
+	 * Contact action
+	 *
+	 * @return void
+	 */
+	public function contactAction() {
+		$this->view->headTitle('Contact');
+	}
+
+	/**
+	 * Just junk
+	 *
+	 * @return void
+	 */
+	public function junkAction() {
+		$this->_helper->jsonOutput(true);
 	}
 
 }
