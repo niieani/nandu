@@ -1,7 +1,7 @@
 <?php
 
 require_once (__DIR__.'/functions.php');
-ini_set(display_errors, 1);
+ini_set('display_errors', 1);
 
 $genome = array(createGenome($scales['major'], 2, 16, 8), createGenome($scales['major']));
 
@@ -22,7 +22,10 @@ foreach ($genome as $k => $pitches)
 <?php
 foreach ($files as $file)
 {
-	echo '<audio src="./tmp/'.$file.'" controls></audio><br />';
+	echo '<audio controls preload>
+	<source src="./tmp/'.$file.'.ogg"></source>
+	<source src="./tmp/'.$file.'.mp3"></source>
+	</audio><br />';
 }
 ?>
 </body>

@@ -1,3 +1,4 @@
 tests/*/tmp/*
 tmp/*
 app/htdocs
+.settings.xml
