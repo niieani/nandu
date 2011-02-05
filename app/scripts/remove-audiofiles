@@ -1,0 +1,1 @@
+rm ../public/audio/*.mp3 ../public/audio/*.ogg ../public/audio/*.mid

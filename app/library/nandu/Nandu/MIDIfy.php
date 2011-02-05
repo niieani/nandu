@@ -12,7 +12,7 @@ class Nandu_MIDIfy
     public $referenceNote;
     private $filenameSet;
     
-    public function initializeMIDI($timebase = 480, $bpm = 97)
+    public function initializeMIDI($bpm = 97, $instrument = 12, $timebase = 480)
     {
         /*
         $instruments = $midi->getInstrumentList();

@@ -26,7 +26,7 @@ class Nandu_Spiecies extends Void_Doctrine_Record {
         $this->hasColumn('user_id', 'integer', 8, array('notnull' => true, 'default' => 0));
         $this->hasColumn('tonality', 'integer', 8, array('notnull' => true, 'default' => 0));
         $this->hasColumn('tempo', 'integer', 8, array('notnull' => true, 'default' => 100));
-        $this->hasColumn('instrument', 'integer', 8, array('notnull' => true, 'default' => 0));
+        $this->hasColumn('instrument', 'integer', 8, array('notnull' => true, 'default' => 12));
 //		$this->hasColumn('species_id', 'integer', 8, array('notnull' => true));
 	}
 
