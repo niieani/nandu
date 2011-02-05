@@ -1,45 +1,58 @@
-<link href="http://cdn.jotfor.ms/jotform.cssgz?3.1.100" rel="stylesheet" type="text/css" />
-<style type="text/css">
-    .form-label{
-        width:150px !important;
-    }
-    .form-label-left{
-        width:150px !important;
-    }
-    .form-line{
-        padding:10px;
-    }
-    .form-label-right{
-        width:150px !important;
-    }
-    body, html{
-        margin:0;
-        padding:0;
-        background:false;
-    }
+<!-- HTML5 Shim, IE8 and bellow recognize HTML5 elements -->
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->		
+<!-- Modernizr -->
+<script src="js/modernizr-1.5.min.js"></script>
+<!-- Webforms2 -->
+<script src="webforms2/webforms2-p.js"></script>	
+<!-- jQuery and jQuery UI -->
+<link rel="stylesheet" href="ui-themes/aristo/jquery.ui.all.css"> 
+<script src="js/jquery-ui-1.8.5.min.js"></script>
+<!-- jQuery Numeric Spinner -->	
+<link rel="stylesheet" href="components/spinner/ui.spinner.css"> 
+<script src="components/spinner/ui.spinner.js"></script>
+<!-- jQuery Color Picker -->
+<link rel="stylesheet" href="components/colorpicker/colorpicker.css">
+<script src="components/colorpicker/colorpicker.js"></script>
+<!-- jQuery Placehol -->
+<script src="components/placeholder/jquery.placehold-0.2.min.js"></script>
 
-    .form-all{
-        margin:0px auto;
-        padding-top:0px;
-        width:650px;
-        color:Black !important;
-        font-family:Verdana;
-        font-size:12px;
-    }
-</style>
+<form action="<?php echo $this->url(array(), 'index', true); ?>" method="post" id="createSpecies">
+<div class="row requiredRow">
+    <label for="txt_Nameofspecies" id="Nameofspecies-ariaLabel">Name of species</label>
+	<input id="txt_Nameofspecies" name="txt_Nameofspecies" type="text" aria-labelledby="Nameofspecies-ariaLabel" class="required" title="Name of species. This is a required field" />
+</div>
+<div class="row requiredRow">
+	<label for="sel_Scale" id="Scale-ariaLabel">Scale</label>
+	<select id="sel_Scale" name="sel_Scale" aria-labelledby="Scale-ariaLabel" class="required" title="Scale. This is a required field">
+		<option value="Major (dur)">Major (dur)</option>
+		<option value="Minor (moll)">Minor (moll)</option>
+		<option value="Minor harmonic">Minor harmonic</option>
+	</select>
+</div>
+<div class="row requiredRow">
+	<label for="sldr_TempoBPM" id="TempoBPM-ariaLabel">Tempo BPM</label>
+	<input id="sldr_TempoBPM" name="sldr_TempoBPM" type="range" aria-labelledby="TempoBPM-ariaLabel" class="required" title="Scale. This is a required field" min="20" max="250" step="1" value="97" />
+</div>
+<div class="row requiredRow">
+	<label for="sel_Instrument" id="Instrument-ariaLabel">Instrument</label>
+	<select id="sel_Instrument" name="sel_Instrument" aria-labelledby="Instrument-ariaLabel" class="required" title="Instrument. This is a required field">
+		<option value="Piano">Piano</option>
+		<option value="Vibes">Vibes</option>
+		<option value="Organ">Organ</option>
+	</select>
+</div>
+<div class="row requiredRow">
+	<label for="Referencenote" id="Referencenote-ariaLabel">Reference note</label>
+    <p>This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on...<br />Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)</p>
+	<input id="Referencenote" name="Referencenote" type="number" aria-labelledby="Referencenote-ariaLabel" class="required" title="Instrument. This is a required field" min="20" max="200" step="1" value="60" />
+</div>
+<div class="row">
+<input type="submit" value="Create species" />
+</div>
+</form>
 
-<script src="http://cdn.jotfor.ms/jotform.jgz?3.1.100" type="text/javascript"></script>
-<script type="text/javascript">
-   JotForm.init(function(){
-      $('input_4').hint(' my species');
-      $('input_6').slider({ width: '200', maxValue: '250', value: '97'});
-      $('input_8').spinner({ imgPath:'http://www.jotform.com/images/', width: '60', maxValue:'', minValue:'20', allowNegative: false, addAmount: 1, value:'60' });
-      JotForm.description('input_8', 'This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on...<br />Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)');
-   });
-</script>
 
-<form class="jotform-form" action="#" method="post" name="form_10352946635" id="10352946635" accept-charset="utf-8">
-    <input type="hidden" name="formID" value="10352946635" />
+<form class="jotform-form" action="<?php echo $this->url(array(), 'index', true); ?>" method="post" name="cregateSpecies" id="10352946635" accept-charset="utf-8">
     <div class="form-all">
         <ul class="form-section">
             <li id="cid_1" class="form-input-wide">
@@ -55,7 +68,7 @@
                     Name of species<span class="form-required">*</span>
                 </label>
                 <div id="cid_4" class="form-input">
-                    <input type="text" class="form-textbox validate[required]" id="input_4" name="q4_nameOf" size="20" />
+                    <input type="text" class="form-textbox validate[required]" id="input_4" name="name" size="20" />
                 </div>
 
             </li>
@@ -64,12 +77,12 @@
                     Scale<span class="form-required">*</span>
                 </label>
                 <div id="cid_3" class="form-input">
-                    <select class="form-dropdown validate[required]" style="width:150px" id="input_3" name="q3_scale">
+                    <select class="form-dropdown validate[required]" style="width:150px" id="input_3" name="scale_type">
                         <option>  </option>
 
-                        <option selected="selected" value="Major (dur)"> Major (dur) </option>
-                        <option value="Minor natural (moll)"> Minor natural (moll) </option>
-                        <option value="Minor harmonic"> Minor harmonic </option>
+                        <option selected="selected" value="0"> Major (dur) </option>
+                        <option value="1"> Minor natural (moll) </option>
+                        <option value="2"> Minor harmonic </option>
                     </select>
                 </div>
             </li>
@@ -79,7 +92,7 @@
                     Tempo BPM<span class="form-required">*</span>
                 </label>
                 <div id="cid_6" class="form-input">
-                    <input type="range" class="form-textbox validate[required]" id="input_6" name="q6_tempoBpm" />
+                    <input type="range" class="form-textbox validate[required]" id="input_6" name="tempo" />
                 </div>
             </li>
 
@@ -88,12 +101,12 @@
                     Instrument<span class="form-required">*</span>
                 </label>
                 <div id="cid_7" class="form-input">
-                    <select class="form-dropdown validate[required]" style="width:180px" id="input_7" name="q7_instrument">
+                    <select class="form-dropdown validate[required]" style="width:180px" id="input_7" name="instrument">
                         <option>  </option>
 
-                        <option value="Piano"> Piano </option>
-                        <option selected="selected" value="Vibes"> Vibes </option>
-                        <option value="Organ"> Organ </option>
+                        <option value="0"> Piano </option>
+                        <option selected="12" value="Vibes"> Vibes </option>
+                        <option value="14"> Organ </option>
                     </select>
                 </div>
             </li>
@@ -103,7 +116,7 @@
                     Reference note<span class="form-required">*</span>
                 </label>
                 <div id="cid_8" class="form-input">
-                    <input type="number" id="input_8" name="q8_referenceNote" />
+                    <input type="number" id="input_8" name="reference_note" />
                 </div>
             </li>
 
@@ -118,9 +131,4 @@
             </li>
         </ul>
     </div>
-</form>
-
-
-<form method="post">
-	<input type="submit" name="create" value="Create new species!">
 </form>
