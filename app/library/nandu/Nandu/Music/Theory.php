@@ -146,7 +146,22 @@ class Nandu_Music_Theory
                     	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::OnScale, NoteType::Any));
                         if (defined('DEBUG')) $log->logDebug("$i: generating normal - note ($melody[$i])");
                     }
-                } while($i != 0 && ( ($proximitySecondary === TRUE && (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistanceSecondary, $scale)) === FALSE))  || ($proximityPrimary === TRUE && (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistancePrimary, $scale)) === FALSE)) ) );
+                } while($i != 0 &&
+                                (
+                                    (
+                                        $proximitySecondary === TRUE 
+                                            && 
+                                        (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistanceSecondary, $scale)) === FALSE)
+                                    )
+                                    ||
+                                    (
+                                        $proximityPrimary === TRUE 
+                                            && 
+                                        (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistancePrimary, $scale)) === FALSE)
+                                    )
+                                )
+                        );
+                /* that was one massive while, therefore I decided to break it up so it's nice and readable */
             }
         }
         return $melody;
@@ -173,7 +188,7 @@ class Nandu_Music_Theory
                     return $this->getNoteFromTriad($scale, $octaves);
                     break;
                 case NoteType::OnScale:
-                    if ($this->pNoteOnScale->get()) //need to check if probability works inside this function or do I need to make it global
+                    if ($this->pNoteOnScale->get())
                         return $this->getNoteOnScale($scale, $octaves);
                     break;
                 case NoteType::LastPhraseNoteOnTriad:

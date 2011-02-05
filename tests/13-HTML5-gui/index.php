@@ -4,7 +4,7 @@ $mainTimer = new Timer();
 $mainTimer->start();
 
 require_once (__DIR__.'/class.KLogger.php');
-//define('DEBUG', './');
+define('DEBUG', './');
 require_once (__DIR__.'/class.MusicTheory.php');
 require_once (__DIR__.'/class.AuralizeNumbers.php');
 define('ASYNCHRONOUS_LAUNCH', true);
@@ -15,7 +15,7 @@ $music = new MusicTheory();
 $files = array();
 $genotypes = array();
 
-$genotypes[] = $music->melodyGen(MusicScales::Major(), 2, 8, 16);
+$genotypes[] = $music->melodyGen(MusicScales::MinorHarmonic(), 2, 8, 16);
 $genotypes[] = $music->melodyGen(MusicScales::Major(), 2, 8, 16);
 
 foreach ($genotypes as $genotype)
