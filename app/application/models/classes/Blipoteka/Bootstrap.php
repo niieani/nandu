@@ -67,8 +67,7 @@ final class Blipoteka_Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 		$view->headTitle(self::HEAD_TITLE)->setSeparator(' » ');
 		$view->headMeta()->setName("description", self::HEAD_META_DESCRIPTION);
 		$view->headLink()->appendStylesheet($view->baseUrl('css/style.css'));
-		$view->headLink()->appendStylesheet($view->baseUrl('css/960.css'));
-		$view->headLink()->appendStylesheet($view->baseUrl('css/blipoteka.css'));
+		$view->headLink()->appendStylesheet($view->baseUrl('css/c-css.php'));
 		$view->headScript()->appendFile($view->baseUrl('js/libs/jquery-1.4.4.min.js'));
 		$view->headOpenSearch(self::OPENSEARCH_TITLE, '');
 	}

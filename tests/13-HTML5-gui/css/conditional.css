@@ -1,0 +1,357 @@
+/*
+used parts by marcofolio.net
+*/
+
+/* BASIC RESET */
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,macbook,p,blockquote,fieldset,input{margin:0; padding:0;}
+
+/* HTML ELEMENTS */
+body { color:#fff; background-color:#151f23; font: 100%/1.4 "Candara", Verdana, Geneva, sans-serif; text-align:center; }
+h1 { font: bold 50px Helvetica, Arial, Sans-serif; text-align: center; color: #eee; text-shadow: 0px 2px 6px #333; }
+h1 small{ font-size: 20px; text-transform:uppercase; letter-spacing: 14px; display: block; color: #ccc; margin-top:10px; }
+h2 a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 40px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
+h2 a:hover { color: #90bcd0; }
+
+.debuginfo
+{
+    width: 700px;
+    margin:  10px auto;
+    padding: 60px 10px 10px 10px;
+}
+
+.debuginfo h3
+{
+    padding-bottom: 4px;
+}
+
+.debuginfo p
+{
+    padding-bottom: 8px;
+}
+
+.debuglog
+{
+    margin:  10px auto;
+    text-align:left;
+}
+
+/* COMMON CLASSES */
+.break { clear:both; }
+
+/* WRAPPER */
+/*width:1200px;  margin:40px auto; */ 
+
+#wrapper { 
+    width: 100%;
+	margin:  40px auto;
+    text-align: left;
+}
+
+/* CONTENT */
+/* #content { margin:10px auto; } *//* align all to center */
+
+#content h2 { 
+    font: bold 25px Helvetica, Arial, Sans-serif; 
+    color:#eee; 
+    text-shadow: 0px 2px 4px #333; 
+    text-align:center; 
+    padding-top:20px;
+}
+
+
+/* BAR */
+#bar { 
+    position:relative;
+    width: 720px; 
+    /* CENTER */
+    margin: 0 auto; 
+    top:50px; 
+    [if ! IE 9] display:none; /* jQuery magic */
+}
+
+#bar div.element {
+	margin-bottom:20px;
+	-webkit-transition:-webkit-transform 0.1s ease-in; /*animate transform property */
+	-o-transition:-o-transform 0.1s ease-in; /*animate transform property in Opera */
+	-moz-transition-duration: 0.1s;
+	-moz-transition-timing-function: ease-in;
+	float:left;
+	min-width:350px;
+	height: 140px;
+}
+
+#first 
+{
+    margin-right:10px;
+}
+
+div.element .oneheight { height:100px; }
+
+div.element a
+{
+    display: block;
+    width: 350px;
+    position: absolute;
+}
+
+[if css3] #bar div.element div.bottom { 
+    -moz-box-shadow: 0 10px 10px hsla(0,0%,0%,.2); 
+    -webkit-box-shadow: 0 10px 30px hsla(0,0%,0%,.2); 
+    box-shadow: 0 10px 30px hsla(0,0%,0%,.2); 
+	-moz-transition-property: background-color;
+	-moz-transition-duration: 1s;
+	-moz-transition-timing-function: ease-out;
+	-webkit-transition-property: background-color;
+	-webkit-transition-duration: 1s;
+	-o-transition-property: background-color;
+	-o-transition-duration: 1s;
+	transition-property: background-color;
+	transition-duration: 1s;
+}
+
+/* Ellipse progressbar */
+.element div.progressbar { 
+    display:inline; 
+    position:absolute; 
+    margin-left:0px; 
+    [if css3] background-color:rgba(140,172,176,0);
+    [if ! css3] background-color:rgba(140,172,176);
+	width:40px; 
+    [if css3] -moz-border-radius: 40px/100px; 
+    [if css3] -webkit-border-radius: 40px 100px; 
+    [if css3] border-radius: 40px/100px; 
+    z-index:-5;
+    [if css3] background-image: -webkit-gradient(
+        linear,
+        right bottom,
+        left top,
+        color-stop(0.19, rgba(101,120,122,0.2)),
+        color-stop(0.7, rgba(140,172,176,0.2))
+    );
+    [if css3] background-image: -moz-linear-gradient(
+        right bottom,
+        rgba(101,120,122,0.2) 19%,
+        rgba(140,172,176,0.2) 70%
+    );    
+    /* box-shadow: 0px 0px 20px rgba(183,222,237,0);
+    -moz-box-shadow: 0px 0px 20px rgba(183,222,237,0);
+    -webkit-box-shadow: 0 0 20px rgba(183,222,237,0);*/
+}
+    
+[if css3] .element:hover div.progressbar {
+    -webkit-transition: all 11s linear; 
+    -moz-transition: all 11s linear; 
+    -o-transition: all 11s linear;
+    width:350px;
+    background-color:rgba(255,255,255,0.9);
+    box-shadow: 0px 0px 20px rgba(183,222,237,1);
+    -moz-box-shadow: 0px 0px 20px rgba(183,222,237,1);
+    -webkit-box-shadow: 0 0 20px rgba(183,222,237,1);
+}
+    
+
+.element div.right { 
+    display:inline; 
+    position:absolute; 
+    margin-left:310px;  
+    [if css3] background-color:rgba(140,172,176,0); 
+	width:40px; 
+    -moz-border-radius: 40px/100px; 
+    -webkit-border-radius: 40px 100px; 
+    border-radius: 40px/100px; 
+    background-image: -webkit-gradient(
+        linear,
+        right bottom,
+        left top,
+        color-stop(0.19, rgba(101,120,122,0.5)),
+        color-stop(0.7, rgba(140,172,176,0.5))
+    );
+    background-image: -moz-linear-gradient(
+        right bottom,
+        rgba(101,120,122,0.5) 19%,
+        rgba(140,172,176,0.5) 70%
+    );
+    -moz-box-shadow: 0 0px 10px hsla(0,0%,0%,.2); 
+    -webkit-box-shadow: 0 -10px 50px hsla(0,0%,0%,.2); 
+    box-shadow: 0 -10px 50px hsla(0,0%,0%,.2);
+	-moz-transition-property: background-color;
+	-moz-transition-duration: 1s;
+	-moz-transition-timing-function: ease-out;
+	-webkit-transition-property: background-color;
+	-webkit-transition-duration: 1s;
+	-o-transition-property: background-color;
+	-o-transition-duration: 1s;
+	transition-property: background-color;
+	transition-duration: 1s;
+    }
+
+/*.tracktext { top:35px; visibility:hidden; width:350px; text-align:center; position:absolute; z-index: 1000; display:inline; }*/
+
+.notes { 
+    margin-top:5px; 
+    margin-left: 40px; 
+    visibility:visible; 
+    position:absolute; 
+    display:inline; 
+    }
+    
+.note { 
+    /*background-color:rgba(140,172,176,0.7);*/
+    
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.5); 
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.5); 
+    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    
+    width:15px; 
+    height:4px; 
+    -moz-border-radius: 4px/8px; 
+    -webkit-border-radius: 4px 8px; 
+    border-radius: 4px/8px; 
+    content: " "; 
+    display:inline; 
+    position:absolute; 
+    }
+    
+.notetrack1
+{
+    background-color:rgba(135,206,250,0.6); 
+}
+
+.notetrack2
+{
+    background-color:rgba(200,215,47,0.6);
+}
+
+/* Bar bottom */
+.element div.bottom {  
+    background-color:rgba(184,203,205,0); 
+    display:inline; 
+    position:absolute; 
+	-moz-border-radius: 40px/100px; -webkit-border-radius: 40px 100px; border-radius: 40px/100px; 
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.35, rgba(81,91,92,0.4)),
+        color-stop(0.85, rgba(184,203,206,0.4))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgba(81,91,92,0.4) 35%,
+        rgba(184,203,206,0.4) 85%
+    );
+}
+	
+.element div.bottom div.infobox { padding:100px 0 0 0px; text-align:center; font-variant:small-caps;}
+.element div.bottom div.infobox h3 { font-family:"Calibri",Arial,Helvetica,Sans-Serif; }
+.element div.bottom div.infobox p { font-family:"Lucida Grande",Arial,Helvetica,Sans-Serif; text-shadow: 0px 5px 5px #111; }
+
+/*
+.topmost { 
+    width: 700px; 
+    height: 135px; 
+    position:relative; 
+}*/
+
+/* General hover actions */
+/* .element:hover div.tracktext { visibility:visible; } */ 
+/*#bar li:hover div.bottom, div.right { background-color:rgba(140,172,176,0.8);  }*/
+/*#bar li:hover div.bottom div.infobox { color:#eee; text-shadow: 0px 5px 5px #111; }*/
+
+/* first bar */
+#first div.bottom { 
+    width:350px; 
+    [if ! css3] background-color:rgb(26,108,144);
+}
+#first:hover div.right { 
+    [if css3] background-color:rgba(31,129,172,0.5);
+    /*background-color:#1f81ac;*/ 
+}
+
+#first:hover div.bottom { 
+    background-color:rgba(26,108,144,0.7);
+    /*z-index:994; *//*background-color:#1a6c90;*/ 
+	/*background:-moz-linear-gradient(-90deg, #1a6c90, #14506b); background:-webkit-gradient(linear, 0 top, 0 bottom, from(#1a6c90), to(#14506b)); */
+}
+
+/* second bar */
+#second div.bottom { 
+    width:350px; 
+    [if ! css3] background-color:rgb(105,141,84);
+}
+#second:hover div.right {  
+    [if css3] background-color:rgba(125,168,100,0.5);
+}
+#second:hover div.bottom { 
+    background-color:rgba(105,141,84,0.7); 
+}
+
+/*background:-moz-linear-gradient(-90deg, #698d54, #506b40); background:-webkit-gradient(linear, 0 top, 0 bottom, from(#698d54), to(#506b40));*/ 
+
+/* msg box overlay */
+/* http://www.queness.com/post/1696/create-a-beautiful-looking-custom-dialog-box-with-jquery-and-css3 */
+#dialog-overlay {
+ 
+    /* set it to fill the whil screen */
+    width:100%; 
+    height:100%;
+     
+    /* transparency for different browsers */
+    filter:alpha(opacity=50); 
+    -moz-opacity:0.5; 
+    -khtml-opacity: 0.5; 
+    opacity: 0.5; 
+    background:#000; 
+ 
+    /* make sure it appear behind the dialog box but above everything else */
+    position:absolute; 
+    top:0; left:0; 
+    z-index:3000; 
+ 
+    /* hide it by default */
+    display:none;
+}
+ 
+ 
+#dialog-box {
+     
+    /* css3 drop shadow */
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+     
+    /* css3 border radius */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+     
+    background:#eee;
+    /* styling of the dialog box, i have a fixed dimension for this demo */
+    width:400px; 
+     
+    /* make sure it has the highest z-index */
+    position:absolute; 
+    z-index:5000; 
+ 
+    /* hide it by default */
+    display:none;
+}
+ 
+#dialog-box .dialog-content {
+    /* style the content */
+    text-align:left; 
+    padding:10px; 
+    margin:13px;
+    color:#666; 
+    font-size:15px; 
+}
+/* extra styling */
+
+#dialog-box .dialog-content p {
+    font-weight:700; margin:0;
+    text-align:center;
+}
+ 
+#dialog-box .dialog-content ul {
+    margin:10px 0 10px 20px; 
+    padding:0; 
+    height:50px;
+}

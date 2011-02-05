@@ -4,35 +4,29 @@
 <?php echo $this->headMeta() . "\n"; ?>
 <?php echo $this->headTitle() . "\n"; ?>
 <?php echo $this->headLink() . "\n"; ?>
+<?php echo $this->headScript() . "\n"; ?>
 <script src="<?php echo $this->baseUrl("js/libs/modernizr-1.6.min.js"); ?>"></script>
-<script src="<?php echo $this->baseUrl("js/html5media/html5media.min.js"); ?>"></script>
+<script src="<?php echo $this->baseUrl("js/libs/jquery.jplayer.min.js"); ?>"></script>
 <?php echo $this->inlineScript()->setScript(sprintf("var baseUrl = '%s';", $this->baseUrl(''))); ?>
+
 </head>
 <body>
-<div id="wrap">
-	<div id="container">
-		<section id="header">
-			<div class="container_12 clearfix"> 
-				<div class="grid_1">
-					<img class="logo" src="<?php echo $this->baseUrl('img/logo60.png'); ?>" alt="Logo ñandú" />
-				</div>
-				<header class="grid_7">
-					<h1><a href="<?php echo $this->url(array(), 'index') ?>">ñandú!</a></h1>
-					<p>Genetic music</p>
-                    <p>PLACEHOLDER na opis programu. Elementy logowania na razie wywaliłem, do wersji v1 to nie jest istotne. </p>
-				</header>
-			</div>
-		</section>
-		<section id="content" class="container_12">
-			<article class="grid_12">
-			<?php echo $this->layout()->content . "\n" ?>
-			</article>
-		</section>
-	</div>
+
+<div id="wrapper">
+    <section id="header">
+        <header>
+        <h1>Ñandú<small>Genetic Music Evolution</small></h1>
+        </header>
+    </section>
+	<section id="content">
+        <article>
+        <?php echo $this->layout()->content . "\n" ?>
+        </article>
+    </section>
 </div>
 
-<?php echo $this->partial('footer-layout.phtml') . "\n"; ?>
+<?php //echo $this->partial('footer-layout.phtml') . "\n"; ?>
 <?php echo $this->headScript() . "\n"; ?>
-<?php echo $this->partial('footer.phtml') . "\n"; ?>
+<?php //echo $this->partial('footer.phtml') . "\n"; ?>
 </body>
 </html>
