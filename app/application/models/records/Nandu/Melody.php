@@ -58,4 +58,9 @@ class Nandu_Melody extends Void_Doctrine_Record {
 		
 	}
 
+	public function getAudioFilename()
+	{
+		return Nandu_Melody_Manager::getInstance()->getMelodyAudioFilename($this);
+	}
+	
 }

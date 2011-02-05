@@ -25,6 +25,23 @@ class Nandu_Melody_Manager
 	 */
 	protected $_operations;
 
+	/**
+	 * @var Nandu_Melody_Manager
+	 */
+	protected static $_instance;
+	
+	/**
+	 * @return Nandu_Melody_Manager
+	 */
+	public static function getInstance()
+	{
+		if ( ! self::$_instance) {
+			self::$_instance = new Nandu_Melody_Manager();
+		}
+		
+		return self::$_instance;
+	}
+	
 	public function __construct(Zend_Controller_Request_Abstract $request = null)
 	{
 		if (!$request instanceof Zend_Controller_Request_Abstract) {
@@ -34,7 +51,7 @@ class Nandu_Melody_Manager
 		$this->_operations = new Nandu_Genetic_Operations();
 		$this->_settings = Zend_Registry::get('settings');
 	}
-
+	
 	/**
 	 * Get table object
 	 * @param string $class
@@ -164,12 +181,17 @@ class Nandu_Melody_Manager
     	return $this->createMelody($newNotes, $melody);
     }
     
+    public function getMelodyAudioFilename(Nandu_Melody $melody)
+    {
+    	$dir = $this->_settings->music->generator->path;
+    	$audio = new Nandu_MIDIfy_AuralizeNumbers($melody->getNotesAsArray(), $dir);
+    	return $audio->getFilename();
+    }
+    
     protected function _performMutation()
     {
     	$number = rand(1, $this->_settings->genetic->mutate->rate);
     	return 1 == $number;
-//		var_dump($number, $this->_settings->genetic->mutate->rate); die;
-    	
     }
     
     public function evolve(Nandu_Melody $a = null, Nandu_Melody $b = null)
