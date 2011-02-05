@@ -138,7 +138,7 @@ class Nandu_Melody_Manager
     {
     	$worse->delete();
     	$second = $this->getRandomMelody($better->id);
-    	var_dump($worse->toArray()); die;
+    	
     	return array($better, $second);
     }
     
