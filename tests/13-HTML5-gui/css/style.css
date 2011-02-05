@@ -50,7 +50,13 @@ h2 a:hover { color: #90bcd0; }
 /* CONTENT */
 /* #content { margin:10px auto; } *//* align all to center */
 
-#content h2 { font: bold 25px Helvetica, Arial, Sans-serif; color:#eee; text-shadow: 0px 2px 4px #333; text-align:center; padding-top:20px; }
+#content h2 { 
+    font: bold 25px Helvetica, Arial, Sans-serif; 
+    color:#eee; 
+    text-shadow: 0px 2px 4px #333; 
+    text-align:center; 
+    padding-top:20px;
+}
 
 
 /* BAR */
@@ -60,8 +66,7 @@ h2 a:hover { color: #90bcd0; }
     /* CENTER */
     margin: 0 auto; 
     top:50px; 
-    display:none; /* jQuery magic */
-    /*margin:100px 0 0 160px;*/ /*text-align:center;*/ 
+    [if ! IE 9] display:none; /* jQuery magic */
 }
 
 #bar div.element {
@@ -73,19 +78,12 @@ h2 a:hover { color: #90bcd0; }
 	float:left;
 	min-width:350px;
 	height: 140px;
-/*	position:absolute;  
-	z-index: 1200;*/
 }
 
 #first 
 {
     margin-right:10px;
 }
-
-/*
-#first { left: 200px; }
-#second { left: 800px; }
-*/ 
 
 div.element .oneheight { height:100px; }
 
@@ -96,8 +94,7 @@ div.element a
     position: absolute;
 }
 
-/* Last bottom should have a shadow #bar li:last-child div.bottom */
-#bar div.element div.bottom { 
+[if css3] #bar div.element div.bottom { 
     -moz-box-shadow: 0 10px 10px hsla(0,0%,0%,.2); 
     -webkit-box-shadow: 0 10px 30px hsla(0,0%,0%,.2); 
     box-shadow: 0 10px 30px hsla(0,0%,0%,.2); 
@@ -117,30 +114,31 @@ div.element a
     display:inline; 
     position:absolute; 
     margin-left:0px; 
-    background-color:rgba(140,172,176,0);
+    [if css3] background-color:rgba(140,172,176,0);
+    [if ! css3] background-color:rgba(140,172,176);
 	width:40px; 
-    -moz-border-radius: 40px/100px; 
-    -webkit-border-radius: 40px 100px; 
-    border-radius: 40px/100px; 
+    [if css3] -moz-border-radius: 40px/100px; 
+    [if css3] -webkit-border-radius: 40px 100px; 
+    [if css3] border-radius: 40px/100px; 
     z-index:-5;
-    background-image: -webkit-gradient(
+    [if css3] background-image: -webkit-gradient(
         linear,
         right bottom,
         left top,
         color-stop(0.19, rgba(101,120,122,0.2)),
         color-stop(0.7, rgba(140,172,176,0.2))
     );
-        background-image: -moz-linear-gradient(
+    [if css3] background-image: -moz-linear-gradient(
         right bottom,
         rgba(101,120,122,0.2) 19%,
         rgba(140,172,176,0.2) 70%
     );    
-    box-shadow: 0px 0px 20px rgba(183,222,237,0);
+    /* box-shadow: 0px 0px 20px rgba(183,222,237,0);
     -moz-box-shadow: 0px 0px 20px rgba(183,222,237,0);
-    -webkit-box-shadow: 0 0 20px rgba(183,222,237,0);
-    }
+    -webkit-box-shadow: 0 0 20px rgba(183,222,237,0);*/
+}
     
-.element:hover div.progressbar {
+[if css3] .element:hover div.progressbar {
     -webkit-transition: all 11s linear; 
     -moz-transition: all 11s linear; 
     -o-transition: all 11s linear;
@@ -149,14 +147,14 @@ div.element a
     box-shadow: 0px 0px 20px rgba(183,222,237,1);
     -moz-box-shadow: 0px 0px 20px rgba(183,222,237,1);
     -webkit-box-shadow: 0 0 20px rgba(183,222,237,1);
-    }
+}
     
 
 .element div.right { 
     display:inline; 
     position:absolute; 
     margin-left:310px;  
-    background-color:rgba(140,172,176,0); 
+    [if css3] background-color:rgba(140,172,176,0); 
 	width:40px; 
     -moz-border-radius: 40px/100px; 
     -webkit-border-radius: 40px 100px; 
@@ -194,7 +192,6 @@ div.element a
     margin-left: 40px; 
     visibility:visible; 
     position:absolute; 
-    /*z-index: 1000; */
     display:inline; 
     }
     
@@ -257,29 +254,37 @@ div.element a
 }*/
 
 /* General hover actions */
-.element:hover div.tracktext { visibility:visible; }
+/* .element:hover div.tracktext { visibility:visible; } */ 
 /*#bar li:hover div.bottom, div.right { background-color:rgba(140,172,176,0.8);  }*/
 /*#bar li:hover div.bottom div.infobox { color:#eee; text-shadow: 0px 5px 5px #111; }*/
 
 /* first bar */
-#first div.right { /*z-index:99; */}
-#first div.bottom { /*z-index:98; */ width:350px; }
+#first div.bottom { 
+    width:350px; 
+    [if ! css3] background-color:rgb(26,108,144);
+}
 #first:hover div.right { 
-    /*z-index:995; *//*background-color:#1f81ac;*/ 
-    background-color:rgba(31,129,172,0.5);
+    [if css3] background-color:rgba(31,129,172,0.5);
+    /*background-color:#1f81ac;*/ 
 }
 
 #first:hover div.bottom { 
-    /*z-index:994; *//*background-color:#1a6c90;*/ 
     background-color:rgba(26,108,144,0.7);
+    /*z-index:994; *//*background-color:#1a6c90;*/ 
 	/*background:-moz-linear-gradient(-90deg, #1a6c90, #14506b); background:-webkit-gradient(linear, 0 top, 0 bottom, from(#1a6c90), to(#14506b)); */
 }
 
 /* second bar */
-#second div.right { /*z-index:93;*/ }
-#second div.bottom { /*z-index:92; */ width:350px; }
-#second:hover div.right { /*z-index:993; */ background-color:rgba(125,168,100,0.5); }
-#second:hover div.bottom { /*z-index:992; */ background-color:rgba(105,141,84,0.7); }
+#second div.bottom { 
+    width:350px; 
+    [if ! css3] background-color:rgb(105,141,84);
+}
+#second:hover div.right {  
+    [if css3] background-color:rgba(125,168,100,0.5);
+}
+#second:hover div.bottom { 
+    background-color:rgba(105,141,84,0.7); 
+}
 
 /*background:-moz-linear-gradient(-90deg, #698d54, #506b40); background:-webkit-gradient(linear, 0 top, 0 bottom, from(#698d54), to(#506b40));*/ 
 
@@ -336,7 +341,6 @@ div.element a
     padding:10px; 
     margin:13px;
     color:#666; 
-    /*font-family:arial;*/
     font-size:15px; 
 }
 /* extra styling */
