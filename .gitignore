@@ -1,4 +1,5 @@
 tests/*/tmp/*
 tmp/*
 app/htdocs
+app/public/audio/*
 .settings.xml
