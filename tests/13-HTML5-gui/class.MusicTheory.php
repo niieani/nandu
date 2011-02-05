@@ -50,7 +50,7 @@ final class NoteNames
                 )
         );
     }
-    public static function Romance() //solfège
+    public static function Romance() //Solfège
     {
         return array(
                 'Notes' => array(
@@ -106,9 +106,9 @@ final class MusicScales //constant arrays, kind of
             'triad' => array(0,3,4)
         );
     }
-    public function MinorNatural()
+    public static function MinorNatural()
     {
-        return $this->Minor();
+        return self::Minor();
     }
     public static function MinorHarmonic()
     {
@@ -154,12 +154,14 @@ class MusicTheory
         
         // - that the note after is close in pitch to the note before
         $this->pNoteInProximityPrimary = new Probability;
-        $this->pNoteInProximityPrimary-> add(TRUE, 60);
-        $this->pNoteInProximityPrimary-> add(FALSE, 40);
+        $this->pNoteInProximityPrimary-> add(TRUE, 40);
+        $this->pNoteInProximityPrimary-> add(FALSE, 60);
+        //$this->pNoteInProximityPrimary-> set(FALSE);
         
         $this->pNoteInProximitySecondary = new Probability;
-        $this->pNoteInProximitySecondary-> add(TRUE, 85);
-        $this->pNoteInProximitySecondary-> add(FALSE, 15);
+        $this->pNoteInProximitySecondary-> add(TRUE, 80);
+        $this->pNoteInProximitySecondary-> add(FALSE, 20);
+        //$this->pNoteInProximitySecondary-> set(FALSE);
         
         // - that the last note is on a triad
         $this->pLastNoteOnTriad = new Probability;
@@ -575,4 +577,3 @@ class MusicTheory
     }
 
 }
-?>

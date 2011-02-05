@@ -1,5 +1,5 @@
 <?php
-require_once('./classes/midi.class.php');
+require_once('./classes/Midi.php');
 
 final class NoteValue //for timebase 480
 {
@@ -18,6 +18,83 @@ final class NoteValue //for timebase 480
     // ensures that this class acts like an enum
     // and that it cannot be instantiated
     private function __construct(){}
+}
+
+/*
+final class NoteValue //for Sequence
+{
+    const longa     = -1;
+    const double    = 0;
+    const whole     = 1;
+    const half      = 2;
+    const quarter   = 4;
+    const n4       = 4;
+    const n8       = 8;
+    const n16      = 16;
+    const n32      = 32;
+    const n64      = 64;
+    const n128     = 128;
+    
+    // ensures that this class acts like an enum
+    // and that it cannot be instantiated
+    private function __construct(){}
+}
+*/
+final class NotePosition //for Sequence
+{
+    const SequenceBeginning = 0;
+    const SequenceEnd       = 1;
+    const BarBeginning      = 2;
+    const BarEnding         = 3;
+    
+    private function __construct(){}
+}
+
+class SequenceMono
+{
+    private $beats;
+    private $measure;
+    private $bars;
+    private $notes;
+    private $notesCount;
+    private $head; // current time
+    
+    public function __construct()
+    {
+        $this->notes = array();
+        $this->notesCount = 0;
+    }
+    
+    // adds a note to the end of the sequence //
+    public function addNote($pitch, $value)
+    {
+        $this->notes[$notesCount]['pitch'] = $pitch;
+        $this->notes[$notesCount]['position'] = calculatePosition() ? ;
+        $this->notesCount++;
+    }
+    
+    public function calculatePosition()
+    {
+        return (($this->notesCount + 1) % $this->beats); // if it's the last beat in a bar, it will return zero
+    }
+    
+    public function setMeter($beats, $mesure) //time signature
+    {
+        $this->setBeats($beats);
+        $this->setMeasure($measure);
+    }
+    public function setBeats($beats)
+    {
+        
+    }
+    public function setMeasure($measure)
+    {
+        
+    }
+    public function setBars($bars)
+    {
+        
+    }
 }
 
 class MIDIfy

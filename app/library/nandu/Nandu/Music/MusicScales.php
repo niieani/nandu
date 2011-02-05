@@ -19,9 +19,9 @@ final class Nandu_Music_MusicScales //constant arrays, kind of
             'triad' => array(0,3,4)
         );
     }
-    public function MinorNatural()
+    public static function MinorNatural()
     {
-        return $this->Minor();
+        return self::Minor();
     }
     public static function MinorHarmonic()
     {
