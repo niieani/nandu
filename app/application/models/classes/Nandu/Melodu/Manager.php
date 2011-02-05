@@ -114,6 +114,11 @@ class Nandu_Melody_Manager
 		return $this->getRequest()->getParam('melodyId', 0);
 	}
 
+	public function getSpieciesIdFromRequest()
+	{
+		return $this->getRequest()->getParam('spieciesId', 0);
+	}
+
 	/**
 	 * Get category
 	 * @param integer $id
@@ -130,7 +135,27 @@ class Nandu_Melody_Manager
 		if ($melody instanceof Nandu_Melody) {
 			return $melody;
 		} else {
-			throw new Blipoteka_Exception(sprintf('Category %d of type %s not found.', $id, $class));
+			throw new Blipoteka_Exception(sprintf('Melody %d not found.', $id, $class));
+		}
+    }
+
+	/**
+	 * Get spiecies
+	 * @param integer $id
+	 * @return Nandu_Spiecies
+	 */
+    public function getSpiecies($id = null)
+    {
+		if ($id === null) {
+			$id = $this->getSpieciesIdFromRequest();
+		}
+
+		$melody = $this->getSpieciesTable()->find($id);
+
+		if ($melody instanceof Nandu_Spiecies) {
+			return $melody;
+		} else {
+			throw new Blipoteka_Exception(sprintf('Spiecies %d not found.', $id, $class));
 		}
     }
 

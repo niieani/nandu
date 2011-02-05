@@ -13,7 +13,7 @@ class Nandu_Melody extends Void_Doctrine_Record {
 	public function setTableDefinition() {
 		$this->setTableName('melodies');
 
-		$this->hasColumn('spiecies_id', 'integer', 8, array('notnull' => true));
+		$this->hasColumn('species_id', 'integer', 8, array('notnull' => true));
 		$this->hasColumn('first_parent_id', 'integer', 8, array('notnull' => false));
 		$this->hasColumn('second_parent_id', 'integer', 8, array('notnull' => false));
 	}
@@ -23,7 +23,7 @@ class Nandu_Melody extends Void_Doctrine_Record {
 	 * @see Doctrine_Record::setUp()
 	 */
 	public function setUp() {
-		$this->hasOne('Nandu_Spiecies as spiecies', array('local' => 'spiecies_id', 'foreign' => 'id'));
+		$this->hasOne('Nandu_Species as species', array('local' => 'species_id', 'foreign' => 'id'));
 		$this->hasMany('Nandu_Note as notes', array('local' => 'id', 'foreign' => 'melody_id'));
 		$this->hasOne('Nandu_Melody as firstParent', array('local' => 'first_parent_id', 'foreign' => 'id'));
 		$this->hasOne('Nandu_Melody as secondParent', array('local' => 'second_parent_id', 'foreign' => 'id'));
