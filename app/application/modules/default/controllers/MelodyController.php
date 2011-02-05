@@ -23,6 +23,11 @@ class MelodyController extends Blipoteka_Controller
 	{
 		if ($this->getRequest()->isPost()) {
 			$species = new Nandu_Species();
+			$species->name = $this->getRequest()->getParam('name');
+			$species->tempo = $this->getRequest()->getParam('tempo');
+			$species->instrument = $this->getRequest()->getParam('instrument');
+			$species->reference_note = $this->getRequest()->getParam('reference_note');
+			$species->scale_type = $this->getRequest()->getParam('scale_type');
 			$species->save();
 			$this->_manager->initPopulation($species);
 			$this->_helper->redirector->gotoRoute(array('speciesId' => $spiecies->id), 'evolve', true);
