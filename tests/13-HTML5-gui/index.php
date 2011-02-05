@@ -30,7 +30,7 @@ foreach ($genotypes as $genotype)
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <title>Genetic Music Evolution Interface</title>
-<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/c-css.php"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
 
@@ -69,8 +69,8 @@ foreach ($files as $id => $file)
             $("#jquery_jplayer_$id").jPlayer({
         	ready: function () {
         		$(this).jPlayer("setMedia", {
-        			oga: "./tmp/$file.ogg",
-            		mp3: "./tmp/$file.mp3"
+                    oga: "./tmp/$file.ogg",
+                    mp3: "./tmp/$file.mp3"
         		});
         	},
         	ended: function (event) {
@@ -98,6 +98,7 @@ foreach ($files as $id => $file)
             		$(this).jPlayer("pauseOthers");
             });
         }
+
 EOT;
 }
 ?>
