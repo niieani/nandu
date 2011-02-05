@@ -1,0 +1,1 @@
+rm ./tmp/*.mp3 ./tmp/*.ogg ./tmp/*.mid

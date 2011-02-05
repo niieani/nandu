@@ -7,7 +7,9 @@ MIDI CLASS CODE
 require_once('./class.MIDIfy.php');
 
 /*
-    Requires tiMIDIty to be installed in /usr/bin/timidity
+    Requires TiMidity++ to be installed in /usr/bin/timidity (currently hardcoded)
+    It would be better to switch to something maintained, like FluidSynth,
+    as soon, as the project starts to support non-realtime MIDI rendering
 */
 
 class AuralizeNumbers extends MIDIfy
@@ -55,6 +57,8 @@ class AuralizeNumbers extends MIDIfy
         //file_put_contents('command', $command);
         if (defined('ASYNCHRONOUS_LAUNCH')) $this->launchBackgroundProcess('/bin/bash -c "'.$command.'"');
         else shell_exec('/bin/bash -c "'.$command.'"');
+        if (defined('DEBUG')) $log = KLogger::instance(dirname(DEBUG), KLogger::DEBUG);
+        if (defined('DEBUG')) $log->logInfo("Converted MIDI to audio files with the command: $command");
         return true;
     }
     

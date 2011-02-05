@@ -126,7 +126,6 @@ class MusicTheory
 {
     // TODO:
     // - reimplement note display in <canvas> (like http://mootools.net/blog/2010/05/18/a-magical-journey-into-the-base-fx-class/)
-    
     public $pNoteOnScale;
     public $pNoteInProximity;
     public $pLastNoteOnTriad;
@@ -155,8 +154,8 @@ class MusicTheory
         
         // - that the note after is close in pitch to the note before
         $this->pNoteInProximityPrimary = new Probability;
-        $this->pNoteInProximityPrimary-> add(TRUE, 65);
-        $this->pNoteInProximityPrimary-> add(FALSE, 35);
+        $this->pNoteInProximityPrimary-> add(TRUE, 60);
+        $this->pNoteInProximityPrimary-> add(FALSE, 40);
         
         $this->pNoteInProximitySecondary = new Probability;
         $this->pNoteInProximitySecondary-> add(TRUE, 85);
@@ -232,6 +231,8 @@ class MusicTheory
     //returns the melody with filled NULLs
     public function melodyFill(array $melody, $scale, $octaves = 1, $phraseLength = 8) //$length = 16
     {
+        if (defined('DEBUG')) $log = KLogger::instance(dirname(DEBUG), KLogger::DEBUG);
+        
         //if you want to extend or shorten the melody we should implmenet array_pad to full the melody if you specify length)
         $length = count($melody);
         
@@ -241,37 +242,33 @@ class MusicTheory
             {
                 $proximityPrimary = $this->pNoteInProximityPrimary->get();
                 $proximitySecondary = $this->pNoteInProximitySecondary->get();
-                //do //not great implementation, but at least there's a higher possibility of getting a note in proximity to the one before
+                do //not great implementation, but at least there's a higher possibility of getting a note in proximity to the one before
                 {
-                    do
-                    {
-                        if (!($i % $phraseLength)) //if beginning of phrase
-                        {	//get a nice note from the triad and gently fallback to a onscale note and any note
-                        	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::FirstPhraseNoteOnTriad, NoteType::OnScale, NoteType::Any));
-                            if (defined('DEBUG')) echo "$i: beginning phrase note - note ($melody[$i]) \n";
-                        }
-                        
-                        elseif ($i == ($length - 1))
-                        {    //if this is the last note of the melody
-                            $melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::LastNoteIsTonic, NoteType::LastNoteOnTonicChord, NoteType::LastNoteOnTriad, NoteType::OnScale, NoteType::Any));
-                            if (defined('DEBUG')) echo "$i: last note - note ($melody[$i]) \n";
-                        }
-                        
-                        elseif (!(($i+($phraseLength+1)) % $phraseLength))
-                        {	//if this is the last note of the phrase
-                        	//get a nice note from 'I'
-                        	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::LastPhraseNoteOnTriad, NoteType::OnScale, NoteType::Any));
-                            if (defined('DEBUG')) echo "$i: last phrase - note ($melody[$i]) \n";
-                        }
-                        
-                        else
-                        {	//get any note on scale
-                        	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::OnScale, NoteType::Any));
-                            if (defined('DEBUG')) echo "$i: normal - note ($melody[$i]) \n";
-                        }
-                    }  while($i != 0 && ( ($proximitySecondary === TRUE && (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistanceSecondary, $scale)) === FALSE))  || ($proximityPrimary === TRUE && (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistancePrimary, $scale)) === FALSE)) ) );
-                    // || ($i != 0 && $proximityPrimary === TRUE && (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistancePrimary, $scale)) === FALSE))
-                } //while($i != 0 && $proximityPrimary === TRUE && (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistancePrimary, $scale)) === FALSE));
+                    if (!($i % $phraseLength)) //if beginning of phrase
+                    {	//get a nice note from the triad and gently fallback to a onscale note and any note
+                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::FirstPhraseNoteOnTriad, NoteType::OnScale, NoteType::Any));
+                        if (defined('DEBUG')) $log->logDebug("$i: generating beginning phrase note - note $melody[$i]");
+                    }
+                    
+                    elseif ($i == ($length - 1))
+                    {    //if this is the last note of the melody
+                        $melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::LastNoteIsTonic, NoteType::LastNoteOnTonicChord, NoteType::LastNoteOnTriad, NoteType::OnScale, NoteType::Any));
+                        if (defined('DEBUG')) $log->logDebug("$i: generating last note - note ($melody[$i])");
+                    }
+                    
+                    elseif (!(($i+($phraseLength+1)) % $phraseLength))
+                    {	//if this is the last note of the phrase
+                    	//get a nice note from 'I'
+                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::LastPhraseNoteOnTriad, NoteType::OnScale, NoteType::Any));
+                        if (defined('DEBUG')) $log->logDebug("$i: generating last phrase - note ($melody[$i])");
+                    }
+                    
+                    else
+                    {	//get any note on scale
+                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::OnScale, NoteType::Any));
+                        if (defined('DEBUG')) $log->logDebug("$i: generating normal - note ($melody[$i])");
+                    }
+                } while($i != 0 && ( ($proximitySecondary === TRUE && (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistanceSecondary, $scale)) === FALSE))  || ($proximityPrimary === TRUE && (($melody[$i] = $this->findClosestEquivalent($melody[$i], $melody[$i-1], $this->allowedDistancePrimary, $scale)) === FALSE)) ) );
             }
         }
         return $melody;
@@ -337,17 +334,19 @@ class MusicTheory
     
     function oneOctaveTransposeCloser($note1, $note2, $distance = 7, $scale)
     {
-        if (defined('DEBUG')) echo "trying to transpose octave for $note1 \n";
+        if (defined('DEBUG')) $log = KLogger::instance(dirname(DEBUG), KLogger::DEBUG);
+
+        if (defined('DEBUG')) $log->logDebug("trying to transpose octave for $note1");
         if ($this->checkInterval($note1-$scale['length'], $note2) <= $distance)
         {
             $closer = $note1-$scale['length'];
-            if (defined('DEBUG')) echo 'closer = '."$closer is closer for $note2 (was $note1) \n";
+            if (defined('DEBUG')) $log->logDebug('closer = '."$closer is closer for $note2 (was $note1)");
             return $closer;
         }
         elseif ($this->checkInterval($note1+$scale['length'], $note2) <= $distance)
         {
             $closer = $note1+$scale['length'];
-            if (defined('DEBUG')) echo 'closer = '."$closer is closer for $note2 (was $note1) \n";
+            if (defined('DEBUG')) $log->logDebug('closer = '."$closer is closer for $note2 (was $note1)");
             return $closer;
         }
         /*if($this->checkInterval($closer, $note2) < $distance)*/
@@ -356,7 +355,9 @@ class MusicTheory
     
     function findClosestEquivalent($note1, $note2, $distance = 7, $scale)
     {
-        if (defined('DEBUG')) echo "finding closest equivalent for $note1 vs $note2 with distance $distance\n";
+        if (defined('DEBUG')) $log = KLogger::instance(dirname(DEBUG), KLogger::DEBUG);
+        
+        if (defined('DEBUG')) $log->logDebug("finding closest equivalent for $note1 vs $note2 with distance $distance");
         if ($this->checkInterval($note1, $note2) > $distance)
         {
             return $this->oneOctaveTransposeCloser($note1, $note2, $distance, $scale);
