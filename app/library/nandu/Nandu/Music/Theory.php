@@ -23,7 +23,7 @@ class Nandu_Music_Theory
         //	Probabilities of the following:
         
         // - that the note is in scale, rather than being sharp or flat
-        $this->pNoteOnScale = new Nandu_Music_Probability();
+        $this->pNoteOnScale = new Nandu_Utilities_Probability();
         $this->pNoteOnScale-> add(TRUE, 80);
         $this->pNoteOnScale-> add(FALSE, 20);
         
@@ -31,21 +31,21 @@ class Nandu_Music_Theory
         //$this->pNoteOnScale-> set(TRUE);
         
         // - that the note after is close in pitch to the note before
-        $this->pNoteInProximityPrimary = new Nandu_Music_Probability();
+        $this->pNoteInProximityPrimary = new Nandu_Utilities_Probability();
         $this->pNoteInProximityPrimary-> add(TRUE, 60);
         $this->pNoteInProximityPrimary-> add(FALSE, 40);
         
-        $this->pNoteInProximitySecondary = new Nandu_Music_Probability();
+        $this->pNoteInProximitySecondary = new Nandu_Utilities_Probability();
         $this->pNoteInProximitySecondary-> add(TRUE, 85);
         $this->pNoteInProximitySecondary-> add(FALSE, 15);
         
         // - that the last note is on a triad
-        $this->pLastNoteOnTriad = new Nandu_Music_Probability();
+        $this->pLastNoteOnTriad = new Nandu_Utilities_Probability();
         $this->pLastNoteOnTriad-> add(TRUE, 80);
         $this->pLastNoteOnTriad-> add(FALSE, 20);
         
         // - that the last note is on the tonic chord
-        $this->pLastNoteOnTonicChord = new Nandu_Music_Probability();
+        $this->pLastNoteOnTonicChord = new Nandu_Utilities_Probability();
         $this->pLastNoteOnTonicChord-> add(TRUE, 55);
         $this->pLastNoteOnTonicChord-> add(FALSE, 45);
         
@@ -53,7 +53,7 @@ class Nandu_Music_Theory
         //$this->pLastNoteOnTriad-> set(TRUE);
         
         // - that the last note is a tonic
-        $this->pLastNoteIsTonic = new Nandu_Music_Probability();
+        $this->pLastNoteIsTonic = new Nandu_Utilities_Probability();
         $this->pLastNoteIsTonic-> add(TRUE, 60);
         $this->pLastNoteIsTonic-> add(FALSE, 40);
         
@@ -61,12 +61,12 @@ class Nandu_Music_Theory
         //$this->pLastNoteIsTonic-> set(TRUE);
         
         // - that the beat notes are on triad
-        $this->pFirstPhraseNoteOnTriad = new Nandu_Music_Probability();
+        $this->pFirstPhraseNoteOnTriad = new Nandu_Utilities_Probability();
         $this->pFirstPhraseNoteOnTriad-> add(TRUE, 60);
         $this->pFirstPhraseNoteOnTriad-> add(FALSE, 40);
         
         // - that the last note of the phrase is on triad (subdominant or dominant)
-        $this->pLastPhraseNoteOnTriad = new Nandu_Music_Probability();
+        $this->pLastPhraseNoteOnTriad = new Nandu_Utilities_Probability();
         $this->pLastPhraseNoteOnTriad-> add(TRUE, 70);
         $this->pLastPhraseNoteOnTriad-> add(FALSE, 30);
         
@@ -74,28 +74,28 @@ class Nandu_Music_Theory
         //$this->pLastPhraseNoteOnTriad-> set(TRUE);
         
         // - that the second phrase is similar to second phrase
-        $this->pSecondPhraseSimilar = new Nandu_Music_Probability();
+        $this->pSecondPhraseSimilar = new Nandu_Utilities_Probability();
         $this->pSecondPhraseSimilar-> add(TRUE, 65);
         $this->pSecondPhraseSimilar-> add(FALSE, 35);
         
         // other probabilities:
         // - that the melody shifts into a parallel scale
-        $this->pParallelScale = new Nandu_Music_Probability();
+        $this->pParallelScale = new Nandu_Utilities_Probability();
         $this->pParallelScale-> add(TRUE, 5);
         $this->pParallelScale-> add(FALSE, 95);
         
         // - that intervals repeat (like, 2nd up, 3rd down, 1st, 2nd up, 3rd down, 1st) minimum 2 intervals = 3 notes
-        $this->pIntervalRepeat = new Nandu_Music_Probability();
+        $this->pIntervalRepeat = new Nandu_Utilities_Probability();
         $this->pIntervalRepeat-> add(TRUE, 20);
         $this->pIntervalRepeat-> add(FALSE, 80);
         
         // - that a group of notes in close proximity will be based on one chord (also a 7th chord)
-        $this->pChordBased = new Nandu_Music_Probability();
+        $this->pChordBased = new Nandu_Utilities_Probability();
         $this->pChordBased-> add(TRUE, 15);
         $this->pChordBased-> add(FALSE, 85);
         
         // if so, how many notes together:
-        $this->pHowMany = new Nandu_Music_Probability();
+        $this->pHowMany = new Nandu_Utilities_Probability();
         $this->pHowMany-> add(2, 95);
         $this->pHowMany-> add(3, 65);
         $this->pHowMany-> add(4, 35);
