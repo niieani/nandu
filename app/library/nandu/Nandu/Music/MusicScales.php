@@ -2,6 +2,19 @@
 
 final class Nandu_Music_MusicScales //constant arrays, kind of
 {
+    public static function GetScaleById($id)
+    {
+        switch($id)
+        {
+            case 0:
+                return self::Major();
+            case 1:
+                return self::Minor();
+            case 2:
+                return self::MinorHarmonic();
+        }
+        return false;
+    }
     //Ten kawałek kodu to taki LUKIER SYNTAKTYCZNY :-D
     public static function Major()
     {

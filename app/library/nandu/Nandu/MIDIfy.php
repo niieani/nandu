@@ -26,11 +26,9 @@ class Nandu_MIDIfy
         $this->midi->open($timebase); //sets timebase to 480
         $this->midi->setBpm($bpm);
         
-        //channel
         $channel = 1;
         
-        //$inst
-        $instrument = 12; // nice 9
+        //$instrument = 12; // nice 9
         
         $this->midiTrack = $this->addTrack();
         
