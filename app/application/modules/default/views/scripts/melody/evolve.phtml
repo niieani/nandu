@@ -32,7 +32,7 @@
 		}
 		?>
 		</div>
-		<a href="<?php echo $this->url(array('a' => $this->melodyA->id, 'b' => $this->melodyB->id), 'evolve', true); ?>" class="track1 oneheight"></a>
+		<a href="<?php echo $this->url(array('speciesId' => $this->species->id, 'a' => $this->melodyA->id, 'b' => $this->melodyB->id), 'vote', true); ?>" class="track1 oneheight"></a>
 	</div>
 	<div id="second" class="element track2">
 		<div class="bottom oneheight">
@@ -55,7 +55,7 @@
 		}
 		?>
 		</div>
-		<a href="<?php echo $this->url(array('b' => $this->melodyA->id, 'a' => $this->melodyB->id), 'evolve', true); ?>" class="track2 oneheight"></a>
+		<a href="<?php echo $this->url(array('speciesId' => $this->species->id, 'b' => $this->melodyA->id, 'a' => $this->melodyB->id), 'vote', true); ?>" class="track2 oneheight"></a>
 	</div>
 </div>
 <div class="debuginfo break">

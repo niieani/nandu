@@ -21,13 +21,20 @@ class MelodyController extends Blipoteka_Controller
 
 	public function indexAction()
 	{
-		
+		if ($this->getRequest()->isPost()) {
+			$species = new Nandu_Species();
+			$species->save();
+			$this->_manager->initPopulation($species);
+			$this->_helper->redirector->gotoRoute(array('speciesId' => $spiecies->id), 'evolve', true);
+		}
 	}
 
 	public function evolveAction()
 	{
 		$melodyAId = $this->getRequest()->getParam('a');
 		$melodyBId = $this->getRequest()->getParam('b');
+		$species = $this->_manager->getSpecies();
+		$this->view->species = $species;
 
 		if ($melodyAId && $melodyBId) {
 			$melodyA = $this->_manager->getMelody($melodyAId);
@@ -35,7 +42,7 @@ class MelodyController extends Blipoteka_Controller
 	
 			list ($newA, $newB) = $this->_manager->vote($melodyA, $melodyB);
 		} else {
-			list ($newA, $newB) = $this->_manager->getPair();
+			list ($newA, $newB) = $this->_manager->getPair($species);
 		}
 		
 		$this->view->melodyA = $newA;
@@ -44,7 +51,7 @@ class MelodyController extends Blipoteka_Controller
 
 	public function initAction()
 	{
-		$this->view->spiecies = $this->_manager->initPopulation();
+		$this->view->species = $this->_manager->initPopulation();
 	}
 	
 }

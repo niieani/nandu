@@ -3,7 +3,7 @@ class Nandu_Melody_Manager
 {
 	const MELODY_CLASS 		= 'Nandu_Melody';
 	const NOTE_CLASS 		= 'Nandu_Note';
-	const SPIECIES_CLASS 	= 'Nandu_Spiecies';
+	const SPECIES_CLASS 	= 'Nandu_Species';
 
 	protected $_tables = array();
 
@@ -85,9 +85,9 @@ class Nandu_Melody_Manager
 	/**
 	 * @return Doctrine_Table
 	 */
-	public function getSpieciesTable()
+	public function getSpeciesTable()
 	{
-		return $this->getTable(self::SPIECIES_CLASS);
+		return $this->getTable(self::SPECIES_CLASS);
 	}
 
 	/**
@@ -120,9 +120,9 @@ class Nandu_Melody_Manager
 	/**
 	 * @return Doctrine_Query
 	 */
-	public function getSpieciesQuery()
+	public function getSpeciesQuery()
 	{
-		return $this->getQuery(self::SPIECIES_CLASS);
+		return $this->getQuery(self::SPECIES_CLASS);
 	}
 
 	/**
@@ -162,11 +162,34 @@ class Nandu_Melody_Manager
 			throw new Blipoteka_Exception(sprintf('Melody #%d not found.', $id));
 		}
     }
-    
+	public function getSpeciesIdFromRequest()
+	{
+		return $this->getRequest()->getParam('speciesId', 0);
+	}
+
+	/**
+	 * Get species
+	 * @param integer $id
+	 * @return Nandu_Species
+	 */
+    public function getSpecies($id = null)
+    {
+		if ($id === null) {
+			$id = $this->getSpeciesIdFromRequest();
+		}
+
+		$melody = $this->getSpeciesTable()->find($id);
+
+		if ($melody instanceof Nandu_Species) {
+			return $melody;
+		} else {
+			throw new Blipoteka_Exception(sprintf('Species %d not found.', $id, $class));
+		}
+    }
     public function createMelody(array $notes, Nandu_Melody $firstParent = null, Nandu_Melody $secondParent = null)
     {
     	$melody = new Nandu_Melody();
-    	$melody->spiecies_id = $firstParent->spiecies_id;
+    	$melody->species_id = $firstParent->species_id;
     	$melody->firstParent = $firstParent;
     	$melody->secondParent = $secondParent;
     	$melody->save();
@@ -194,14 +217,10 @@ class Nandu_Melody_Manager
     	return 1 == $number;
     }
     
-    public function evolve(Nandu_Melody $a = null, Nandu_Melody $b = null)
+    public function evolve(Nandu_Melody $a, Nandu_Melody $b = null)
     {
-    	if ( ! $a) {
-    		$a = $this->getRandomMelody();
-    	}
-    	
     	if ( ! $b) {
-    		$b = $this->getRandomMelody($a->id);
+    		$b = $this->getRandomMelody($a->species, $a->id);
     	}
     	
     	$notesA = $a->getNotesAsArray();
@@ -226,16 +245,16 @@ class Nandu_Melody_Manager
     	if ($this->_performMutation()) {
     		$second = $this->mutate($better);
     	} else {
-    		$second = $this->getRandomMelody($better->id);
+    		$second = $this->getRandomMelody($better->species, $better->id);
     	}
     	
     	return array($better, $second);
     }
     
-    public function getRandomMelody($bannedId = false)
+    public function getRandomMelody(Nandu_Species $species, $bannedId = false)
     {
     	$q  = $this->getMelodyQuery()
-    				->where('spiecies_id = ?', 1)
+    				->where('species_id = ?', $species->id)
     				->andWhere('deleted_at IS NULL')
     				->orderBy('RAND()')
     				->limit(2);
@@ -247,32 +266,32 @@ class Nandu_Melody_Manager
 		return $q->fetchOne();
     }
     
-    public function getPair()
+    public function getPair(Nandu_Species $species)
     {
-    	$a = $this->getRandomMelody();
-    	$b = $this->getRandomMelody($a->id);
+    	$a = $this->getRandomMelody($species);
+    	$b = $this->getRandomMelody($species, $a->id);
     	return array($a, $b);
     }
     
-    public function initPopulation(Nandu_Spiecies $spiecies = null, $count = 8)
+    public function initPopulation(Nandu_Species $species = null, $count = 8)
     {
     	
-    	if (null == $spiecies) {
-    		$spiecies = new Nandu_Spiecies();
-    		$spiecies->save();
+    	if (null == $species) {
+    		$species = new Nandu_Species();
+    		$species->save();
     	}
     	
     	$music = new Nandu_Music_Theory();
     	
     	for($i = 0; $i < $count; $i++) {
     		$melody = new Nandu_Melody();
-    		$melody->spiecies_id = $spiecies->id;
+    		$melody->species_id = $species->id;
     		$melody->save();
     		$notes = $music->melodyGen(Nandu_Music_MusicScales::Major(), 2, 8, 16);
     		$melody->setNotesFromArray($notes);
     	}
     	
-    	return $spiecies;
+    	return $species;
     }
 
 }
