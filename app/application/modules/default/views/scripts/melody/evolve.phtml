@@ -112,10 +112,13 @@ function popup(message) {
 $(document).ready(function(){
     // this is quite dirty and should be moved to a separate file //
 <?php
-$file = "nic";
+$files = array();
+//$this->baseUrl('/audio');
+$files[] = $this->baseUrl('/audio/'.$this->melodyA->getAudioFilename());
+$files[] = $this->baseUrl('/audio/'.$this->melodyB->getAudioFilename());
 for ($id = 1; $id <= 2; $id++)
 {
-    //$id++;
+    $file = $files[$id-1];
     echo <<< "EOT"
         window.setTimeout(jplayerSetup$id, 800); //FIX ME, this is a poor's man synchronization for the asynchronous generation :-D
         function jplayerSetup$id()
@@ -123,8 +126,8 @@ for ($id = 1; $id <= 2; $id++)
             $("#jquery_jplayer_$id").jPlayer({
             ready: function () {
                 $(this).jPlayer("setMedia", {
-                    oga: "./tmp/$file.ogg",
-                    mp3: "./tmp/$file.mp3"
+                    oga: "$file.ogg",
+                    mp3: "$file.mp3"
         		});
         	},
         	ended: function (event) {

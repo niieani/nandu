@@ -50,7 +50,9 @@ class Nandu_MIDIfy
     public function generateFilename(array $pitches)
     {
         $this->filenameSet = true;
-        $this->filename = base_convert(implode('-', $pitches), 10, 36);
+        //$this->filename = base_convert(md5(implode('', $pitches)), 10, 36);
+        //$this->filename = base_convert(bin2hex(substr(md5(implode('', $pitches), true), 0, 12)), 10, 36);
+        $this->filename = str_pad(base_convert(sprintf('%u',crc32(implode('', $pitches))),10,36),7,'0',STR_PAD_LEFT);
         return $this->filepath = $this->saveDir.$this->filename;
     }
     
