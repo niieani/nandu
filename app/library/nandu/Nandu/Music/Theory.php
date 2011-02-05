@@ -124,26 +124,26 @@ class Nandu_Music_Theory
                 {
                     if (!($i % $phraseLength)) //if beginning of phrase
                     {	//get a nice note from the triad and gently fallback to a onscale note and any note
-                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::FirstPhraseNoteOnTriad, NoteType::OnScale, NoteType::Any));
+                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(Nandu_Music_NoteType::FirstPhraseNoteOnTriad, Nandu_Music_NoteType::OnScale, Nandu_Music_NoteType::Any));
                         if (defined('DEBUG')) $log->logDebug("$i: generating beginning phrase note - note $melody[$i]");
                     }
                     
                     elseif ($i == ($length - 1))
                     {    //if this is the last note of the melody
-                        $melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::LastNoteIsTonic, NoteType::LastNoteOnTonicChord, NoteType::LastNoteOnTriad, NoteType::OnScale, NoteType::Any));
+                        $melody[$i] = $this->getNoteHelper($scale, $octaves, array(Nandu_Music_NoteType::LastNoteIsTonic, Nandu_Music_NoteType::LastNoteOnTonicChord, Nandu_Music_NoteType::LastNoteOnTriad, Nandu_Music_NoteType::OnScale, Nandu_Music_NoteType::Any));
                         if (defined('DEBUG')) $log->logDebug("$i: generating last note - note ($melody[$i])");
                     }
                     
                     elseif (!(($i+($phraseLength+1)) % $phraseLength))
                     {	//if this is the last note of the phrase
                     	//get a nice note from 'I'
-                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::LastPhraseNoteOnTriad, NoteType::OnScale, NoteType::Any));
+                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(Nandu_Music_NoteType::LastPhraseNoteOnTriad, Nandu_Music_NoteType::OnScale, Nandu_Music_NoteType::Any));
                         if (defined('DEBUG')) $log->logDebug("$i: generating last phrase - note ($melody[$i])");
                     }
                     
                     else
                     {	//get any note on scale
-                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(NoteType::OnScale, NoteType::Any));
+                    	$melody[$i] = $this->getNoteHelper($scale, $octaves, array(Nandu_Music_NoteType::OnScale, Nandu_Music_NoteType::Any));
                         if (defined('DEBUG')) $log->logDebug("$i: generating normal - note ($melody[$i])");
                     }
                 } while($i != 0 &&
@@ -178,40 +178,40 @@ class Nandu_Music_Theory
         {
             switch($type)
             {
-                case NoteType::Tonic:
+                case Nandu_Music_NoteType::Tonic:
                     return $this->getNoteFromDegree($scale, $this->randomizeOctave($octaves), 0);
                     break;
-                case NoteType::OnTonicChord:
+                case Nandu_Music_NoteType::OnTonicChord:
                     return $this->getNoteOnNativeChord($scale, $octaves, 1);
                     break;
-                case NoteType::OnTriad:
+                case Nandu_Music_NoteType::OnTriad:
                     return $this->getNoteFromTriad($scale, $octaves);
                     break;
-                case NoteType::OnScale:
+                case Nandu_Music_NoteType::OnScale:
                     if ($this->pNoteOnScale->get())
-                        return $this->getNoteOnScale($scale, $octaves);
+                    return $this->getNoteOnScale($scale, $octaves);
                     break;
-                case NoteType::LastPhraseNoteOnTriad:
+                case Nandu_Music_NoteType::LastPhraseNoteOnTriad:
                     if ($this->pLastPhraseNoteOnTriad->get()) 
                         return $this->getNoteFromTriad($scale, $octaves);
                     break;
-                case NoteType::FirstPhraseNoteOnTriad:
+                case Nandu_Music_NoteType::FirstPhraseNoteOnTriad:
                     if ($this->pFirstPhraseNoteOnTriad->get()) 
                         return $this->getNoteFromTriad($scale, $octaves);
                     break;
-                case NoteType::LastNoteOnTriad:
+                case Nandu_Music_NoteType::LastNoteOnTriad:
                     if ($this->pLastNoteOnTriad->get()) 
                         return $this->getNoteFromTriad($scale, $octaves);
                     break;
-                case NoteType::LastNoteOnTonicChord:
+                case Nandu_Music_NoteType::LastNoteOnTonicChord:
                     if ($this->pLastNoteOnTonicChord->get()) 
                         return $this->getNoteOnNativeChord($scale, $octaves, 0);
                     break;
-                case NoteType::LastNoteIsTonic:
+                case Nandu_Music_NoteType::LastNoteIsTonic:
                     if ($this->pLastNoteIsTonic->get()) 
                         return $this->getNoteFromDegree($scale, $this->randomizeOctave($octaves), 0);
                     break;
-                case NoteType::Any:
+                case Nandu_Music_NoteType::Any:
                     return $this->getNoteRandom($scale, $octaves);
                     break;
             }
