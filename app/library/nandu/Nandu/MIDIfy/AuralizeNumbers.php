@@ -18,17 +18,15 @@ class Nandu_MIDIfy_AuralizeNumbers extends Nandu_MIDIfy
         $this->auralizeThis();
     }
     
-    public function getFilename()
-    {
-        return $this->filename; 
-    }
-    
     public function auralizeThis()
     {
         if (is_array($this->pitches))
         {
-            $this->generateMIDI($this->pitches);
-            $this->generateAudio($this->filepath);
+            if (!file_exists($this->generateFilename($this->pitches).'.mid'))
+            {
+                $this->generateMIDI($this->pitches);
+                $this->generateAudio($this->filepath);
+            }
             return $this->filename;
         }
         return false;
