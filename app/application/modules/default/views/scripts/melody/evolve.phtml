@@ -1,13 +1,21 @@
+<script>
+$(document).ready(function(){
+	$('#speciesPickerSelect').change(function(){
+		window.location = baseUrl + 'evolve/' + $(this).val();
+	});
+	
+});
+</script>
 <h2>Hover your mouse over the track to hear it<br />Compare and pick the best one</h2>
-<form action="#" method="post">
-<label id="speciesPickerLabel" for="speciesPicker">
+<form action="#" method="post" id="speciesPicker">
+<label id="speciesPickerLabel" for="speciesPickerSelect">
     Select species: 
 </label>
 <div class="form-input">
-    <select class="form-dropdown validate[required]" style="width:150px" id="speciesPickerLabel" name="speciesPickerLabel">
-        <option selected="selected" value="0"> Gatunek pierwszy (ID 0) </option>
-        <option value="1"> Gatunek drugi (ID 1) </option>
-        <option value="2"> Gatunek trzeci (ID 2) </option>
+    <select class="form-dropdown validate[required]" style="width:150px" id="speciesPickerSelect" name="speciesId">
+<?php foreach ($this->allSpecies as $species):?>
+        <option <?php echo $this->species->id == $species->id ? 'selected="selected"' : '';?> value="<?php echo $species->id?>"> <?php echo $species->name?> </option>
+<?php endforeach; ?>
     </select>
 </div>
 </form>

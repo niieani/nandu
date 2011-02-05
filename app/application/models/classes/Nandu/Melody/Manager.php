@@ -278,6 +278,7 @@ class Nandu_Melody_Manager
     	
     	if (null == $species) {
     		$species = new Nandu_Species();
+    		$species->name = "test";
     		$species->save();
     	}
     	
