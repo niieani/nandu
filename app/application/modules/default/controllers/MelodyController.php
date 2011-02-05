@@ -7,10 +7,16 @@ class MelodyController extends Blipoteka_Controller
 	 * @var Nandu_Melody_Manager
 	 */
 	protected $_manager;
+	
+	/**
+	 * @var Zend_Config
+	 */
+	protected $_settings;
 
 	public function init()
 	{
 		$this->_manager = new Nandu_Melody_Manager();
+		$this->_settings = Zend_Registry::get('settings');
 	}
 
 	public function indexAction()
