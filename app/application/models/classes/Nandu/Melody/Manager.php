@@ -134,6 +134,12 @@ class Nandu_Melody_Manager
 		}
     }
     
+    public function evolve(Nandu_Melody $a, Nandu_Melody $b)
+    {
+    	$notesA = $a->getNotesAsArray();
+    	$notesB = $b->getNotesAsArray();
+    }
+    
     public function vote(Nandu_Melody $better, Nandu_Melody $worse)
     {
     	$worse->delete();
