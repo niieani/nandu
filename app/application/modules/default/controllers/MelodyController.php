@@ -30,7 +30,7 @@ class MelodyController extends Blipoteka_Controller
 			$species->scale_type = $this->getRequest()->getParam('scale_type');
 			$species->save();
 			$this->_manager->initPopulation($species);
-			$this->_helper->redirector->gotoRoute(array('speciesId' => $spiecies->id), 'evolve', true);
+			$this->_helper->redirector->gotoRoute(array('speciesId' => $species->id), 'evolve', true);
 		}
 	}
 
