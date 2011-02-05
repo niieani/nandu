@@ -1,5 +1,5 @@
 <?php
-require('midi.class.php');
+//require('midi.class.php');
 
 class MidiConversion extends Midi{
 	

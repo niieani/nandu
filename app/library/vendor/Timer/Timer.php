@@ -6,7 +6,7 @@ class Timer
 {
 
     // command constants
-	const CMD_START = 'start';
+    const CMD_START = 'start';
 	const CMD_STOP = 'end';
 
 	// return format constants

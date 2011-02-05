@@ -109,7 +109,7 @@ class Nandu_Music_Theory
     //returns the melody with filled NULLs
     public function melodyFill(array $melody, $scale, $octaves = 1, $phraseLength = 8) //$length = 16
     {
-        if (defined('DEBUG')) $log = KLogger::instance(dirname(DEBUG), KLogger::DEBUG);
+        if (defined('DEBUG')) $log = Nandu_Utilities_KLogger::instance(dirname(DEBUG), Nandu_Utilities_KLogger::DEBUG);
         
         //if you want to extend or shorten the melody we should implmenet array_pad to full the melody if you specify length)
         $length = count($melody);
@@ -212,7 +212,7 @@ class Nandu_Music_Theory
     
     function oneOctaveTransposeCloser($note1, $note2, $distance = 7, $scale)
     {
-        if (defined('DEBUG')) $log = KLogger::instance(dirname(DEBUG), KLogger::DEBUG);
+        if (defined('DEBUG')) $log = Nandu_Utilities_KLogger::instance(dirname(DEBUG), Nandu_Utilities_KLogger::DEBUG);
 
         if (defined('DEBUG')) $log->logDebug("trying to transpose octave for $note1");
         if ($this->checkInterval($note1-$scale['length'], $note2) <= $distance)
@@ -233,7 +233,7 @@ class Nandu_Music_Theory
     
     function findClosestEquivalent($note1, $note2, $distance = 7, $scale)
     {
-        if (defined('DEBUG')) $log = KLogger::instance(dirname(DEBUG), KLogger::DEBUG);
+        if (defined('DEBUG')) $log = Nandu_Utilities_KLogger::instance(dirname(DEBUG), Nandu_Utilities_KLogger::DEBUG);
         
         if (defined('DEBUG')) $log->logDebug("finding closest equivalent for $note1 vs $note2 with distance $distance");
         if ($this->checkInterval($note1, $note2) > $distance)

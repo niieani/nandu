@@ -1,7 +1,7 @@
 <?php
 // last changes: 26.04.2005
 
-require('midi.class.php');
+//require('midi.class.php');
 
 /****************************************************************************
 Software: MidiRttl Class
