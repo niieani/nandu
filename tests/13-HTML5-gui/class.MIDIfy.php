@@ -69,7 +69,8 @@ class SequenceMono
     public function addNote($pitch, $value)
     {
         $this->notes[$notesCount]['pitch'] = $pitch;
-        $this->notes[$notesCount]['position'] = calculatePosition() ? ;
+        //dokończyć robić
+        //$this->notes[$notesCount]['position'] = calculatePosition() ? ;
         $this->notesCount++;
     }
     

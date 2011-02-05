@@ -10,6 +10,7 @@ class Nandu_MIDIfy
     public $filepath;
     public $saveDir;
     public $referenceNote;
+    private $filenameSet;
     
     public function initializeMIDI($timebase = 480, $bpm = 97)
     {
@@ -46,14 +47,28 @@ class Nandu_MIDIfy
         $this->midi->addMsg($this->midiTrack, "$time Meta TrkEnd");
     }
     
+    public function generateFilename(array $pitches)
+    {
+        $this->filenameSet = true;
+        $this->filename = base_convert(implode('-', $pitches), 10, 36);
+        return $this->filepath = $this->saveDir.$this->filename;
+    }
+    
+    public function getFilename()
+    {
+        return $this->filename; 
+    }
+    
     public function saveMIDItoFile()
     {
-        $this->filename = base_convert(mt_rand(), 10, 36);
-        $this->filepath = $this->saveDir.$this->filename;
+        //$this->filename = base_convert(mt_rand(), 10, 36);
+        if($this->filenameSet === true)
+        {
         $this->midi->saveMidFile($this->filepath.'.mid', 0666);
         if (defined('DEBUG')) $log = KLogger::instance(dirname(DEBUG), KLogger::DEBUG);
         if (defined('DEBUG')) $log->logInfo("Saved MIDI to file: $this->filepath");
         return true;
+        }
     }
     
     public function addTrack()
