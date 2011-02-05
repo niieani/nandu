@@ -1,0 +1,4 @@
+<a href="<?php echo $this->url(array('a' => $this->melodyA->id, 'b' => $this->melodyB->id), 'evolve', true); ?>">Melody A#<?php echo $this->melodyA->id?></a>:
+<pre><?php var_dump($this->melodyA->getNotesAsArray()) ?></pre>
+<a href="<?php echo $this->url(array('b' => $this->melodyA->id, 'a' => $this->melodyB->id), 'evolve', true); ?>">Melody B#<?php echo $this->melodyB->id?></a>:
+<pre><?php var_dump($this->melodyB->getNotesAsArray()) ?></pre>

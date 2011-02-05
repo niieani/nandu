@@ -1,16 +1,6 @@
 <?php
 /**
- * Note entity
- *
- * @property integer $city_id Primary key
- * @property string $name City name
- * @property string $asciiname City name in ASCII (no national characters)
- * @property double $lat Latitude
- * @property double $lng Longitude
- * @property string $feature_code GeoNames feature code
- * @property string $admin1_code A first part of GeoNames administrative code
- * @property string $admin1_code A second part of GeoNames administrative code
- * @property string $modified_at Date of the last update of the data
+ * Melody entity
  *
  * @author Michał Buczek <michal@buczek.cc>
  *
@@ -32,6 +22,30 @@ class Nandu_Melody extends Void_Doctrine_Record {
 	 */
 	public function setUp() {
 		$this->hasOne('Nandu_Spiecies as spiecies', array('local' => 'spiecies_id', 'foreign' => 'id'));
+		$this->hasMany('Nandu_Note as notes', array('local' => 'id', 'foreign' => 'melody_id'));
+		$this->actAs('SoftDelete');
+	}
+	
+	public function getNotesAsArray()
+	{
+		$notes = array();
+		foreach ($this->notes as $note) {
+			$notes[] = $note->pitch;
+		}
+		
+		return $notes;
+	}
+	
+	public function setNotesFromArray(array $notes) 
+	{
+		$this->notes->delete();
+		foreach ($notes as $note) {
+			$n = new Nandu_Note();
+			$n->pitch = $note;
+			$n->melody_id = $this->id;
+			$n->save();
+		}
+		
 	}
 
 }

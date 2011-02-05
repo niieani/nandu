@@ -136,9 +136,53 @@ class Nandu_Melody_Manager
     
     public function vote(Nandu_Melody $better, Nandu_Melody $worse)
     {
-    	//kill worse, mutate better with another better & mutate
-    	// return array($childA, $childB)
-    	return array($better, $worse);
+    	$worse->delete();
+    	$second = $this->getRandomMelody($better->id);
+    	var_dump($worse->toArray()); die;
+    	return array($better, $second);
+    }
+    
+    public function getRandomMelody($bannedId = false)
+    {
+    	$q  = $this->getMelodyQuery()
+    				->where('spiecies_id = ?', 1)
+    				->andWhere('deleted_at IS NULL')
+    				->orderBy('RAND()')
+    				->limit(2);
+
+    	if ($bannedId) {
+    		$q->andWhere('id != ?', $bannedId);
+    	}
+    				
+		return $q->fetchOne();
+    }
+    
+    public function getPair()
+    {
+    	$a = $this->getRandomMelody();
+    	$b = $this->getRandomMelody($a->id);
+    	return array($a, $b);
+    }
+    
+    public function initPopulation(Nandu_Spiecies $spiecies = null, $count = 8)
+    {
+    	
+    	if (null == $spiecies) {
+    		$spiecies = new Nandu_Spiecies();
+    		$spiecies->save();
+    	}
+    	
+    	$music = new Nandu_Music_Theory();
+    	
+    	for($i = 0; $i < $count; $i++) {
+    		$melody = new Nandu_Melody();
+    		$melody->spiecies_id = $spiecies->id;
+    		$melody->save();
+    		$notes = $music->melodyGen(Nandu_Music_MusicScales::Major(), 2, 8, 16);;
+    		$melody->setNotesFromArray($notes);
+    	}
+    	
+    	return $spiecies;
     }
 
 }
