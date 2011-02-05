@@ -34,6 +34,6 @@ class Nandu_Genetic_Operations
 		$index = rand(0, count($genome) - 1);
 		$action = rand(0, 1);
 		$genome[$index] = null;
-		$this->_music;
+		return $this->_music->melodyGen(Nandu_Music_MusicScales::Major(), 2, 8, 16);
 	}
 }
