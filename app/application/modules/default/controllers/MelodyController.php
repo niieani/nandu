@@ -35,6 +35,7 @@ class MelodyController extends Blipoteka_Controller
 		$melodyBId = $this->getRequest()->getParam('b');
 		$species = $this->_manager->getSpecies();
 		$this->view->species = $species;
+		$this->view->allSpecies = $this->_manager->getSpeciesTable()->findAll();;
 
 		if ($melodyAId && $melodyBId) {
 			$melodyA = $this->_manager->getMelody($melodyAId);

@@ -21,7 +21,7 @@ class Nandu_Species extends Void_Doctrine_Record {
 	 * Setup record, table name etc.
 	 */
 	public function setTableDefinition() {
-		$this->setTableName('spiecies');
+		$this->setTableName('species');
     	
     	$this->hasColumn('name', 'string', 255, array('notnull' => true, 'default' => 'default', 'unique' => true));
         $this->hasColumn('user_id', 'integer', 8, array('notnull' => true, 'default' => 0));
