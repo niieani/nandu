@@ -7,6 +7,17 @@
 <?php echo $this->headScript() . "\n"; ?>
 <script src="<?php echo $this->baseUrl("js/libs/modernizr-1.6.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("js/libs/jquery.jplayer.min.js"); ?>"></script>
+<script src="<?php echo $this->baseUrl("webforms2/webforms2-p.js"); ?>"></script>
+<script src="<?php echo $this->baseUrl("js/jquery-ui-1.8.9.min.js"); ?>"></script>
+
+<link rel="stylesheet" href="<?php echo $this->baseUrl("components/spinner/ui.spinner.css"); ?>">
+<script src="<?php echo $this->baseUrl("components/spinner/ui.spinner.js"); ?>"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl("components/colorpicker/colorpicker.css"); ?>">
+<script src="<?php echo $this->baseUrl("components/colorpicker/colorpicker.js"); ?>"></script>
+
+<script src="<?php echo $this->baseUrl("components/placeholder/jquery.placehold-0.2.min.js"); ?>"></script>
+
+
 <?php echo $this->inlineScript()->setScript(sprintf("var baseUrl = '%s';", $this->baseUrl(''))); ?>
 
 </head>

@@ -1,57 +1,45 @@
 <!-- HTML5 Shim, IE8 and bellow recognize HTML5 elements -->
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->		
-<!-- Modernizr -->
-<script src="js/modernizr-1.5.min.js"></script>
-<!-- Webforms2 -->
-<script src="webforms2/webforms2-p.js"></script>	
-<!-- jQuery and jQuery UI -->
-<link rel="stylesheet" href="ui-themes/aristo/jquery.ui.all.css"> 
-<script src="js/jquery-ui-1.8.5.min.js"></script>
-<!-- jQuery Numeric Spinner -->	
-<link rel="stylesheet" href="components/spinner/ui.spinner.css"> 
-<script src="components/spinner/ui.spinner.js"></script>
-<!-- jQuery Color Picker -->
-<link rel="stylesheet" href="components/colorpicker/colorpicker.css">
-<script src="components/colorpicker/colorpicker.js"></script>
-<!-- jQuery Placehol -->
-<script src="components/placeholder/jquery.placehold-0.2.min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--<link rel="stylesheet" href="/css/html5forms.layout.css">-->
+<script src="/js/html5forms.js"></script>
+<script src="/js/html5forms.fallback.js"></script>	
 
 <form action="<?php echo $this->url(array(), 'index', true); ?>" method="post" id="createSpecies">
 <div class="row requiredRow">
     <label for="txt_Nameofspecies" id="Nameofspecies-ariaLabel">Name of species</label>
-	<input id="txt_Nameofspecies" name="txt_Nameofspecies" type="text" aria-labelledby="Nameofspecies-ariaLabel" class="required" title="Name of species. This is a required field" />
+	<input id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" class="required" title="Name of species. This is a required field" />
 </div>
 <div class="row requiredRow">
 	<label for="sel_Scale" id="Scale-ariaLabel">Scale</label>
-	<select id="sel_Scale" name="sel_Scale" aria-labelledby="Scale-ariaLabel" class="required" title="Scale. This is a required field">
-		<option value="Major (dur)">Major (dur)</option>
-		<option value="Minor (moll)">Minor (moll)</option>
-		<option value="Minor harmonic">Minor harmonic</option>
+	<select id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel" class="required" title="Scale. This is a required field">
+		<option value="0">Major (dur)</option>
+		<option value="1">Minor (moll)</option>
+		<option value="2">Minor harmonic</option>
 	</select>
 </div>
 <div class="row requiredRow">
 	<label for="sldr_TempoBPM" id="TempoBPM-ariaLabel">Tempo BPM</label>
-	<input id="sldr_TempoBPM" name="sldr_TempoBPM" type="range" aria-labelledby="TempoBPM-ariaLabel" class="required" title="Scale. This is a required field" min="20" max="250" step="1" value="97" />
+	<input type="range" class="slider" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" class="required" title="Scale. This is a required field" min="20" max="250" step="1" value="97" />
 </div>
 <div class="row requiredRow">
 	<label for="sel_Instrument" id="Instrument-ariaLabel">Instrument</label>
-	<select id="sel_Instrument" name="sel_Instrument" aria-labelledby="Instrument-ariaLabel" class="required" title="Instrument. This is a required field">
-		<option value="Piano">Piano</option>
-		<option value="Vibes">Vibes</option>
-		<option value="Organ">Organ</option>
+	<select id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel" class="required" title="Instrument. This is a required field">
+		<option value="0">Piano</option>
+		<option value="12">Vibes</option>
+		<option value="16">Organ</option>
 	</select>
 </div>
 <div class="row requiredRow">
 	<label for="Referencenote" id="Referencenote-ariaLabel">Reference note</label>
     <p>This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on...<br />Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)</p>
-	<input id="Referencenote" name="Referencenote" type="number" aria-labelledby="Referencenote-ariaLabel" class="required" title="Instrument. This is a required field" min="20" max="200" step="1" value="60" />
+	<input id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" class="required" title="Instrument. This is a required field" min="20" max="200" step="1" value="60" />
 </div>
 <div class="row">
 <input type="submit" value="Create species" />
 </div>
 </form>
 
-
+<!--
 <form class="jotform-form" action="<?php echo $this->url(array(), 'index', true); ?>" method="post" name="cregateSpecies" id="10352946635" accept-charset="utf-8">
     <div class="form-all">
         <ul class="form-section">
@@ -132,3 +120,4 @@
         </ul>
     </div>
 </form>
+-->
