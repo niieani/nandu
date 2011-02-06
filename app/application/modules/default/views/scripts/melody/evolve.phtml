@@ -15,8 +15,13 @@
         
 		<div class="bottom oneheight">
 			<div class="infobox">
-				<h3>Genotype one (<?php echo $this->melodyA->id?>)</h3>
-				<pre><?php echo $this->melodyA->getAudioFilename()?></pre>
+        		<div class="facebooklike">
+        		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://nandu.amplifuge.com/melody/<?php echo $this->melodyA->id?>/from/<?php echo $this->species->id?>/" layout="button_count" show_faces="true" width="450" font="segoe ui"></fb:like>
+        		</div>
+				<h3>
+    			Genotype one (<?php echo $this->melodyA->id?>)
+                </h3>
+				<pre style="display: none;"><?php echo $this->melodyA->getAudioFilename()?></pre>
 			</div>
 		</div>
 		<div class="progressbar oneheight">
@@ -38,8 +43,11 @@
 	<div id="second" class="element track2">
 		<div class="bottom oneheight">
 			<div class="infobox">
+        		<div class="facebooklike">
+        		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://nandu.amplifuge.com/melody/<?php echo $this->melodyB->id?>/from/<?php echo $this->species->id?>/" layout="button_count" show_faces="true" width="450" font="segoe ui"></fb:like>
+        		</div>
 				<h3>Genotype two (<?php echo $this->melodyB->id?>)</h3>
-				<pre><?php echo $this->melodyB->getAudioFilename()?></pre>
+				<pre style="display: none;"><?php echo $this->melodyB->getAudioFilename()?></pre>
 			</div>
 		</div>
 		<div class="progressbar oneheight">

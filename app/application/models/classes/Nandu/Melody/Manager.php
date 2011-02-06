@@ -273,6 +273,12 @@ class Nandu_Melody_Manager
     	return array($a, $b);
     }
     
+    // Bazyli:
+    public function getMelodyB(Nandu_Species $species, $aId)
+    {
+    	return $this->getRandomMelody($species, $aId);;
+    }
+    
     public function initPopulation(Nandu_Species $species = null, $count = 8)
     {
     	

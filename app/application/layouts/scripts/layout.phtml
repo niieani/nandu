@@ -8,6 +8,7 @@
 <script src="<?php echo $this->baseUrl("js/libs/modernizr-1.6.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("js/libs/jquery.jplayer.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("js/libs/jquery-ui-1.8.9.min.js"); ?>"></script>
+<script src="<?php echo $this->baseUrl("js/libs/jquery-validate-1.5.1.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("webforms2/webforms2-p.js"); ?>"></script>
 <link rel="stylesheet" href="<?php echo $this->baseUrl("ui-themes/base/jquery.ui.all.css"); ?>">
 
@@ -19,6 +20,7 @@
 
 <script src="<?php echo $this->baseUrl("js/slide.js"); ?>"></script>
 <link rel="stylesheet" href="<?php echo $this->baseUrl("css/slide.css"); ?>">
+
 <?php echo $this->inlineScript()->setScript(sprintf("var baseUrl = '%s';", $this->baseUrl(''))); ?>
 
 <script>
@@ -26,7 +28,8 @@ $(document).ready(function(){
     $('#speciesPickerSelect').change(function(){
 		window.location = baseUrl + 'evolve/' + $(this).val();
 	});
-	
+    
+	$("#createSpecies").validate();
 });
 </script>
 </head>
@@ -64,11 +67,11 @@ $(document).ready(function(){
     			<form action="<?php echo $this->url(array(), 'index', true); ?>" method="post" id="createSpecies">
         		    <div class="row requiredRow">
             	        <label class="grey" for="txt_Nameofspecies" id="Nameofspecies-ariaLabel">Name of species:</label>
-            	        <input class="field" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" title="Name of species. This is a required field" required />
+            	        <input class="field required" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" title="Try to only use numbers and letters" pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus/>
             	    </div>
             	    <div class="row requiredRow">
             	        <label class="grey" for="sel_Scale" id="Scale-ariaLabel">Scale:</label>
-            	        <select class="field" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel" title="Scale. This is a required field">
+            	        <select class="field required" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel" title="This is a required field">
             	    		<option selected="selected" value="0">Major (dur)</option>
             	    		<option value="1">Minor (moll)</option>
             	    		<option value="2">Minor harmonic</option>
@@ -76,11 +79,11 @@ $(document).ready(function(){
             	    </div>
             	    <div class="row requiredRow">
             	    	<label class="grey" for="sldr_TempoBPM" id="TempoBPM-ariaLabel">Tempo BPM:</label>
-            	    	<input class="field" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" title="Tempo. This is a required field" min="20" max="250" step="1" value="97" />
+            	    	<input class="field required" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" title="This is a required field" min="20" max="250" step="1" value="97" />
             	    </div>
             		<div class="row requiredRow">
             			<label class="grey" for="sel_Instrument" id="Instrument-ariaLabel">Instrument:</label>
-            			<select class="field" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel" title="Instrument. This is a required field">
+            			<select class="field required" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel" title="This is a required field">
             				<option value="0">Piano</option>
             				<option selected="selected" value="12">Vibes</option>
             				<option value="16">Organ</option>
@@ -88,7 +91,8 @@ $(document).ready(function(){
             		</div>
             		<div class="row requiredRow">
             			<label class="grey" for="Referencenote" id="Referencenote-ariaLabel">Reference note:</label>
-            			<input class="field" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" title="This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on... Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)" min="20" max="200" step="1" value="60" />
+                		<p class="gray" style="display: none;">This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on... Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)</p>
+            			<input class="field required" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" title="This is a required field" min="20" max="200" step="1" value="60" />
             		</div>
             		<div class="row">
             		<input type="submit" value="Create species" />

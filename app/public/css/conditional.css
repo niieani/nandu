@@ -242,7 +242,16 @@ div.element a
     );
 }
 	
-.element div.bottom div.infobox { padding:100px 0 0 0px; text-align:center; font-variant:small-caps;}
+.element div.bottom div.infobox { 
+    padding:105px 0 0 0px; 
+    font-variant:small-caps;
+    position: absolute;
+    left: 55px;
+}
+.element div.bottom div.infobox div.facebooklike {
+    position: absolute;
+    left: 150px;
+}
 .element div.bottom div.infobox h3 { font-family:"Calibri",Arial,Helvetica,Sans-Serif; }
 .element div.bottom div.infobox p { font-family:"Lucida Grande",Arial,Helvetica,Sans-Serif; text-shadow: 0px 5px 5px #111; }
 
