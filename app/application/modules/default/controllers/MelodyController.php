@@ -21,9 +21,9 @@ class MelodyController extends Blipoteka_Controller
 
 	public function indexAction()
 	{
-		if ($this->getRequest()->isPost()) {
+		if ($this->getRequest()->isPost() && $this->getRequest()->getParam('name')) {
 			$species = new Nandu_Species();
-			$species->name = $this->getRequest()->getParam('name');
+			$species->name = strip_tags($this->getRequest()->getParam('name'));
 			$species->tempo = $this->getRequest()->getParam('tempo');
 			$species->instrument = $this->getRequest()->getParam('instrument');
 			$species->reference_note = $this->getRequest()->getParam('reference_note');
