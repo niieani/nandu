@@ -8,12 +8,6 @@ $this->headTitle()->append('Melody '.$this->melodyA->id.' vs '.$this->melodyB->i
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
 <div id="jquery_jplayer_2" class="jp-jplayer"></div>
 
-<div id="dialog-overlay"></div>
-<div id="dialog-box">
-    <div class="dialog-content">
-        <div id="dialog-message"></div>
-    </div>
-</div>
 
 <div id="bar">
 	 <div id="first" class="element track1">
@@ -103,25 +97,6 @@ echo '<p>Page generation time: '.$mainTimer->get().'</p>';
 <script type="text/javascript">
 //<![CDATA[
 
-//Popup dialog
-function popup(message) {
-         
-    // get the screen height and width  
-    var maskHeight = $(document).height();  
-    var maskWidth = $(window).width();
-     
-    // calculate the values for center alignment
-    var dialogTop =  (maskHeight/3) - ($('#dialog-box').height());  
-    var dialogLeft = (maskWidth/2) - ($('#dialog-box').width()/2); 
-     
-    // assign values to the overlay and dialog box
-    $('#dialog-overlay').css({height:maskHeight, width:maskWidth}).show();
-    $('#dialog-box').css({top:dialogTop, left:dialogLeft}).show();
-     
-    // display the message
-    $('#dialog-message').html(message);
-             
-}
 
 $(document).ready(function(){
     // this is quite dirty and should be moved to a separate file //

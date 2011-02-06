@@ -9,7 +9,8 @@
 <script src="<?php echo $this->baseUrl("js/libs/jquery.jplayer.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("js/libs/jquery-ui-1.8.9.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("js/libs/jquery-validate-1.5.1.min.js"); ?>"></script>
-<script src="<?php echo $this->baseUrl("webforms2/webforms2-p.js"); ?>"></script>
+<script src="<?php echo $this->baseUrl("js/libs/jquery.qtip-1.0.0-rc3.min.js"); ?>"></script>
+<!--<script src="<?php echo $this->baseUrl("webforms2/webforms2-p.js"); ?>"></script>-->
 <link rel="stylesheet" href="<?php echo $this->baseUrl("ui-themes/base/jquery.ui.all.css"); ?>">
 
 <link rel="stylesheet" href="<?php echo $this->baseUrl("components/spinner/ui.spinner.css"); ?>">
@@ -29,8 +30,118 @@ $(document).ready(function(){
 		window.location = baseUrl + 'evolve/' + $(this).val();
 	});
     
-	$("#createSpecies").validate();
+	//$("#createSpecies").validate();
+    $("#createSpecies").validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 4
+            },
+            tempo: {
+                required: true,
+                min: 20,
+                max: 250
+            },
+            reference_note: {
+                required: true,
+                min: 20,
+                max: 120
+            }
+       },
+       messages: {
+         name: { //jQuery.format("At least {0} characters required!")
+           required: function() { forminfo('Required', '#Nameofspecies-ariaLabel', '#txt_Nameofspecies') },
+           minlength: function() { forminfo('At least 4 characters required!', '#Nameofspecies-ariaLabel', '#txt_Nameofspecies') }
+         },
+         tempo: {
+           required: function() { forminfo('Required', '#TempoBPM-ariaLabel', '#sldr_TempoBPM') },
+           min: function() { forminfo('Tempo must be between 20 and 250', '#TempoBPM-ariaLabel', '#sldr_TempoBPM') }
+         },
+         reference_note: {
+            required: function() { forminfo('Required', '#Nameofspecies-ariaLabel', '#txt_Nameofspecies') },
+            min: function() { forminfo('This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on... Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)', '#Referencenote-ariaLabel', '#Referencenote') },
+            max: function() { forminfo('This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on... Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)', '#Referencenote-ariaLabel', '#Referencenote') }
+         }
+       }
+    })
+    
+    // if user clicked on button, the overlay layer or the dialogbox, close the dialog 
+    $('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {    
+        $('#dialog-overlay, #dialog-box').hide();      
+        return false;
+    });
 });
+//$('#dialog-overlay, #dialog-box').hide(); 
+
+function forminfo(message, id, mytarget)
+{
+    // Destroy currrent tooltip if present
+    if($(id).data("qtip")) $(id).qtip("destroy");
+    if(message.length > 1)
+    {
+        $(id).qtip(
+        {
+           content: message,
+           position: {
+               corner: {
+                   target: 'leftMiddle',
+                   tooltip: 'rightMiddle'
+               }
+           },
+           adjust: {
+              screen: true // Keep the tooltip on-screen at all times
+           },
+           show: {
+               when: {
+                   target: $(mytarget),
+                   event: 'focus'
+               }
+           },
+           hide: {
+               when: {
+                   target: $(mytarget),
+                   event: 'blur'
+               }
+           },
+           style: {
+              border: {
+                 width: 3,
+                 radius: 7
+              },
+              padding: 3, 
+              textAlign: 'center',
+              tip: true, // Give it a speech bubble tip with automatic corner detection
+              name: 'dark' // Style it according to the preset 'cream' style
+           }
+           
+        });
+    }
+}
+
+function popupOK(message)
+{
+    popup(message+'<a href="#" class="button">Close</a>');
+}
+
+//Popup dialog
+function popup(message) {
+         
+    // get the screen height and width  
+    var maskHeight = $(document).height();  
+    var maskWidth = $(window).width();
+     
+    // calculate the values for center alignment
+    var dialogTop =  (maskHeight/3) - ($('#dialog-box').height());  
+    var dialogLeft = (maskWidth/2) - ($('#dialog-box').width()/2); 
+     
+    // assign values to the overlay and dialog box
+    $('#dialog-overlay').css({height:maskHeight, width:maskWidth}).show();
+    $('#dialog-box').css({top:dialogTop, left:dialogLeft}).show();
+     
+    // display the message
+    $('#dialog-message').html(message);
+             
+}
 </script>
 </head>
 <body>
@@ -68,34 +179,33 @@ $(document).ready(function(){
 			<div class="left right">
     		    <h1>Create your own species</h1>
     			<form action="<?php echo $this->url(array(), 'index', true); ?>" method="post" id="createSpecies">
-        		    <div class="row requiredRow">
+        		    <div class="row" id="nameofspecieslabel">
             	        <label class="grey" for="txt_Nameofspecies" id="Nameofspecies-ariaLabel">Name of species:</label>
-            	        <input class="field required" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" title="Try to only use numbers and letters" pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus/>
+            	        <input class="field" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" /> <!-- Try to only use numbers and letters pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" -->
             	    </div>
-            	    <div class="row requiredRow">
+            	    <div class="row">
             	        <label class="grey" for="sel_Scale" id="Scale-ariaLabel">Scale:</label>
-            	        <select class="field required" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel" title="This is a required field">
+            	        <select class="field" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel">
             	    		<option selected="selected" value="0">Major (dur)</option>
             	    		<option value="1">Minor (moll)</option>
             	    		<option value="2">Minor harmonic</option>
             	    	</select>
             	    </div>
-            	    <div class="row requiredRow">
+            	    <div class="row">
             	    	<label class="grey" for="sldr_TempoBPM" id="TempoBPM-ariaLabel">Tempo BPM:</label>
-            	    	<input class="field required" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" title="This is a required field" min="20" max="250" step="1" value="97" />
+            	    	<input class="field required" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" min="20" max="250" step="1" value="97"/> <!--  -->
             	    </div>
-            		<div class="row requiredRow">
+            		<div class="row">
             			<label class="grey" for="sel_Instrument" id="Instrument-ariaLabel">Instrument:</label>
-            			<select class="field required" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel" title="This is a required field">
+            			<select class="field" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel">
             				<option value="0">Piano</option>
             				<option selected="selected" value="12">Vibes</option>
             				<option value="16">Organ</option>
             			</select>
             		</div>
-            		<div class="row requiredRow">
+            		<div class="row">
             			<label class="grey" for="Referencenote" id="Referencenote-ariaLabel">Reference note:</label>
-                		<p class="gray" style="display: none;">This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on... Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)</p>
-            			<input class="field required" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" title="This is a required field" min="20" max="200" step="1" value="60" />
+            			<input class="field required" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" min="20" max="200" step="1" value="60" />
             		</div>
             		<div class="row">
             		<input type="submit" value="Create species" />
@@ -122,6 +232,13 @@ $(document).ready(function(){
 </div> <!-- / top -->
 	
 </div> <!--panel -->
+
+<div id="dialog-overlay"></div>
+<div id="dialog-box">
+    <div class="dialog-content">
+        <div id="dialog-message"></div>
+    </div>
+</div>
 
 <div id="wrapper">
     <section id="header">
