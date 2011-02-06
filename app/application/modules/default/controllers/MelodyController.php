@@ -32,6 +32,9 @@ class MelodyController extends Blipoteka_Controller
 			$this->_manager->initPopulation($species);
 			$this->_helper->redirector->gotoRoute(array('speciesId' => $species->id), 'evolve', true);
 		}
+    	$species = $this->_manager->getSpecies(1);
+        $this->view->species = $species;
+        $this->view->allSpecies = $this->_manager->getSpeciesTable()->findAll();;
 	}
 
 	public function evolveAction()
