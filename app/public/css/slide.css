@@ -40,7 +40,7 @@ Version: 1.0
   	font-weight: bold;
 	line-height: 42px;
 	margin: 0;
-	right: 50px;
+	right: 20px;
   	color: white;
   	/*font-size: 80%;*/
       font-size: 14px;
@@ -217,7 +217,7 @@ Version: 1.0
     padding-top: 15px;
 }
 
-#panel .content label {
+.panel .content label {
 	float: left;
 	/*padding-top: 8px;*/
 	clear: both;

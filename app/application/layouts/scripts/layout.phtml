@@ -20,6 +20,7 @@
 
 <link rel="stylesheet" href="<?php echo $this->baseUrl("css/slide.css"); ?>">
 <script src="<?php echo $this->baseUrl("js/slide.js"); ?>"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 
 <?php echo $this->headLink() . "\n"; ?>
 
@@ -143,7 +144,8 @@ function popup(message) {
     $('#dialog-message').html(message);
              
 }
-
+/*
+*/
 $(document).ready(function() {
 
     //When page loads...
@@ -162,20 +164,74 @@ $(document).ready(function() {
 		$(activeTab).fadeIn(); //Fade in the active ID content
 		return false;
 	});
-
+    
+    FB.init({
+     appId : '180743755293160',
+     status : true, // check login status
+     cookie : true, // enable cookies to allow the server to access the session
+     xfbml : true // parse XFBML
+    });
+    //FB.Canvas.setSize();
+    
+    function disableTooltip(id){
+        $(id).qtip(
+        {
+           content: 'Disabled for now, sorry!',
+           position: {
+               corner: {
+                   target: 'leftMiddle',
+                   tooltip: 'rightMiddle'
+               }
+           },
+           adjust: {
+              screen: true // Keep the tooltip on-screen at all times
+           },
+           show: {
+               when: {
+                   event: 'mouseenter'
+               }
+           },
+           hide: {
+               when: {
+                   event: 'mouseleave'
+               }
+           },
+           style: {
+              border: {
+                 width: 3,
+                 radius: 7
+              },
+              padding: 3, 
+              textAlign: 'center',
+              tip: true, // Give it a speech bubble tip with automatic corner detection
+              name: 'dark' // Style it according to the preset 'cream' style
+           }
+           
+        });
+    }
+    disableTooltip('#scalelabel');
+    disableTooltip('#tempolabel');
+    disableTooltip('#instrumentlabel');
+    disableTooltip('#referencelabel');
+    
 });
+
+window.fbAsyncInit = function() {
+  FB.Canvas.setAutoResize();
+}
 
 </script>
 </head>
 <body>
-
+<div id="fb-root"></div>
+<div id="bodyShadow">
 <!-- Panel -->
 <div id="toppanel">
     <div id="panel" class="panel">
 		<div class="content clearfix">
 			<div class="left">
 				<h1>Welcome to nandu!</h1>
-				<h2>A generic evolution bla</h2>		
+				<h2>A genetic evolution (placeholder for real info)</h2>		
 				<p class="grey">You can do anything you want with it! The only limit is your imagination!</p>
     			<?php if ($this->evolving === true) { ?>
 				<h2>Download the MIDI files for this evolution</h2>
@@ -207,31 +263,31 @@ $(document).ready(function() {
                         <form action="<?php echo $this->url(array(), 'index', true); ?>" method="post" id="createSpecies">
                             <div class="row" id="nameofspecieslabel">
                                 <label class="grey" for="txt_Nameofspecies" id="Nameofspecies-ariaLabel">Name of species:</label>
-                                <input class="field" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" /> <!-- Try to only use numbers and letters pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" -->
+                                <input class="field" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" required autofocus minlength="4" /> <!-- Try to only use numbers and letters pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" -->
                             </div>
-                            <div class="row">
+                            <div class="row" id="scalelabel">
                                 <label class="grey" for="sel_Scale" id="Scale-ariaLabel">Scale:</label>
-                                <select class="field" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel">
+                                <select class="field" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel" disabled="true">
                             		<option selected="selected" value="0">Major (dur)</option>
                             		<option value="1">Minor (moll)</option>
                             		<option value="2">Minor harmonic</option>
                             	</select>
                             </div>
-                            <div class="row">
+                            <div class="row" id="tempolabel">
                             	<label class="grey" for="sldr_TempoBPM" id="TempoBPM-ariaLabel">Tempo BPM:</label>
-                            	<input class="field required" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" min="20" max="250" step="1" value="97"/> <!--  -->
+                            	<input class="field required" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" min="20" max="250" step="1" value="97" disabled="true" /> <!--  -->
                             </div>
-                        	<div class="row">
+                        	<div class="row" id="instrumentlabel">
                         		<label class="grey" for="sel_Instrument" id="Instrument-ariaLabel">Instrument:</label>
-                        		<select class="field" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel">
+                        		<select class="field" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel" disabled="true">
                         			<option value="0">Piano</option>
                         			<option selected="selected" value="12">Vibes</option>
                         			<option value="16">Organ</option>
                         		</select>
                         	</div>
-                        	<div class="row">
+                        	<div class="row" id="referencelabel">
                         		<label class="grey" for="Referencenote" id="Referencenote-ariaLabel">Reference note:</label>
-                        		<input class="field required" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" min="20" max="200" step="1" value="60" />
+                        		<input class="field required" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" min="20" max="200" step="1" value="60" disabled="true" />
                         	</div>
                         	<div class="row">
                         	<input type="submit" value="Create species" />
@@ -291,5 +347,6 @@ $(document).ready(function() {
 <?php //echo $this->partial('footer-layout.phtml') . "\n"; ?>
 <?php //echo $this->headScript() . "\n"; ?>
 <?php //echo $this->partial('footer.phtml') . "\n"; ?>
+</div>
 </body>
 </html>

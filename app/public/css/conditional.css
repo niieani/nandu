@@ -7,6 +7,16 @@ ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,macbook,p,blockquote,fieldset,input{mar
 
 /* HTML ELEMENTS */
 body { color:#fff; background-color:#151923; /* #151f23; */ font: 100%/1.4 "Candara", Verdana, Geneva, sans-serif; text-align:center; }
+#bodyShadow {
+    width:100%; 
+    height:100%;
+    box-shadow: 0 0 20px #FFFFFF inset, 0 0 20px #FFFFFF inset;
+    -moz-box-shadow: 0 0 20px #FFFFFF inset, 0 0 20px #FFFFFF inset;
+    -webkit-box-shadow: 0 0 20px #FFFFFF inset, 0 0 20px #FFFFFF inset;
+    /* make sure it appear behind the dialog box but above everything else */
+    position:absolute; 
+    top:0; left:0; 
+}
 h1 { font: bold 50px Helvetica, Arial, Sans-serif; text-align: center; color: #eee; text-shadow: 0px 2px 6px #333; }
 h1 small{ font-size: 20px; text-transform:uppercase; letter-spacing: 14px; display: block; color: #ccc; margin-top:10px; }
 h2 a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 40px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
