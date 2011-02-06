@@ -120,7 +120,7 @@ Version: 1.0
     margin-right: auto;
 }
 
-#panel {
+.panel {
 	width: 100%;
 	height: 270px;
 	color: #999999;
@@ -132,7 +132,7 @@ Version: 1.0
 	display: none;
 }
 
-#panel h1 {
+.panel h1 {
 	font-size: 22px;
 	padding: 5px 0 10px;
 	margin: 0;
@@ -140,52 +140,54 @@ Version: 1.0
     white-space:nowrap;
 }
 
-#panel h2{
+.panel h2{
 	font-size: 17px;
 	padding: 10px 0 5px;
 	margin: 0;
 	color: white;
 }
 
-#panel p {
+.panel p {
 	margin: 5px 0;
 	padding: 0;
 }
 
-#panel a {
+.panel a {
 	text-decoration: none;
 	color: #15ADFF;
 }
 
-#panel a:hover {
+.panel a:hover {
 	color: white;
 }
 
-#panel a-lost-pwd {
+.panel a-lost-pwd {
 	display: block;
 	float: left;
 }
 
-#panel .content {
-	width: 960px;
+.panel .content {
+	width: 640px; /* 960 */
 	margin: 0 auto;
 	padding-top: 15px;
 	text-align: left;
 	font-size: 0.85em;
 }
 
-#panel .content .left {
+.panel .content .left {
 	width: 280px;
 	float: left;
 	padding: 0 15px;
 	border-left: 1px solid #333;
+    height: 250px;
+    position: relative;
 }
 
-#panel .content .right {
+.panel .content .right {
 	border-right: 1px solid #333;
 }
 
-#panel .content .left .row {
+.panel .content .left .row {
     clear:both;
     border-bottom: 1px solid #333;
     
@@ -202,7 +204,7 @@ Version: 1.0
 }*/
 /*padding: 0 7px; border-right: 1px solid #333;*/
 
-#panel .content form {
+.panel .content form {
 	margin: 0 0 10px 0;
 }
 
@@ -224,7 +226,7 @@ Version: 1.0
     /*height: 17px;*/
 }
 
-#panel .content input.field, select.field {
+.panel .content input.field, select.field {
 	border: 1px #1A1A1A solid;
 	background: #414141;
 	/*margin-right: 5px;
@@ -235,26 +237,26 @@ Version: 1.0
 	height: 18px;
 }
 
-#panel .content select.field {
+.panel .content select.field {
     /*font-size: 80%;*/
     font-size: 15px;
     height: 21px;
 }
 
-#panel .content select.dropdown {
+.panel .content select.dropdown {
     width: 270px;
     height: 25px;
     font-size: 15px;
 }
 
-#panel .content input:focus.field {
+.panel .content input:focus.field {
 	background: #545454;
 }
 
 /* BUTTONS */
 /* Login and Register buttons */
-#panel .content input.bt_login,
-#panel .content input.bt_register {
+.panel .content input.bt_login,
+.panel .content input.bt_register {
 	display: block;
 	float: left;
 	clear: left;
@@ -266,18 +268,18 @@ Version: 1.0
 	margin: 10px 0;
 }
 
-#panel .content input.bt_login {
+.panel .content input.bt_login {
 	width: 74px;
 	background: transparent url(../images/bt_login.png) no-repeat 0 0;
 }
 
-#panel .content input.bt_register {
+.panel .content input.bt_register {
 	width: 94px;
 	color: white;
 	background: transparent url(../images/bt_register.png) no-repeat 0 0;
 }
 
-#panel .lost-pwd {
+.panel .lost-pwd {
 	display: block;
 	float:left;
 	clear: right;

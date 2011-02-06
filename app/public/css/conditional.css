@@ -400,3 +400,62 @@ a.button {
 a.button:hover {
     background-color: #c33100; 
 }
+
+/* TABS */
+
+ul.tabs {
+    margin: 0;
+	padding: 0;
+	/*float: left;*/
+	list-style: none;
+	height: 20px; /*--Set height of tabs--*/
+	/*border-top: 1px solid #444;*/
+	border-left: 1px solid #444;
+	width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 140px;
+    
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+ul.tabs li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	height: 17px; /*--Subtract 1px from the height of the unordered list--*/
+	line-height: 17px; /*--Vertically aligns the text within the tab--*/
+	border: 1px solid #444;
+	border-left: none;
+	margin-bottom: -1px; /*--Pull the list item down 1px--*/
+	overflow: hidden;
+	position: relative;
+	background: #333;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+ul.tabs li a {
+	text-decoration: none;
+	color: #AAA;
+	display: block;
+	font-size: 14px;
+	padding: 0 20px;
+	border: 1px solid #bbb; /*--Gives the bevel look with a 1px white border inside the list item--*/
+	outline: none;
+    font-variant:small-caps;
+    
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+ul.tabs li a:hover {
+	background: #777;
+}
+html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+	background: #222;
+	border-top: 1px solid #bbb; /*--Makes the active tab look like it's connected with its content--*/
+}

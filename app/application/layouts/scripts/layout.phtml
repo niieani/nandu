@@ -3,7 +3,6 @@
 <head>
 <?php echo $this->headMeta() . "\n"; ?>
 <?php echo $this->headTitle() . "\n"; ?>
-<?php echo $this->headLink() . "\n"; ?>
 <?php echo $this->headScript() . "\n"; ?>
 <script src="<?php echo $this->baseUrl("js/libs/modernizr-1.6.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("js/libs/jquery.jplayer.min.js"); ?>"></script>
@@ -19,8 +18,10 @@
 <script src="<?php echo $this->baseUrl("components/placeholder/jquery.placehold-0.2.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("js/html5forms.fallback.js"); ?>"></script>
 
-<script src="<?php echo $this->baseUrl("js/slide.js"); ?>"></script>
 <link rel="stylesheet" href="<?php echo $this->baseUrl("css/slide.css"); ?>">
+<script src="<?php echo $this->baseUrl("js/slide.js"); ?>"></script>
+
+<?php echo $this->headLink() . "\n"; ?>
 
 <?php echo $this->inlineScript()->setScript(sprintf("var baseUrl = '%s';", $this->baseUrl(''))); ?>
 
@@ -142,13 +143,35 @@ function popup(message) {
     $('#dialog-message').html(message);
              
 }
+
+$(document).ready(function() {
+
+    //When page loads...
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+
+	//On Click Event
+	$("ul.tabs li").click(function() {
+
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+
+		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active ID content
+		return false;
+	});
+
+});
+
 </script>
 </head>
 <body>
 
 <!-- Panel -->
 <div id="toppanel">
-    <div id="panel">
+    <div id="panel" class="panel">
 		<div class="content clearfix">
 			<div class="left">
 				<h1>Welcome to nandu!</h1>
@@ -160,57 +183,69 @@ function popup(message) {
                 <?php } ?>
 			</div>
     		
-			<div class="left">
-    		    <h1>Change species to evolve</h1>
-                <form action="#" class="" method="post" id="speciesPicker">
-                <label id="speciesPickerLabel" for="speciesPickerSelect">
-                    <h2>Select species</2>
-                </label>
-                <div class="row selectSpecies">
-                    <select class="field dropdown" id="speciesPickerSelect" name="speciesId">
-                <?php foreach ($this->allSpecies as $species):?>
-                        <option <?php echo $this->species->id === $species->id ? 'selected="selected"' : '';?> value="<?php echo $species->id?>"> <?php echo $species->id.': '.$species->name?> </option>
-                <?php endforeach; ?>
-                <?php if ($this->evolving === false) echo '<option selected="selected" value=""> </option>'; ?>
-                    </select>
-                </div>
-                </form>
-			</div>
 			<div class="left right">
-    		    <h1>Create your own species</h1>
-    			<form action="<?php echo $this->url(array(), 'index', true); ?>" method="post" id="createSpecies">
-        		    <div class="row" id="nameofspecieslabel">
-            	        <label class="grey" for="txt_Nameofspecies" id="Nameofspecies-ariaLabel">Name of species:</label>
-            	        <input class="field" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" /> <!-- Try to only use numbers and letters pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" -->
-            	    </div>
-            	    <div class="row">
-            	        <label class="grey" for="sel_Scale" id="Scale-ariaLabel">Scale:</label>
-            	        <select class="field" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel">
-            	    		<option selected="selected" value="0">Major (dur)</option>
-            	    		<option value="1">Minor (moll)</option>
-            	    		<option value="2">Minor harmonic</option>
-            	    	</select>
-            	    </div>
-            	    <div class="row">
-            	    	<label class="grey" for="sldr_TempoBPM" id="TempoBPM-ariaLabel">Tempo BPM:</label>
-            	    	<input class="field required" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" min="20" max="250" step="1" value="97"/> <!--  -->
-            	    </div>
-            		<div class="row">
-            			<label class="grey" for="sel_Instrument" id="Instrument-ariaLabel">Instrument:</label>
-            			<select class="field" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel">
-            				<option value="0">Piano</option>
-            				<option selected="selected" value="12">Vibes</option>
-            				<option value="16">Organ</option>
-            			</select>
-            		</div>
-            		<div class="row">
-            			<label class="grey" for="Referencenote" id="Referencenote-ariaLabel">Reference note:</label>
-            			<input class="field required" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" min="20" max="200" step="1" value="60" />
-            		</div>
-            		<div class="row">
-            		<input type="submit" value="Create species" />
-            		</div>
-            	</form>
+
+                <div class="tab_container">
+                    <div id="tab1" class="tab_content">
+                        <h1>Change species to evolve</h1>
+                        <form action="#" class="" method="post" id="speciesPicker">
+                        <label id="speciesPickerLabel" for="speciesPickerSelect">
+                            <h2>Select species</2>
+                        </label>
+                        <div class="row selectSpecies">
+                            <select class="field dropdown" id="speciesPickerSelect" name="speciesId">
+                        <?php foreach ($this->allSpecies as $species):?>
+                                <option <?php echo $this->species->id === $species->id ? 'selected="selected"' : '';?> value="<?php echo $species->id?>"> <?php echo $species->id.': '.$species->name?> </option>
+                        <?php endforeach; ?>
+                        <?php if ($this->evolving === false) echo '<option selected="selected" value=""> </option>'; ?>
+                            </select>
+                        </div>
+                        </form>
+                    </div>
+                    <div id="tab2" class="tab_content">
+                        <h1>Create your own species</h1>
+                        <form action="<?php echo $this->url(array(), 'index', true); ?>" method="post" id="createSpecies">
+                            <div class="row" id="nameofspecieslabel">
+                                <label class="grey" for="txt_Nameofspecies" id="Nameofspecies-ariaLabel">Name of species:</label>
+                                <input class="field" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" /> <!-- Try to only use numbers and letters pattern="^([a-z0-9ąęśćółżź~@#!\(\)\s]*)$" required autofocus minlength="4" -->
+                            </div>
+                            <div class="row">
+                                <label class="grey" for="sel_Scale" id="Scale-ariaLabel">Scale:</label>
+                                <select class="field" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel">
+                            		<option selected="selected" value="0">Major (dur)</option>
+                            		<option value="1">Minor (moll)</option>
+                            		<option value="2">Minor harmonic</option>
+                            	</select>
+                            </div>
+                            <div class="row">
+                            	<label class="grey" for="sldr_TempoBPM" id="TempoBPM-ariaLabel">Tempo BPM:</label>
+                            	<input class="field required" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" min="20" max="250" step="1" value="97"/> <!--  -->
+                            </div>
+                        	<div class="row">
+                        		<label class="grey" for="sel_Instrument" id="Instrument-ariaLabel">Instrument:</label>
+                        		<select class="field" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel">
+                        			<option value="0">Piano</option>
+                        			<option selected="selected" value="12">Vibes</option>
+                        			<option value="16">Organ</option>
+                        		</select>
+                        	</div>
+                        	<div class="row">
+                        		<label class="grey" for="Referencenote" id="Referencenote-ariaLabel">Reference note:</label>
+                        		<input class="field required" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" min="20" max="200" step="1" value="60" />
+                        	</div>
+                        	<div class="row">
+                        	<input type="submit" value="Create species" />
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+                
+                <ul class="tabs">
+                    <li><a href="#tab1" class="tablink">Select</a></li>
+                    <li><a href="#tab2" class="tablink">Create</a></li>
+                </ul>
+
+    		    
 			</div>
 		</div>
 </div>	

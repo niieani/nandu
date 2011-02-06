@@ -54,6 +54,7 @@ class MelodyController extends Blipoteka_Controller
 		} elseif ($melodyAId) {
     	    $newA = $this->_manager->getMelody($melodyAId);
     	    $newB = $this->_manager->getMelodyB($species, $melodyAId);
+            $this->view->singleMelodyLink = true;
 		} else {
 			list ($newA, $newB) = $this->_manager->getPair($species);
 		}
