@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />	
+	<title>Building cross-browser HTML5 forms, with jQuery UI - Demo Page</title>	
+	<!-- HTML5 Shim, IE8 and bellow recognize HTML5 elements -->
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->		
+	<!-- Modernizr -->
+	<script src="js/libs/modernizr-1.6.min.js"></script>
+	<!-- Webforms2 -->
+	<script src="webforms2/webforms2-p.js"></script>	
+	<!-- jQuery and jQuery UI -->
+	<link rel="stylesheet" href="ui-themes/aristo/jquery.ui.all.css"> 
+	<script src="js/libs/jquery-1.4.4.min.js"></script>
+	<script src="js/libs/jquery-ui-1.8.9.min.js"></script>
+	<!-- jQuery Numeric Spinner -->	
+	<link rel="stylesheet" href="components/spinner/ui.spinner.css"> 
+	<script src="components/spinner/ui.spinner.js"></script>
+	<!-- jQuery Color Picker -->
+	<link rel="stylesheet" href="components/colorpicker/colorpicker.css">
+	<script src="components/colorpicker/colorpicker.js"></script>
+	<!-- jQuery Placehol -->
+	<script src="components/placeholder/jquery.placehold-0.2.min.js"></script>
+
+	<!-- Demo page layout -->
+	<link rel="stylesheet" href="css/html5forms.layout.css">
+	<script src="js/html5forms.js"></script>
+	<script src="js/html5forms.fallback.js"></script>	
+	
+</head>
+<body>
+	
+	<h1>
+		Cross-browser HTML5 forms
+		<span>with <a href="http://code.google.com/p/webforms2/">Webforms2</a>, <a href="http://www.modernizr.com/">Modernizr</a>, <a href="http://jqueryui.com/">jQuery UI</a> and other jQuery Plugins. </span>
+	</h1>
+	
+	<form>
+		<label for="range-slider">Slider</label>
+		<input type="range" name="range-slider" id="range-slider" class="slider" min="0" max="20" step="1" value="0">
+	
+		<label for="numeric-spinner">Numeric spinner</label>
+		<input type="number" name="numeric-spinner" id="numeric-spinner" value="2">
+	
+		<label for="date-picker">Date picker</label>
+		<input type="date" name="date-picker" id="date-picker" value="2010-10-06">
+		
+		<label for="color-picker">Color picker</label>
+		<input type="color" name="color-picker" id="color-picker" value="ff0000">
+	
+		<label for="text-field">Text field with placeholder</label>
+		<input type="text" name="text-field" id="text-field" placeholder="Insert your text here">
+	
+		<label for="url-field">Url field</label>
+		<input type="url" id="url-field" name="url-field" placeholder="http://net.tutsplus.com/" required>
+	
+		<label for="email-field">Email field</label>
+		<input type="email" id="email-field" name="email-field" placeholder="contact@ghinda.net" required>
+		
+		<button type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+			<span class="ui-button-text">Submit form</span>
+		</button>
+		<div class="clearfix"></div>
+	</form>
+	
+	<footer>
+		<p><a href="http://www.eyecon.ro/colorpicker/">Color Picker</a> plugin by <a href="http://www.eyecon.ro/">Stefan Petre</a></p>
+		<p>Numeric spinner by <a href="http://btburnett.com/">Brant Burnett</a></p>
+		<p><a href="http://www.viget.com/inspire/a-jquery-placeholder-enabling-plugin/">Placehold</a> by <a href="http://www.viget.com/inspire/">Viget Labs</a></p>
+		
+		<p class="author">
+			Cross-browser HTML5 Forms by <a href="http://ghinda.net">Cristian Colceriu</a> 
+			<br>
+			<a href="http://twitter.com/ghindas">Twitter</a> - <a href="mailto:cristian@ghinda.net">Email</a>
+		</p>
+	</footer>
+	
+</body>
+</html>

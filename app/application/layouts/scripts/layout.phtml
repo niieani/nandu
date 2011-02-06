@@ -7,21 +7,112 @@
 <?php echo $this->headScript() . "\n"; ?>
 <script src="<?php echo $this->baseUrl("js/libs/modernizr-1.6.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("js/libs/jquery.jplayer.min.js"); ?>"></script>
+<script src="<?php echo $this->baseUrl("js/libs/jquery-ui-1.8.9.min.js"); ?>"></script>
 <script src="<?php echo $this->baseUrl("webforms2/webforms2-p.js"); ?>"></script>
-<script src="<?php echo $this->baseUrl("js/jquery-ui-1.8.9.min.js"); ?>"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl("ui-themes/base/jquery.ui.all.css"); ?>">
 
 <link rel="stylesheet" href="<?php echo $this->baseUrl("components/spinner/ui.spinner.css"); ?>">
 <script src="<?php echo $this->baseUrl("components/spinner/ui.spinner.js"); ?>"></script>
-<link rel="stylesheet" href="<?php echo $this->baseUrl("components/colorpicker/colorpicker.css"); ?>">
-<script src="<?php echo $this->baseUrl("components/colorpicker/colorpicker.js"); ?>"></script>
 
 <script src="<?php echo $this->baseUrl("components/placeholder/jquery.placehold-0.2.min.js"); ?>"></script>
+<script src="<?php echo $this->baseUrl("js/html5forms.fallback.js"); ?>"></script>
 
-
+<script src="<?php echo $this->baseUrl("js/slide.js"); ?>"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl("css/slide.css"); ?>">
 <?php echo $this->inlineScript()->setScript(sprintf("var baseUrl = '%s';", $this->baseUrl(''))); ?>
 
+<script>
+$(document).ready(function(){
+    $('#speciesPickerSelect').change(function(){
+		window.location = baseUrl + 'evolve/' + $(this).val();
+	});
+	
+});
+</script>
 </head>
 <body>
+
+<!-- Panel -->
+<div id="toppanel">
+    <div id="panel">
+		<div class="content clearfix">
+			<div class="left">
+				<h1>Welcome to nandu!</h1>
+				<h2>A generic evolution bla</h2>		
+				<p class="grey">You can do anything you want with it! The only limit is your imagination!</p>
+				<h2>Download the MIDI files for this evolution</h2>
+				<p class="grey">Genotype <a href="#" title="Download">A &raquo;</a> | Genotype <a href="#" title="Download">B &raquo;</a></p>
+			</div>
+    		
+			<div class="left">
+    		    <h1>Change species to evolve</h1>
+                <form action="#" class="" method="post" id="speciesPicker">
+                <label id="speciesPickerLabel" for="speciesPickerSelect">
+                    <h2>Select species</2>
+                </label>
+                <div class="row selectSpecies">
+                    <select class="field dropdown" id="speciesPickerSelect" name="speciesId">
+                <?php foreach ($this->allSpecies as $species):?>
+                        <option <?php echo $this->species->id == $species->id ? 'selected="selected"' : '';?> value="<?php echo $species->id?>"> <?php echo $species->name?> </option>
+                <?php endforeach; ?>
+                    </select>
+                </div>
+                </form>
+			</div>
+			<div class="left right">
+    		    <h1>Create your own species</h1>
+    			<form action="<?php echo $this->url(array(), 'index', true); ?>" method="post" id="createSpecies">
+        		    <div class="row requiredRow">
+            	        <label class="grey" for="txt_Nameofspecies" id="Nameofspecies-ariaLabel">Name of species:</label>
+            	        <input class="field" id="txt_Nameofspecies" name="name" type="text" aria-labelledby="Nameofspecies-ariaLabel" title="Name of species. This is a required field" required />
+            	    </div>
+            	    <div class="row requiredRow">
+            	        <label class="grey" for="sel_Scale" id="Scale-ariaLabel">Scale:</label>
+            	        <select class="field" id="sel_Scale" name="scale_type" aria-labelledby="Scale-ariaLabel" title="Scale. This is a required field">
+            	    		<option selected="selected" value="0">Major (dur)</option>
+            	    		<option value="1">Minor (moll)</option>
+            	    		<option value="2">Minor harmonic</option>
+            	    	</select>
+            	    </div>
+            	    <div class="row requiredRow">
+            	    	<label class="grey" for="sldr_TempoBPM" id="TempoBPM-ariaLabel">Tempo BPM:</label>
+            	    	<input class="field" type="number" id="sldr_TempoBPM" name="tempo" aria-labelledby="TempoBPM-ariaLabel" title="Tempo. This is a required field" min="20" max="250" step="1" value="97" />
+            	    </div>
+            		<div class="row requiredRow">
+            			<label class="grey" for="sel_Instrument" id="Instrument-ariaLabel">Instrument:</label>
+            			<select class="field" id="sel_Instrument" name="instrument" aria-labelledby="Instrument-ariaLabel" title="Instrument. This is a required field">
+            				<option value="0">Piano</option>
+            				<option selected="selected" value="12">Vibes</option>
+            				<option value="16">Organ</option>
+            			</select>
+            		</div>
+            		<div class="row requiredRow">
+            			<label class="grey" for="Referencenote" id="Referencenote-ariaLabel">Reference note:</label>
+            			<input class="field" id="Referencenote" name="reference_note" type="number" aria-labelledby="Referencenote-ariaLabel" title="This is the reference note of your scale - 60 is the Middle C, 62 Middle D and so on... Therefore selecting 60 will mean that your species will mutate with a high probability of being in C scale (if you selected Major, C Major)" min="20" max="200" step="1" value="60" />
+            		</div>
+            		<div class="row">
+            		<input type="submit" value="Create species" />
+            		</div>
+            	</form>
+			</div>
+		</div>
+</div>	
+
+<!-- The tab on top -->	
+<div class="tab">
+	<ul class="login">
+		<li class="left">&nbsp;</li>
+		<li><strong><?php echo $this->species->name; ?></strong></li>
+		<li class="sep">|</li>
+		<li id="toggle">
+			<a id="open" class="open" href="#">Switch | Create</a>
+			<a id="close" style="display: none;" class="close" href="#">Close Panel</a>			
+		</li>
+		<li class="right">&nbsp;</li>
+	</ul> 
+</div> <!-- / top -->
+	
+</div> <!--panel -->
 
 <div id="wrapper">
     <section id="header">
