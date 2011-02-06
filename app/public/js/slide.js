@@ -2,8 +2,7 @@ $(document).ready(function() {
 	
 	// Expand Panel
 	$("#open").click(function(){
-		$("div#panel").slideDown("slow");
-	
+		$("div#panel").fadeIn("slow");
 	});	
 	
 	// Collapse Panel

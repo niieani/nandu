@@ -43,8 +43,10 @@ $(document).ready(function(){
 				<h1>Welcome to nandu!</h1>
 				<h2>A generic evolution bla</h2>		
 				<p class="grey">You can do anything you want with it! The only limit is your imagination!</p>
+    			<?php if ($this->evolving === true) { ?>
 				<h2>Download the MIDI files for this evolution</h2>
-				<p class="grey">Genotype <a href="#" title="Download">A &raquo;</a> | Genotype <a href="#" title="Download">B &raquo;</a></p>
+				<p class="grey">Genotype <a href="<?php echo $this->baseUrl('/audio/'.$this->melodyAfilename.'.mid'); ?>" title="Download">A &raquo;</a> | Genotype <a href="<?php echo $this->baseUrl('/audio/'.$this->melodyBfilename.'.mid'); ?>" title="Download">B &raquo;</a></p>
+                <?php } ?>
 			</div>
     		
 			<div class="left">
@@ -56,8 +58,9 @@ $(document).ready(function(){
                 <div class="row selectSpecies">
                     <select class="field dropdown" id="speciesPickerSelect" name="speciesId">
                 <?php foreach ($this->allSpecies as $species):?>
-                        <option <?php echo $this->species->id == $species->id ? 'selected="selected"' : '';?> value="<?php echo $species->id?>"> <?php echo $species->name?> </option>
+                        <option <?php echo $this->species->id === $species->id ? 'selected="selected"' : '';?> value="<?php echo $species->id?>"> <?php echo $species->id.': '.$species->name?> </option>
                 <?php endforeach; ?>
+                <?php if ($this->evolving === false) echo '<option selected="selected" value=""> </option>'; ?>
                     </select>
                 </div>
                 </form>
@@ -106,10 +109,12 @@ $(document).ready(function(){
 <div class="tab">
 	<ul class="login">
 		<li class="left">&nbsp;</li>
-		<li><strong><?php echo $this->species->name; ?></strong></li>
+		<li><strong>
+    	<?php if ($this->evolving === false) echo '[please select species]'; 
+    	    else echo $this->species->name; ?></strong></li>
 		<li class="sep">|</li>
 		<li id="toggle">
-			<a id="open" class="open" href="#">Switch | Create</a>
+			<a id="open" class="open" href="#">Select | Create</a>
 			<a id="close" style="display: none;" class="close" href="#">Close Panel</a>			
 		</li>
 		<li class="right">&nbsp;</li>

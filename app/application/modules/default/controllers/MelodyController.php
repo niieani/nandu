@@ -32,9 +32,10 @@ class MelodyController extends Blipoteka_Controller
 			$this->_manager->initPopulation($species);
 			$this->_helper->redirector->gotoRoute(array('speciesId' => $species->id), 'evolve', true);
 		}
-    	$species = $this->_manager->getSpecies(1);
-        $this->view->species = $species;
+    	//$species = $this->_manager->getSpecies(1);
+        //$this->view->species = $species;
         $this->view->allSpecies = $this->_manager->getSpeciesTable()->findAll();;
+        $this->view->evolving = false;
 	}
 
 	public function evolveAction()
@@ -59,6 +60,9 @@ class MelodyController extends Blipoteka_Controller
 		
 		$this->view->melodyA = $newA;
 		$this->view->melodyB = $newB;
+    	$this->view->melodyAfilename = $newA->getAudioFilename();
+        $this->view->melodyBfilename = $newB->getAudioFilename();
+    	$this->view->evolving = true;
 	}
 
 	public function initAction()

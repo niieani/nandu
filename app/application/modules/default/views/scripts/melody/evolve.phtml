@@ -2,6 +2,7 @@
 $this->headTitle()->append($this->species->name);
 $this->headTitle()->append('Melody '.$this->melodyA->id.' vs '.$this->melodyB->id);
 ?>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 <h2>Hover your mouse over the track to hear it<br />Compare and pick the best one</h2>
 
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
@@ -20,7 +21,7 @@ $this->headTitle()->append('Melody '.$this->melodyA->id.' vs '.$this->melodyB->i
 		<div class="bottom oneheight">
 			<div class="infobox">
         		<div class="facebooklike">
-        		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://nandu.amplifuge.com/melody/<?php echo $this->melodyA->id?>/from/<?php echo $this->species->id?>/" layout="button_count" show_faces="true" width="450" font="segoe ui"></fb:like>
+            	<fb:like href="http://nandu.amplifuge.com<?php echo $this->url(array('speciesId' => $this->species->id, 'a' => $this->melodyA->id), 'open', true); ?>" layout="button_count" show_faces="true" width="50" font="segoe ui"></fb:like>
         		</div>
 				<h3>
     			Genotype one (<?php echo $this->melodyA->id?>)
@@ -48,7 +49,7 @@ $this->headTitle()->append('Melody '.$this->melodyA->id.' vs '.$this->melodyB->i
 		<div class="bottom oneheight">
 			<div class="infobox">
         		<div class="facebooklike">
-        		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://nandu.amplifuge.com/melody/<?php echo $this->melodyB->id?>/from/<?php echo $this->species->id?>/" layout="button_count" show_faces="true" width="450" font="segoe ui"></fb:like>
+        		<fb:like href="http://nandu.amplifuge.com/melody/<?php echo $this->melodyB->id?>/from/<?php echo $this->species->id?>/" layout="button_count" show_faces="true" width="50" font="segoe ui"></fb:like>
         		</div>
 				<h3>Genotype two (<?php echo $this->melodyB->id?>)</h3>
 				<pre style="display: none;"><?php echo $this->melodyB->getAudioFilename()?></pre>
@@ -126,9 +127,9 @@ $(document).ready(function(){
     // this is quite dirty and should be moved to a separate file //
 <?php
 $files = array();
-//$this->baseUrl('/audio');
-$files[] = $this->baseUrl('/audio/'.$this->melodyA->getAudioFilename());
-$files[] = $this->baseUrl('/audio/'.$this->melodyB->getAudioFilename());
+// this was: $this->melodyB->getAudioFilename() but $this->melodyX is not available in the main layout for the top bar
+$files[] = $this->baseUrl('/audio/'.$this->melodyAfilename);
+$files[] = $this->baseUrl('/audio/'.$this->melodyBfilename);
 for ($id = 1; $id <= 2; $id++)
 {
     $file = $files[$id-1];
