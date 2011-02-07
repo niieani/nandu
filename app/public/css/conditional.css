@@ -6,7 +6,9 @@ used parts by marcofolio.net
 ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,macbook,p,blockquote,fieldset,input{margin:0; padding:0;}
 
 /* HTML ELEMENTS */
-body { color:#fff; background-color:#151923; /* #151f23; */ font: 100%/1.4 "Candara", Verdana, Geneva, sans-serif; text-align:center; }
+/*html { overflow: hidden; }*/
+body { color: #BBB; background-color:#151923; /* #151f23; */ font: 100%/1.4 "Candara", Verdana, Geneva, sans-serif; text-align:center; 
+}
 #bodyShadow {
     width:100%; 
     height:100%;
@@ -19,24 +21,57 @@ body { color:#fff; background-color:#151923; /* #151f23; */ font: 100%/1.4 "Cand
 }
 h1 { font: bold 50px Helvetica, Arial, Sans-serif; text-align: center; color: #eee; text-shadow: 0px 2px 6px #333; }
 h1 small{ font-size: 20px; text-transform:uppercase; letter-spacing: 14px; display: block; color: #ccc; margin-top:10px; }
-h2 a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 40px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
-h2 a:hover { color: #90bcd0; }
+h1 a, h1 a:hover, h1 a:active, h1 a:visited { color: #eee; text-decoration: none; }
+/*h2 a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 40px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
+h2 a:hover { color: #90bcd0; }*/
+
+footer{
+    margin: 30px 60px;
+}
+
+
+.debuginfo h1 {
+    font-size: 22px;
+	padding: 5px 0 10px;
+	margin: 0;
+	color: white;
+    text-align: left;
+}
+
+.debuginfo h2{
+	font-size: 17px;
+	padding: 10px 0 5px;
+	margin: 0;
+	color: white;
+    text-align: left;
+}
+
+.debuginfo p {
+	margin: 5px 0;
+    padding-bottom: 8px;
+}
+
+.debuginfo a {
+	text-decoration: none;
+	color: #15ADFF;
+}
+
+.debuginfo a:hover {
+	color: white;
+}
 
 .debuginfo
 {
-    width: 700px;
+    width: 600px;
     margin:  10px auto;
+    /*text-align: left;*/
     padding: 60px 10px 10px 10px;
+    color: #999999;
 }
 
 .debuginfo h3
 {
     padding-bottom: 4px;
-}
-
-.debuginfo p
-{
-    padding-bottom: 8px;
 }
 
 .debuglog
@@ -51,21 +86,40 @@ h2 a:hover { color: #90bcd0; }
 /* WRAPPER */
 /*width:1200px;  margin:40px auto; */ 
 
+.overflow 
+{
+    overflow-y: visible;
+    height: 100px;
+}
+
 #wrapper { 
     width: 100%;
 	margin:  40px auto;
+    margin-top: 50px;
     text-align: left;
 }
 
 /* CONTENT */
 /* #content { margin:10px auto; } *//* align all to center */
 
+
 #content h2 { 
-    font: bold 25px Helvetica, Arial, Sans-serif; 
+    font: bold 20px Helvetica, Arial, Sans-serif; 
     color:#eee; 
     text-shadow: 0px 2px 4px #333; 
     text-align:center; 
     padding-top:20px;
+}
+
+#helptext{
+    margin: 30px 50px;
+}
+#helptext p {
+    padding: 3px 3px;
+}
+#helptext h2{
+    text-align:left;
+    margin: 0 20px;
 }
 
 
@@ -262,7 +316,7 @@ div.element a
     position: absolute;
     left: 150px;
 }
-.element div.bottom div.infobox h3 { font-family:"Calibri",Arial,Helvetica,Sans-Serif; }
+.element div.bottom div.infobox h3 { font-family:"Calibri",Arial,Helvetica,Sans-Serif; color:white; }
 .element div.bottom div.infobox p { font-family:"Lucida Grande",Arial,Helvetica,Sans-Serif; text-shadow: 0px 5px 5px #111; }
 
 /*
@@ -413,7 +467,7 @@ a.button:hover {
 
 /* TABS */
 
-ul.tabs {
+ul.tabs, ul.tabs2 {
     margin: 0;
 	padding: 0;
 	/*float: left;*/
@@ -430,7 +484,10 @@ ul.tabs {
     -moz-border-radius: 20px;
     border-radius: 20px;
 }
-ul.tabs li {
+ul.tabs2 {
+    left: 120px;
+}
+ul.tabs li, ul.tabs2 li {
 	float: left;
 	margin: 0;
 	padding: 0;
@@ -447,7 +504,7 @@ ul.tabs li {
     border-radius: 20px;
 }
 
-ul.tabs li a {
+ul.tabs li a, ul.tabs2 li a {
 	text-decoration: none;
 	color: #AAA;
 	display: block;
@@ -462,10 +519,10 @@ ul.tabs li a {
     border-radius: 20px;
 }
 
-ul.tabs li a:hover {
+ul.tabs li a:hover, ul.tabs2 li a:hover {
 	background: #777;
 }
-html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+html ul.tabs li.active, html ul.tabs2 li.active, html ul.tabs li.active a:hover, html ul.tabs2 li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
 	background: #222;
 	border-top: 1px solid #bbb; /*--Makes the active tab look like it's connected with its content--*/
 }

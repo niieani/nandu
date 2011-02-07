@@ -104,14 +104,14 @@ body, select, input, textarea {
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 
 /* always force a scrollbar in non-IE */
-html { overflow-y: scroll; }
+/*html { overflow-y: scroll; }*/
 
 
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
+a, a:active, a:visited { text-decoration: none; color: #15ADFF; /*color: #9EBDDB; *//*#607890;*/ }
+a:hover { color: white; /*color: #5E86AD;*/ /*#036; */ }
 
 
 ul, ol { margin-left: 1.8em; }

@@ -3,7 +3,7 @@ $this->headTitle()->append($this->species->name);
 $this->headTitle()->append('Melody '.$this->melodyA->id.' vs '.$this->melodyB->id);
 ?>
 <!--<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>-->
-<h2>Hover your mouse over the track to hear it<br />Compare and pick the best one</h2>
+<h2>Hover your mouse over each genotype to hear them.<br />Compare and pick the best one by clicking on it.</h2>
 
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
 <div id="jquery_jplayer_2" class="jp-jplayer"></div>
@@ -67,7 +67,19 @@ $this->headTitle()->append('Melody '.$this->melodyA->id.' vs '.$this->melodyB->i
 	</div>
 </div>
 <div class="debuginfo break">
+<h1>How to use?</h1>
 <p>
+When you are in the <i>evolve</i> mode you are faced with two blobs of genetic material. 
+<br/> Hover your mouse over the blobs to hear them. <br/>Pick one that you like best by clicking on it. </p>
+<p>
+The one you have chosen will become a parent for a new generation and will also survive to the next one in an unchanged form as 'Genotype A' (the one on the left).</p>
+<p>This way, you can keep clicking on Genotype A until the other one sounds better to you. You may stop this process at any time.</p>
+<p>Visual representation may help you notice the evolutionary process. </p>
+<h1>Look-alike?</h1>
+<p>Like in real life, it sometimes happens that two members of species look very similar - or in this case identical.</p>
+<p>If that happens you simply have to click on either one in order to continue the evolution. Enough melody-organisms are being generated, breed or mutated, so that the whole genetic pool will not be influenced by one pair of look-alikes.</p>
+<h1>MIDI</h1>
+<p>You can download the MIDI files for each Genotype <a href="#toppanel" class="openPanel">from the slide menu</a> (click to open).</p>
 <?php
 /*
 foreach($genotypes as $id => $genotype)
@@ -91,7 +103,6 @@ $mainTimer->stop();
 echo '<p>Page generation time: '.$mainTimer->get().'</p>';
 */
 ?>
-</p>
 </div>
 
 <script type="text/javascript">
@@ -173,13 +184,13 @@ EOT;
       $("#jquery_jplayer_1").jPlayer("play");
     }).mouseleave(function(){
       $("#jquery_jplayer_1").jPlayer("stop");
-    }).click(function(){ popup(pleaseWaitNote); });
+    }).click(function(){ popup(pleaseWaitNote); $("body").css({ cursor:"wait" }); });
     
     $("div.track2").mouseenter( function() {
       $("#jquery_jplayer_2").jPlayer("play");
     }).mouseleave(function(){
       $("#jquery_jplayer_2").jPlayer("stop");
-    }).click(function(){ popup(pleaseWaitNote); });
+    }).click(function(){ popup(pleaseWaitNote); $("body").css({ cursor:"wait" }); });
     
 });
 

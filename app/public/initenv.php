@@ -39,6 +39,9 @@ defined('APPLICATION_PATH') || define('APPLICATION_PATH', ROOT_PATH . DS . 'appl
 // Define the application environment (context), if it's not defined already
 defined('APPLICATION_ENV') || define('APPLICATION_ENV', getenv('APPLICATION_ENV') ?: 'production');
 
+// This uses the async generator
+defined('ASYNCHRONOUS_LAUNCH') || define('ASYNCHRONOUS_LAUNCH', true);
+
 // Here we add include paths to files which are an absolute must
 set_include_path(
 	ROOT_PATH . DS. 'library' . DS . 'vendor' . PS .
