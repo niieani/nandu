@@ -3,7 +3,7 @@ $(document).ready(function() {
 	// Expand Panel
 	$("#open, .openPanel").click(function(){
 		$("div#panel").fadeIn("slow");
-	});	
+	});
 	
 	// Collapse Panel
 	$("#close").click(function(){
