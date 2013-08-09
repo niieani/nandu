@@ -1,1 +1,66 @@
-placeholder
+About ñandú!
+====
+
+Nowadays popular and conventional ways of playback of music are very limited in terms of adding variation to how it is played every time. Usually, we only have the option to playback the piece exactly the way it was recorded and mixed. We are only able to influence the environment in which we hear it. If we want a “real”, “live” experience, our almost sole option is to see a live performance. The project’s main idea is to create self-evolving music, which will sound slightly different every time it is played. 
+
+The software is based on user-interactive evolution, where the user can select the parts of the track which he likes and ones which he does not like. It imitates the behaviour of genetic evolution of species and biological natural selection – in which you (the users) are the natural environment for the track to evolve in. The parts tagged as “bad” become recessive and eventually change or completely die out, and the “good” parts survive and create offsprings: the new versions of the track.
+The ultimate goal for the software is to be able to evolve entire musical pieces or songs, “mega-organisms”, created from smaller parts that were also evolved at an earlier stage. This will of course take some time, but the developement is going really fast!
+
+> Genetic algorithms (GAs) and evolutionary computation (EC) are devilish fun partly because they permit us to tweak the noses of those whoshare the conventional wisdom that ‘computers only do what you program them to do.’ This cold war view of computer as gloriﬁed adding machine is still with us, but it seems to me generally that the accomplishments of EC must be giving those who still hold such views some pause, as ﬁeld after ﬁeld is changed by the computational innovation and creativity embodied in GAs and EC.
+
+*Evolutionary Computer Music - E. Miranda, J. al Biles (Springer, 2007) (p. v)*
+
+The first version of ñandú will only support generating melodies.
+
+ñandú is licensed on the MIT License, so feel free to use its code in your own projects.
+
+TO DO - ñandú v1.0 - RELEASE DATE 6th FEBRUARY 2011
+-----
+* Integrate the evaluation of musical fitness functions to genetic operators (p. 5)
+* Define population structure
+* Finish implementing randomising algorithm for initialisation of the genotype
+* Multiple organisms by ID (selectable from a dropdown)
+
+TO DO - ñandú post 1.0
+-----
+* Genetic operators: add inverse or part-inverse (and possibly other Baroque fugue techniques)
+* Genetic operator: two-point cross-over (p. 7)
+* GUI fallback for pre-HTML5 or non-OGG browser
+* Show number of users on-line, working on the current organism [ajax counter, even iframe if there's no time to implement]
+* Automated evolution (to skip *x* iterations)
+* Rhythmic patterns evolution
+* Pattern 
+* lots of ideas, will write down later
+
+Ideas (Polish / English)
+----
+Strona 6 Evolutionary Technique:
+
+* rozłożone generacje na siatce 2D, mating with the ones in proximity
+* tagowanie generacji, by móc potem określać charakter i tworzyć hybrydy
+* przy cross-over operator, mozna kleić geny w punktach dźwięków wspólnych
+* mutation operator nearly always respect musical/harmonic rules
+* odrębne organizmy (species) (str 9) tworzace odmienne bloki (muzyczne), a potem gdy już baza jest pełna - łączenie tych bloków muzycznych równiez za pomocą ewolucyjnego algorytmu
+
+Darwinian Search Algorithms
+-----
+> Variations are caused by genetic processes such as mutations (sometimes caused by mistakes in DNA replication) and recombination of genetic material from different sources (e.g. the two parents in sexual reproduction).
+
+[[https://github.com/niieani/nandu/raw/master/wiki/basic-EA.png]]
+
+*Evolutionary Computer Music - E. Miranda, J. al Biles (Springer, 2007) (p. 3)*
+
+The main components of an evolutionary search algorithm are:
+-----
+* genetic representation
+* evaluation function
+* population structure
+* selection method
+* genetic operators
+* replacement scheme
+
+Genetic operators
+------
+[[https://github.com/niieani/nandu/raw/master/wiki/genetic-operators.png]]
+
+*Evolutionary Computer Music - E. Miranda, J. al Biles (Springer, 2007) (p. 7)*
