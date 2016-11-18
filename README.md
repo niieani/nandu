@@ -1,4 +1,12 @@
-## Welcome to ñandú!
+# Welcome to ñandú!
+
+## Deprecation Note
+
+This software is no longer actively maintained and the server where it run is down. 
+
+If you like the idea, feel free and to get inspired or even try to get it running on your own machine. :) Let me know if you do!
+
+## Introduction
 
 Nowadays popular and conventional ways of playback of music are very limited
 in terms of adding variation to how it is played every time. Usually, we only
@@ -7,8 +15,7 @@ mixed. We are only able to influence the environment in which we hear it. If
 we want a “real”, “live” experience, our almost sole option is to see a live
 performance. The project’s main idea is to create self-evolving music, which
 will sound slightly different every time it is played. Read about it some more
-below, or if you feel adventurous - get right to it and [start evolving](<!--?php
-echo $this--->url(array('speciesId' =&gt; 1), 'evolve', true)) yourself!
+below, or if you feel adventurous - get right to it and [start evolving](http://sorry.no.longer.available/speciesId=1&evolve=true) yourself!
 
 ## How does it work?
 
@@ -20,9 +27,7 @@ to evolve in. The parts tagged as “bad” become recessive and eventually chan
 or completely die out, and the “good” parts survive and create offsprings: the
 new versions of the track. The ultimate goal for the software is to be able to
 evolve entire musical pieces or songs, “mega-organisms”, created from smaller
-parts that were also evolved at an earlier stage. This will of course take
-some time, but the developement is going really fast! Until we get there,
-enjoy the current state and be sure to check back in a couple of weeks!
+parts that were also evolved at an earlier stage. 
 
 ## What is working now?
 
@@ -42,8 +47,7 @@ problems.
 
 ## How do I use it?
 
-Head over to the [first organism's evolution page](<!--?php echo
-$this--->url(array('speciesId' =&gt; 1), 'evolve', true)), or pick an organism
+Head over to the [first organism's evolution page](http://sorry.no.longer.available/speciesId=1&evolve=true), or pick an organism
 from the list in the select/create menu (click to open). More information is
 available on the evolve page.
 
@@ -65,11 +69,6 @@ as [rhea](http://en.wikipedia.org/wiki/Rhea_%28bird%29). Rhea is also the name
 of a goddess according to Greek mithology. Thus we decided that ñandú sounds
 pretty awesome and is a great inspiration for the logo (which by the way has
 not been made yet).
-
-## Technical details
-
-If you want technical details head over to our [ñandú
-wiki](https://github.com/niieani/nandu/wiki/%C3%B1and%C3%BA).
 
 ## How to use?
 
@@ -94,6 +93,37 @@ influenced by one pair of look-alikes.
 
 You can download the MIDI files for each Genotype from the slide menu (click
 to open).
+
+## Technical details
+
+> Genetic algorithms (GAs) and evolutionary computation (EC) are devilish fun partly because they permit us to tweak the noses of those whoshare the conventional wisdom that ‘computers only do what you program them to do.’ This cold war view of computer as gloriﬁed adding machine is still with us, but it seems to me generally that the accomplishments of EC must be giving those who still hold such views some pause, as ﬁeld after ﬁeld is changed by the computational innovation and creativity embodied in GAs and EC.
+
+*Evolutionary Computer Music - E. Miranda, J. al Biles (Springer, 2007) (p. v)*
+
+The first version of ñandú will only support generating melodies.
+
+Darwinian Search Algorithms
+-----
+> Variations are caused by genetic processes such as mutations (sometimes caused by mistakes in DNA replication) and recombination of genetic material from different sources (e.g. the two parents in sexual reproduction).
+
+![basic EA](https://github.com/niieani/nandu/raw/master/wiki/basic-EA.png)
+
+*Evolutionary Computer Music - E. Miranda, J. al Biles (Springer, 2007) (p. 3)*
+
+The main components of an evolutionary search algorithm are:
+-----
+* genetic representation
+* evaluation function
+* population structure
+* selection method
+* genetic operators
+* replacement scheme
+
+Genetic operators
+------
+![genetic operators](https://github.com/niieani/nandu/raw/master/wiki/genetic-operators.png)
+
+*Evolutionary Computer Music - E. Miranda, J. al Biles (Springer, 2007) (p. 7)*
 
 ## OK. Any terms of service? What's the license like?
 
